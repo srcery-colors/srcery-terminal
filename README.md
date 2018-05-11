@@ -1,5 +1,7 @@
 ![title](assets/title.png)
 
+Repository containing various configurations and extras related to the [Srcery](https://github.com/roosta/vim-srcery) [Colorscheme](https://github.com/roosta/emacs-srcery).
+
 ## Palette
 
 TERMCOL       | NR  | HEX     | RGB
