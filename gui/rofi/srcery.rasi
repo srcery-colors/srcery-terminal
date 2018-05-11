@@ -6,14 +6,14 @@
  * File: srcery.rasi
  * Desc: Srcery theme for Rofi
  * Author: Daniel Berg <mail@roosta.sh>
- * Modified: 2018-02-11
+ * Modified: 2018-05-11
  */
 
 * {
   spacing:       2;
 
   black:         #1C1B19;
-  brightblack:   #2D2B28;
+  brightblack:   #2D2C29;
 
   red:           #EF2F27;
   brightred:     #F75341;
@@ -25,7 +25,7 @@
   brightyellow:  #FED06E;
 
   blue:          #2C78BF;
-  brightblue:    #82B4E3;
+  brightblue:    #68A8E4;
 
   magenta:       #E02C6D;
   brightmagenta: #FF5C8F;
