@@ -1,46 +1,46 @@
-# srcery.kitty
-# https://github.com/roosta/vim-srcery/
+# kitty/kitty.colors
+# https://github.com/roosta/contrib-srcery/
 
-# special colors {{{
+# Special Colors {{{
 
-foreground      #fce8c3
-background      #1c1b19
-cursor          #fce8c3
+foreground      #FCE8C3
+background      #1C1B19
+cursor          #FCE8C3
 
 # }}}
 
 
-# main colors {{{
+# Main Colors {{{
 
-# black
+# Black
 color0          #1C1B19
 color8          #2D2C29
 
-# red
+# Red
 color1          #EF2F27
 color9          #F75341
 
-# green
+# Green
 color2          #519F50
 color10         #98BC37
 
-# yellow
+# Yellow
 color3          #FBB829
 color11         #FED06E
 
-# blue
+# Blue
 color4          #2C78BF
 color12         #68A8E4
 
-# magenta
+# Magenta
 color5          #E02C6D
 color13         #FF5C8F
 
-# cyan
+# Cyan
 color6          #0AAEB3
 color14         #53FDE9
 
-# white
+# White
 color7          #918175
 color15         #FCE8C3
 
