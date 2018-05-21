@@ -34,3 +34,4 @@ xgrey5        | 239 | #4E4E4E | 78, 78, 78
 
 ## GUI
 * [Rofi theme](https://github.com/roosta/contrib-srcery/tree/master/gui/rofi)
+* [tmux](https://github.com/MindTooth/tmux-srcery) (WIP, please comment)
