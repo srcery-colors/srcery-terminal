@@ -26,11 +26,11 @@ brightwhite   |  15 | #FCE8C3 | 252, 232, 195
 orange        | 166 | #D75F00 |  215, 95, 0 |
 brorange      | 208 | #FF8700 | 255, 135, 0
 hard_black    | 233 | #121212 | 18, 18, 18
-xgrey1        | 235 | #262626 | 38, 38, 38
-xgrey2        | 236 | #303030 | 48, 48, 48
-xgrey3        | 237 | #3A3A3A | 58, 58, 58
-xgrey4        | 238 | #444444 | 68, 68, 68
-xgrey5        | 239 | #4E4E4E | 78, 78, 78
+xgray1        | 235 | #262626 | 38, 38, 38
+xgray2        | 236 | #303030 | 48, 48, 48
+xgray3        | 237 | #3A3A3A | 58, 58, 58
+xgray4        | 238 | #444444 | 68, 68, 68
+xgray5        | 239 | #4E4E4E | 78, 78, 78
 
 ## GUI
 * [Rofi theme](https://github.com/roosta/contrib-srcery/tree/master/gui/rofi)
