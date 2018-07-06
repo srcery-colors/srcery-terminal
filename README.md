@@ -1,6 +1,6 @@
 ![title](assets/title.png)
 
-Repository containing various configurations and extras related to the [Srcery](https://github.com/roosta/vim-srcery) [Colorscheme](https://github.com/roosta/emacs-srcery).
+Terminal configurations for [Srcery](https://github.com/srcery-colors/srcery-vim) [Colorscheme](https://github.com/srcery-colors/srcery-emacs).
 
 ## Palette
 
@@ -31,7 +31,3 @@ xgray2        | 236 | #303030 | 48, 48, 48
 xgray3        | 237 | #3A3A3A | 58, 58, 58
 xgray4        | 238 | #444444 | 68, 68, 68
 xgray5        | 239 | #4E4E4E | 78, 78, 78
-
-## GUI
-* [Rofi theme](https://github.com/roosta/contrib-srcery/tree/master/gui/rofi)
-* [tmux](https://github.com/MindTooth/tmux-srcery) (WIP, please comment)
