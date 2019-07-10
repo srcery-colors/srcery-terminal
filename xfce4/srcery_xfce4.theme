@@ -1,4 +1,5 @@
-[Configuration]
+[Scheme]
+Name=srcery
 ColorCursor=#fcfce8e8c3c3
 ColorForeground=#fcfce8e8c3c3
 ColorBackground=#1c1c1b1b1919
