@@ -4,7 +4,7 @@
 
 const fs = require("fs");
 const termcolors = require("termcolors");
-const pkg = require("./package.json");
+const pkg = require("../package.json");
 const palette = fs.readFileSync("./palette.json", "utf8");
 const colors = termcolors.json.import(palette);
 const program = require("commander");
