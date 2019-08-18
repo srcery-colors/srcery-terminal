@@ -24,3 +24,6 @@ guake/srcery_guake.sh: templates/guake.dot palette.json
 
 iterm/srcery_iterm.itermcolors: templates/iterm.dot palette.json
 	bin/builder -o iterm > $@
+
+kitty/srcery_kitty.conf: templates/kitty.dot palette.json
+	bin/builder -o kitty > $@

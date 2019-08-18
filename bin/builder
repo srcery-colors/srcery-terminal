@@ -11,7 +11,7 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = ["pantheon", "iterm", "genode", "tilix", "xfce", "gnome", "guake"];
+const formats = ["pantheon", "iterm", "genode", "tilix", "xfce", "gnome", "guake", "kitty"];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
     return color.toHex();
@@ -78,6 +78,13 @@ function guakeConfig() {
   process.stdout.write(data);
 }
 
+function kittyConfig() {
+  const file = fs.readFileSync("./templates/kitty.dot", "utf8");
+  const template = termcolors.export(file, toHexUpper);
+  const data = template(colors);
+  process.stdout.write(data);
+}
+
 program
   .version(pkg.version)
   .option('-l, --list', 'List available formats')
@@ -128,6 +135,10 @@ case "gnome":
   break;
 case "guake":
   guakeConfig();
+  process.exit();
+  break;
+case "kitty":
+  kittyConfig();
   process.exit();
   break;
 }
