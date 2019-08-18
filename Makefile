@@ -21,3 +21,6 @@ gnome-terminal/srcery_gnome-terminal.sh: palette.json templates/gnome.dot
 
 guake/srcery_guake.sh: templates/guake.dot palette.json
 	bin/builder -o guake > $@
+
+iterm/srcery_iterm.itermcolors: templates/iterm.dot palette.json
+	bin/builder -o iterm > $@
