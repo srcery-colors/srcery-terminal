@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Save this script into srcery_guake.sh, make this file executable and run it:
+#
+# $ chmod +x srcery_guake.sh
+# $ ./srcery_guake.sh
+#
+# Alternatively copy lines below directly into your shell.
+
+gconftool-2 -s -t string /apps/guake/style/background/color '{{=c.background}}'
+gconftool-2 -s -t string /apps/guake/style/font/color '{{=c.foreground}}'
+gconftool-2 -s -t string /apps/guake/style/font/palette '{{=c[0]}}:{{=c[1]}}:{{=c[2]}}:{{=c[3]}}:{{=c[4]}}:{{=c[5]}}:{{=c[6]}}:{{=c[7]}}:{{=c[8]}}:{{=c[9]}}:{{=c[10]}}:{{=c[11]}}:{{=c[12]}}:{{=c[13]}}:{{=c[14]}}:{{=c[15]}}'
