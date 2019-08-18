@@ -11,7 +11,7 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = ["pantheon", "iterm", "genode", "tilix", "xfce"];
+const formats = ["pantheon", "iterm", "genode", "tilix", "xfce", "gnome"];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
     return color.toHex();
@@ -64,6 +64,12 @@ function xfceConfig() {
   process.stdout.write(data);
 }
 
+function gnomeConfig() {
+  const file = fs.readFileSync("./templates/gnome.dot", "utf8");
+  const template = termcolors.export(file, toHex);
+  const data = template(colors);
+  process.stdout.write(data);
+}
 program
   .version(pkg.version)
   .option('-l, --list', 'List available formats')
@@ -106,6 +112,10 @@ case "tilix":
   break;
 case "xfce":
   xfceConfig();
+  process.exit();
+  break;
+case "gnome":
+  gnomeConfig();
   process.exit();
   break;
 }
