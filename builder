@@ -11,6 +11,8 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
+const formats = ["pantheon", "iterm", "genode", "tilix", "xfce"];
+
 const toHex = _.partialRight(_.mapValues, function(color) {
     return color.toHex();
 });
@@ -23,7 +25,9 @@ const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
     return color.toAvgRgbArray();
 });
 
-const formats = ["pantheon", "iterm", "genode", "tilix"];
+const toDoubleHex = _.partialRight(_.mapValues, function(color) {
+    return color.toDoubleHex();
+});
 
 function pantheonConfig() {
   const file = fs.readFileSync("./templates/pantheon.dot", "utf8");
@@ -49,6 +53,13 @@ function genodeConfig() {
 function tilixConfig() {
   const file = fs.readFileSync("./templates/tilix.dot", "utf8");
   const template = termcolors.export(file, toHexUpper);
+  const data = template(colors);
+  process.stdout.write(data);
+}
+
+function xfceConfig() {
+  const file = fs.readFileSync("./templates/xfce.dot", "utf8");
+  const template = termcolors.export(file, toDoubleHex);
   const data = template(colors);
   process.stdout.write(data);
 }
@@ -91,6 +102,10 @@ case "genode":
   break;
 case "tilix":
   tilixConfig();
+  process.exit();
+  break;
+case "xfce":
+  xfceConfig();
   process.exit();
   break;
 }
