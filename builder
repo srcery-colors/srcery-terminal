@@ -23,7 +23,7 @@ const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
     return color.toAvgRgbArray();
 });
 
-const formats = ["pantheon", "iterm", "genode"];
+const formats = ["pantheon", "iterm", "genode", "tilix"];
 
 function pantheonConfig() {
   const file = fs.readFileSync("./templates/pantheon.dot", "utf8");
@@ -41,6 +41,13 @@ function itermConfig() {
 
 function genodeConfig() {
   const file = fs.readFileSync("./templates/genode.dot", "utf8");
+  const template = termcolors.export(file, toHexUpper);
+  const data = template(colors);
+  process.stdout.write(data);
+}
+
+function tilixConfig() {
+  const file = fs.readFileSync("./templates/tilix.dot", "utf8");
   const template = termcolors.export(file, toHexUpper);
   const data = template(colors);
   process.stdout.write(data);
@@ -80,6 +87,10 @@ case "iterm":
   break;
 case "genode":
   genodeConfig();
+  process.exit();
+  break;
+case "tilix":
+  tilixConfig();
   process.exit();
   break;
 }
