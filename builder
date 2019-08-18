@@ -15,11 +15,22 @@ const toHex = _.partialRight(_.mapValues, function(color) {
     return color.toHex();
 });
 
-const formats = ["pantheon"];
+const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
+    return color.toAvgRgbArray();
+});
+
+const formats = ["pantheon", "iterm"];
 
 function pantheonConfig() {
   const file = fs.readFileSync("./templates/pantheon.dot", "utf8");
   const template = termcolors.export(file, toHex);
+  const data = template(colors);
+  process.stdout.write(data);
+}
+
+function itermConfig() {
+  const file = fs.readFileSync("./templates/iterm.dot", "utf8");
+  const template = termcolors.export(file, toAvgRgbArray);
   const data = template(colors);
   process.stdout.write(data);
 }
@@ -51,4 +62,9 @@ switch (program.output) {
 case "pantheon":
   pantheonConfig();
   process.exit();
+  break;
+case "iterm":
+  itermConfig();
+  process.exit();
+  break;
 }
