@@ -15,11 +15,15 @@ const toHex = _.partialRight(_.mapValues, function(color) {
     return color.toHex();
 });
 
+const toHexUpper = _.partialRight(_.mapValues, function(color) {
+  return color.toHex().toUpperCase();
+});
+
 const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
     return color.toAvgRgbArray();
 });
 
-const formats = ["pantheon", "iterm"];
+const formats = ["pantheon", "iterm", "genode"];
 
 function pantheonConfig() {
   const file = fs.readFileSync("./templates/pantheon.dot", "utf8");
@@ -31,6 +35,13 @@ function pantheonConfig() {
 function itermConfig() {
   const file = fs.readFileSync("./templates/iterm.dot", "utf8");
   const template = termcolors.export(file, toAvgRgbArray);
+  const data = template(colors);
+  process.stdout.write(data);
+}
+
+function genodeConfig() {
+  const file = fs.readFileSync("./templates/genode.dot", "utf8");
+  const template = termcolors.export(file, toHexUpper);
   const data = template(colors);
   process.stdout.write(data);
 }
@@ -65,6 +76,10 @@ case "pantheon":
   break;
 case "iterm":
   itermConfig();
+  process.exit();
+  break;
+case "genode":
+  genodeConfig();
   process.exit();
   break;
 }
