@@ -1,14 +1,14 @@
 {
-  "name": "srcery-builder",
+  "name": "srcery-terminal",
   "version": "0.0.1",
   "description": "Build terminal configurations for the srcery color scheme",
-  "main": "index.js",
+  "main": "builder",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/srcery-colors/srcery-builder.git"
+    "url": "git+https://github.com/srcery-colors/srcery-terminal.git"
   },
   "keywords": [
     "configuration",
@@ -18,9 +18,9 @@
   "author": "Daniel Berg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/srcery-colors/srcery-builder/issues"
+    "url": "https://github.com/srcery-colors/srcery-terminal/issues"
   },
-  "homepage": "https://github.com/srcery-colors/srcery-builder#readme",
+  "homepage": "https://github.com/srcery-colors/srcery-terminal#readme",
   "devDependencies": {
     "eslint": "^6.1.0"
   },
