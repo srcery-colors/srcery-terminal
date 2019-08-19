@@ -187,4 +187,7 @@ case "xfce":
 case "xresources":
   xresourcesConfig();
   break;
+default:
+  console.log("An unsupported output was somehow selected");
+  process.exit(1);
 }
