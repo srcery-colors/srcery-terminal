@@ -54,3 +54,6 @@ terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.js
 
 termite/srcery_termite.ini: templates/termite.dot palette.json
 	bin/builder -o termite > $@
+
+xfce4/srcery_xfce4.theme: templates/xfce.dot palette.json
+	bin/builder -o xfce > $@
