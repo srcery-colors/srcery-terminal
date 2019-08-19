@@ -39,3 +39,6 @@ linux_vc/srcery_linux_vc.sh: templates/linux.dot palette.json
 
 mintty/srcery_mintty.conf: templates/mintty.dot palette.json
 	bin/builder -o mintty > $@
+
+pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.dot palette.json
+	bin/builder -o pantheon > $@
