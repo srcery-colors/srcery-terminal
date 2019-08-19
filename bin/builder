@@ -28,6 +28,7 @@ const formats = [
   "st",
   "terminalapp",
   "terminator",
+  "termite",
   "tilix",
   "xfce"
 ];
@@ -99,6 +100,7 @@ const puttyConfig       = createConfigFn("./templates/putty.dot", toRgb);
 const stConfig          = createConfigFn("./templates/st.dot", toHex);
 const terminalappConfig = createConfigFn("./templates/terminal-app.dot", terminalappColor);
 const terminatorConfig  = createConfigFn("./templates/terminator.dot", toHex);
+const termiteConfig     = createConfigFn("./templates/termite.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
 
@@ -170,6 +172,9 @@ case "terminalapp":
   break;
 case "terminator":
   terminatorConfig();
+  break;
+case "termite":
+  termiteConfig();
   break;
 case "tilix":
   tilixConfig();
