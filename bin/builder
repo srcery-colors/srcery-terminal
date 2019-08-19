@@ -11,10 +11,14 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = ["pantheon", "iterm", "genode", "tilix", "xfce", "gnome", "guake", "kitty"];
+const formats = ["alacritty", "pantheon", "iterm", "genode", "tilix", "xfce", "gnome", "guake", "kitty"];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
-    return color.toHex();
+  return color.toHex();
+});
+
+const toHexSlice = _.partialRight(_.mapValues, function(color) {
+  return color.toHex().slice(1);
 });
 
 const toHexUpper = _.partialRight(_.mapValues, function(color) {
@@ -22,11 +26,11 @@ const toHexUpper = _.partialRight(_.mapValues, function(color) {
 });
 
 const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
-    return color.toAvgRgbArray();
+  return color.toAvgRgbArray();
 });
 
 const toDoubleHex = _.partialRight(_.mapValues, function(color) {
-    return color.toDoubleHex();
+  return color.toDoubleHex();
 });
 
 function createConfigFunction(location, colorFn) {
@@ -39,6 +43,7 @@ function createConfigFunction(location, colorFn) {
   };
 }
 
+const alacrittyConfig = createConfigFunction("./templates/alacritty.dot", toHexSlice);
 const pantheonConfig = createConfigFunction("./templates/pantheon.dot", toHex);
 const itermConfig    = createConfigFunction("./templates/iterm.dot", toAvgRgbArray);
 const genodeConfig   = createConfigFunction("./templates/genode.dot", toHexUpper);
@@ -72,6 +77,9 @@ if (!formats.includes(program.output)) {
 }
 
 switch (program.output) {
+case "alacritty":
+  alacrittyConfig();
+  break;
 case "pantheon":
   pantheonConfig();
   break;
