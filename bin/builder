@@ -11,8 +11,8 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = ["alacritty", "chromeshell", "pantheon", "iterm", "genode",
-                 "tilix", "xfce", "gnome", "guake", "kitty"];
+const formats = ["alacritty", "chromeshell", "genode", "gnome", "guake",
+                 "iterm", "kitty", "pantheon", "tilix", "xfce"];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
   return color.toHex();
@@ -44,16 +44,16 @@ function createConfigFn(location, colorFn) {
   };
 }
 
-const alacrittyConfig = createConfigFn("./templates/alacritty.dot", toHexSlice);
+const alacrittyConfig   = createConfigFn("./templates/alacritty.dot", toHexSlice);
 const chromeshellConfig = createConfigFn("./templates/chrome-secure-shell.dot", toHex);
-const pantheonConfig = createConfigFn("./templates/pantheon.dot", toHex);
-const itermConfig    = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
-const genodeConfig   = createConfigFn("./templates/genode.dot", toHexUpper);
-const tilixConfig    = createConfigFn("./templates/tilix.dot", toHexUpper);
-const xfceConfig     = createConfigFn("./templates/xfce.dot", toDoubleHex);
-const gnomeConfig    = createConfigFn("./templates/gnome.dot", toHex);
-const guakeConfig    = createConfigFn("./templates/guake.dot", toDoubleHex);
-const kittyConfig    = createConfigFn("./templates/kitty.dot", toHexUpper);
+const genodeConfig      = createConfigFn("./templates/genode.dot", toHexUpper);
+const gnomeConfig       = createConfigFn("./templates/gnome.dot", toHex);
+const guakeConfig       = createConfigFn("./templates/guake.dot", toDoubleHex);
+const itermConfig       = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
+const kittyConfig       = createConfigFn("./templates/kitty.dot", toHexUpper);
+const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
+const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
+const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
 
 program
   .version(pkg.version)
