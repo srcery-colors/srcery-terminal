@@ -57,3 +57,6 @@ termite/srcery_termite.ini: templates/termite.dot palette.json
 
 xfce4/srcery_xfce4.theme: templates/xfce.dot palette.json
 	bin/builder -o xfce > $@
+
+xresources/srcery.xresources: templates/xresources.dot palette.json
+	bin/builder -o xresources > $@
