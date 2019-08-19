@@ -30,7 +30,8 @@ const formats = [
   "terminator",
   "termite",
   "tilix",
-  "xfce"
+  "xfce",
+  "xresources"
 ];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
@@ -103,6 +104,7 @@ const terminatorConfig  = createConfigFn("./templates/terminator.dot", toHex);
 const termiteConfig     = createConfigFn("./templates/termite.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
+const xresourcesConfig  = createConfigFn("./templates/xresources.dot", toHex);
 
 program
   .version(pkg.version)
@@ -181,5 +183,8 @@ case "tilix":
   break;
 case "xfce":
   xfceConfig();
+  break;
+case "xresources":
+  xresourcesConfig();
   break;
 }
