@@ -21,6 +21,7 @@ const formats = [
   "kitty",
   "konsole",
   "linux",
+  "mintty",
   "pantheon",
   "tilix",
   "xfce"
@@ -73,6 +74,7 @@ const itermConfig       = createConfigFn("./templates/iterm.dot", toAvgRgbArray)
 const kittyConfig       = createConfigFn("./templates/kitty.dot", toHexUpper);
 const konsoleConfig     = createConfigFn("./templates/konsole.dot", toRgb);
 const linuxConfig       = createConfigFn("./templates/linux.dot", hexNoHash);
+const minttyConfig      = createConfigFn("./templates/mintty.dot", toRgb);
 const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
@@ -127,6 +129,9 @@ case "konsole":
   break;
 case "linux":
   linuxConfig();
+  break;
+case "mintty":
+  minttyConfig();
   break;
 case "pantheon":
   pantheonConfig();
