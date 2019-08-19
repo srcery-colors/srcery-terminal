@@ -29,61 +29,24 @@ const toDoubleHex = _.partialRight(_.mapValues, function(color) {
     return color.toDoubleHex();
 });
 
-function pantheonConfig() {
-  const file = fs.readFileSync("./templates/pantheon.dot", "utf8");
-  const template = termcolors.export(file, toHex);
-  const data = template(colors);
-  process.stdout.write(data);
+function createConfigFunction(location, colorFn) {
+  return function() {
+    const file = fs.readFileSync(location, "utf8");
+    const template = termcolors.export(file, colorFn);
+    const data = template(colors);
+    process.stdout.write(data);
+    process.exit();
+  };
 }
 
-function itermConfig() {
-  const file = fs.readFileSync("./templates/iterm.dot", "utf8");
-  const template = termcolors.export(file, toAvgRgbArray);
-  const data = template(colors);
-  process.stdout.write(data);
-}
-
-function genodeConfig() {
-  const file = fs.readFileSync("./templates/genode.dot", "utf8");
-  const template = termcolors.export(file, toHexUpper);
-  const data = template(colors);
-  process.stdout.write(data);
-}
-
-function tilixConfig() {
-  const file = fs.readFileSync("./templates/tilix.dot", "utf8");
-  const template = termcolors.export(file, toHexUpper);
-  const data = template(colors);
-  process.stdout.write(data);
-}
-
-function xfceConfig() {
-  const file = fs.readFileSync("./templates/xfce.dot", "utf8");
-  const template = termcolors.export(file, toDoubleHex);
-  const data = template(colors);
-  process.stdout.write(data);
-}
-
-function gnomeConfig() {
-  const file = fs.readFileSync("./templates/gnome.dot", "utf8");
-  const template = termcolors.export(file, toHex);
-  const data = template(colors);
-  process.stdout.write(data);
-}
-
-function guakeConfig() {
-  const file = fs.readFileSync("./templates/guake.dot", "utf8");
-  const template = termcolors.export(file, toDoubleHex);
-  const data = template(colors);
-  process.stdout.write(data);
-}
-
-function kittyConfig() {
-  const file = fs.readFileSync("./templates/kitty.dot", "utf8");
-  const template = termcolors.export(file, toHexUpper);
-  const data = template(colors);
-  process.stdout.write(data);
-}
+const pantheonConfig = createConfigFunction("./templates/pantheon.dot", toHex);
+const itermConfig    = createConfigFunction("./templates/iterm.dot", toAvgRgbArray);
+const genodeConfig   = createConfigFunction("./templates/genode.dot", toHexUpper);
+const tilixConfig    = createConfigFunction("./templates/tilix.dot", toHexUpper);
+const xfceConfig     = createConfigFunction("./templates/xfce.dot", toDoubleHex);
+const gnomeConfig    = createConfigFunction("./templates/gnome.dot", toHex);
+const guakeConfig    = createConfigFunction("./templates/guake.dot", toDoubleHex);
+const kittyConfig    = createConfigFunction("./templates/kitty.dot", toHexUpper);
 
 program
   .version(pkg.version)
@@ -111,34 +74,26 @@ if (!formats.includes(program.output)) {
 switch (program.output) {
 case "pantheon":
   pantheonConfig();
-  process.exit();
   break;
 case "iterm":
   itermConfig();
-  process.exit();
   break;
 case "genode":
   genodeConfig();
-  process.exit();
   break;
 case "tilix":
   tilixConfig();
-  process.exit();
   break;
 case "xfce":
   xfceConfig();
-  process.exit();
   break;
 case "gnome":
   gnomeConfig();
-  process.exit();
   break;
 case "guake":
   guakeConfig();
-  process.exit();
   break;
 case "kitty":
   kittyConfig();
-  process.exit();
   break;
 }
