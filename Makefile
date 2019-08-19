@@ -48,3 +48,6 @@ putty/srcery_putty.reg: templates/putty.dot palette.json
 
 st/srcery_st.c: templates/st.dot palette.json
 	bin/builder -o st > $@
+
+terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json
+	bin/builder -o terminalapp > $@
