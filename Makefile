@@ -42,3 +42,6 @@ mintty/srcery_mintty.conf: templates/mintty.dot palette.json
 
 pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.dot palette.json
 	bin/builder -o pantheon > $@
+
+putty/srcery_putty.reg: templates/putty.dot palette.json
+	bin/builder -o putty > $@
