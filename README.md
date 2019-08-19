@@ -41,7 +41,7 @@ Clone this repository and run `make install`, this will install the required pac
 
 ### Generating configurations
 To get a list of available configurations call `make list`. By editing
-the relevant template any given configuration (located in
+the relevant template for any given configuration (located in
 `./templates`), or by editing `palette.json` and calling `make` will
 generate a new configuration.
 
