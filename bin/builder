@@ -11,7 +11,8 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = ["alacritty", "pantheon", "iterm", "genode", "tilix", "xfce", "gnome", "guake", "kitty"];
+const formats = ["alacritty", "chromeshell", "pantheon", "iterm", "genode",
+                 "tilix", "xfce", "gnome", "guake", "kitty"];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
   return color.toHex();
@@ -33,7 +34,7 @@ const toDoubleHex = _.partialRight(_.mapValues, function(color) {
   return color.toDoubleHex();
 });
 
-function createConfigFunction(location, colorFn) {
+function createConfigFn(location, colorFn) {
   return function() {
     const file = fs.readFileSync(location, "utf8");
     const template = termcolors.export(file, colorFn);
@@ -43,15 +44,16 @@ function createConfigFunction(location, colorFn) {
   };
 }
 
-const alacrittyConfig = createConfigFunction("./templates/alacritty.dot", toHexSlice);
-const pantheonConfig = createConfigFunction("./templates/pantheon.dot", toHex);
-const itermConfig    = createConfigFunction("./templates/iterm.dot", toAvgRgbArray);
-const genodeConfig   = createConfigFunction("./templates/genode.dot", toHexUpper);
-const tilixConfig    = createConfigFunction("./templates/tilix.dot", toHexUpper);
-const xfceConfig     = createConfigFunction("./templates/xfce.dot", toDoubleHex);
-const gnomeConfig    = createConfigFunction("./templates/gnome.dot", toHex);
-const guakeConfig    = createConfigFunction("./templates/guake.dot", toDoubleHex);
-const kittyConfig    = createConfigFunction("./templates/kitty.dot", toHexUpper);
+const alacrittyConfig = createConfigFn("./templates/alacritty.dot", toHexSlice);
+const chromeshellConfig = createConfigFn("./templates/chrome-secure-shell.dot", toHex);
+const pantheonConfig = createConfigFn("./templates/pantheon.dot", toHex);
+const itermConfig    = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
+const genodeConfig   = createConfigFn("./templates/genode.dot", toHexUpper);
+const tilixConfig    = createConfigFn("./templates/tilix.dot", toHexUpper);
+const xfceConfig     = createConfigFn("./templates/xfce.dot", toDoubleHex);
+const gnomeConfig    = createConfigFn("./templates/gnome.dot", toHex);
+const guakeConfig    = createConfigFn("./templates/guake.dot", toDoubleHex);
+const kittyConfig    = createConfigFn("./templates/kitty.dot", toHexUpper);
 
 program
   .version(pkg.version)
@@ -79,6 +81,9 @@ if (!formats.includes(program.output)) {
 switch (program.output) {
 case "alacritty":
   alacrittyConfig();
+  break;
+case "chromeshell":
+  chromeshellConfig();
   break;
 case "pantheon":
   pantheonConfig();

@@ -13,8 +13,8 @@ list:
 alacritty/srcery_alacritty.yml: templates/alacritty.dot palette.json
 	bin/builder -o alacritty > $@
 
-chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: palette.json
-	$(termcolors) -i json -o chromeshell < palette.json > $@
+chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.dot palette.json
+	bin/builder -o chromeshell > $@
 
 genode-terminal/srcery_genode-terminal.config: palette.json templates/genode.dot
 	bin/builder -o genode > $@
