@@ -1,3 +1,4 @@
+# Colors (Srcery)
 colors:
   # Default colors
   primary:
@@ -25,4 +26,3 @@ colors:
     magenta: '0xff5c8f'
     cyan:    '0x53fde9'
     white:   '0xfce8c3'
-

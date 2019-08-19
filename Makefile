@@ -7,8 +7,11 @@ default: alacritty/srcery_alacritty.yml chrome_secure_shell/srcery_chrome_secure
 install:
 	npm install
 
-alacritty/srcery_alacritty.yml: palette.json
-	$(termcolors) -i json -o alacritty < palette.json > $@
+list:
+	@bin/builder --list
+
+alacritty/srcery_alacritty.yml: templates/alacritty.dot palette.json
+	bin/builder -o alacritty > $@
 
 chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: palette.json
 	$(termcolors) -i json -o chromeshell < palette.json > $@
