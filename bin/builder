@@ -11,10 +11,20 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = ["alacritty", "chromeshell", "genode", "gnome", "guake",
-                 "iterm", "kitty", "konsole", "pantheon", "tilix", "xfce"
-
-                ];
+const formats = [
+  "alacritty",
+  "chromeshell",
+  "genode",
+  "gnome",
+  "guake",
+  "iterm",
+  "kitty",
+  "konsole",
+  "linux",
+  "pantheon",
+  "tilix",
+  "xfce"
+];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
   return color.toHex();
@@ -40,6 +50,10 @@ const toRgb = _.partialRight(_.mapValues, function(color) {
   return color.toRgbArray().join();
 });
 
+const hexNoHash = _.partialRight(_.mapValues, function(color) {
+  return color.toHex().substring(1);
+});
+
 function createConfigFn(location, colorFn) {
   return function() {
     const file = fs.readFileSync(location, "utf8");
@@ -58,6 +72,7 @@ const guakeConfig       = createConfigFn("./templates/guake.dot", toDoubleHex);
 const itermConfig       = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
 const kittyConfig       = createConfigFn("./templates/kitty.dot", toHexUpper);
 const konsoleConfig     = createConfigFn("./templates/konsole.dot", toRgb);
+const linuxConfig       = createConfigFn("./templates/linux.dot", hexNoHash);
 const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
@@ -109,6 +124,9 @@ case "kitty":
   break;
 case "konsole":
   konsoleConfig();
+  break;
+case "linux":
+  linuxConfig();
   break;
 case "pantheon":
   pantheonConfig();

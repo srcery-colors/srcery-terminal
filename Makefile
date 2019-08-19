@@ -33,3 +33,6 @@ kitty/srcery_kitty.conf: templates/kitty.dot palette.json
 
 konsole/srcery_konsole.colorscheme: templates/konsole.dot palette.json
 	bin/builder -o konsole > $@
+
+linux_vc/srcery_linux_vc.sh: templates/linux.dot palette.json
+	bin/builder -o linux > $@
