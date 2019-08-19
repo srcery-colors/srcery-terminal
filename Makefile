@@ -36,3 +36,6 @@ konsole/srcery_konsole.colorscheme: templates/konsole.dot palette.json
 
 linux_vc/srcery_linux_vc.sh: templates/linux.dot palette.json
 	bin/builder -o linux > $@
+
+mintty/srcery_mintty.conf: templates/mintty.dot palette.json
+	bin/builder -o mintty > $@
