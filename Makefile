@@ -51,3 +51,6 @@ st/srcery_st.c: templates/st.dot palette.json
 
 terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json
 	bin/builder -o terminalapp > $@
+
+terminator/srcery_terminator.config: templates/terminator.dot palette.json
+	bin/builder -o terminator > $@
