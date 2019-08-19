@@ -1,8 +1,18 @@
 ![title](assets/title.png)
 
-Terminal configurations for [Srcery](https://github.com/srcery-colors/srcery-vim) [Colorscheme](https://github.com/srcery-colors/srcery-emacs).
+Terminal configurations for [vim](https://github.com/srcery-colors/srcery-vim), and [emacs](https://github.com/srcery-colors/srcery-emacs) color scheme. Pick and choose for your terminal of choice for the pre-generated configs tracked in this repo.
 
-## Palette
+### Building
+#### Requirements
+[Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) is required to build the terminal configurations.
+
+#### Installing
+Clone this repository and run `make install`, this will install the required packages via [npm](https://www.npmjs.com/) locally.
+
+#### Generating configurations
+To get a list of available configurations call `make list`. By editing the relevant template any given configuration (located in `./template`), or by editing the palette and calling `make` will generate a new configuration.
+
+### Palette
 
 TERMCOL       | NR  | HEX     | RGB
 ------------- | --- | ------- | ------------
