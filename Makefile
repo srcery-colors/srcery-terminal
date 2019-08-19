@@ -45,3 +45,6 @@ pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.dot palette.js
 
 putty/srcery_putty.reg: templates/putty.dot palette.json
 	bin/builder -o putty > $@
+
+st/srcery_st.c: templates/st.dot palette.json
+	bin/builder -o st > $@

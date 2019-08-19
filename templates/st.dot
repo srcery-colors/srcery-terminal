@@ -1,0 +1,43 @@
+/* Terminal colors (16 first used in escape sequence) */
+static const char *colorname[] = {
+
+  /* 8 normal colors */
+  [0] = "{{=c[0]}}", /* black   */
+  [1] = "{{=c[1]}}", /* red     */
+  [2] = "{{=c[2]}}", /* green   */
+  [3] = "{{=c[3]}}", /* yellow  */
+  [4] = "{{=c[4]}}", /* blue    */
+  [5] = "{{=c[5]}}", /* magenta */
+  [6] = "{{=c[6]}}", /* cyan    */
+  [7] = "{{=c[7]}}", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "{{=c[8]}}", /* black   */
+  [9]  = "{{=c[9]}}", /* red     */
+  [10] = "{{=c[10]}}", /* green   */
+  [11] = "{{=c[11]}}", /* yellow  */
+  [12] = "{{=c[12]}}", /* blue    */
+  [13] = "{{=c[13]}}", /* magenta */
+  [14] = "{{=c[14]}}", /* cyan    */
+  [15] = "{{=c[15]}}", /* white   */
+
+  /* special colors */
+  [256] = "{{=c.background}}", /* background */
+  [257] = "{{=c.foreground}}", /* foreground */
+};
+
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor
+ */
+static unsigned int defaultfg = 257;
+static unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+static unsigned int defaultitalic = 7;
+static unsigned int defaultunderline = 7;
