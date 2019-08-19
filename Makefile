@@ -1,8 +1,6 @@
-.phony: default install
+.phony: default install list
 
-termcolors = node_modules/termcolors/bin/termcolors
-
-default: alacritty/srcery_alacritty.yml chrome_secure_shell/srcery_chrome_secure_shell.prefs.js genode-terminal/srcery_genode-terminal.config
+default: alacritty/srcery_alacritty.yml chrome_secure_shell/srcery_chrome_secure_shell.prefs.js genode-terminal/srcery_genode-terminal.config gnome-terminal/srcery_gnome-terminal.sh guake/srcery_guake.sh iterm/srcery_iterm.itermcolors kitty/srcery_kitty.conf konsole/srcery_konsole.colorscheme linux_vc/srcery_linux_vc.sh mintty/srcery_mintty.conf pantheon-terminal/srcery_pantheon-terminal.sh putty/srcery_putty.reg st/srcery_st.c terminal_app/srcery_terminal_app.terminal termite/srcery_termite.ini xfce4/srcery_xfce4.theme xresources/srcery.xresources
 
 install:
 	npm install
