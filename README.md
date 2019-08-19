@@ -2,17 +2,7 @@
 
 Terminal configurations for [vim](https://github.com/srcery-colors/srcery-vim), and [emacs](https://github.com/srcery-colors/srcery-emacs) color scheme. Pick and choose for your terminal of choice for the pre-generated configs tracked in this repo.
 
-### Building
-#### Requirements
-[Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) is required to build the terminal configurations.
-
-#### Installing
-Clone this repository and run `make install`, this will install the required packages via [npm](https://www.npmjs.com/) locally.
-
-#### Generating configurations
-To get a list of available configurations call `make list`. By editing the relevant template any given configuration (located in `./template`), or by editing the palette and calling `make` will generate a new configuration.
-
-### Palette
+## Palette
 
 TERMCOL       | NR  | HEX     | RGB
 ------------- | --- | ------- | ------------
@@ -41,3 +31,23 @@ xgray2        | 236 | #303030 | 48, 48, 48
 xgray3        | 237 | #3A3A3A | 58, 58, 58
 xgray4        | 238 | #444444 | 68, 68, 68
 xgray5        | 239 | #4E4E4E | 78, 78, 78
+
+## Development
+### Requirements
+[Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) is required to build the terminal configurations.
+
+### Installing
+Clone this repository and run `make install`, this will install the required packages via [npm](https://www.npmjs.com/) locally.
+
+### Generating configurations
+To get a list of available configurations call `make list`. By editing
+the relevant template any given configuration (located in
+`./templates`), or by editing `palette.json` and calling `make` will
+generate a new configuration.
+
+To make a single config, say `xresources` call make like this:
+
+``` shell
+make xresources/srcery.xresources
+```
+Keep in mind that if the template or palette has not been changed nothing will get generated.
