@@ -24,6 +24,7 @@ const formats = [
   "mintty",
   "pantheon",
   "putty",
+  "st",
   "tilix",
   "xfce"
 ];
@@ -78,6 +79,7 @@ const linuxConfig       = createConfigFn("./templates/linux.dot", hexNoHash);
 const minttyConfig      = createConfigFn("./templates/mintty.dot", toRgb);
 const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
 const puttyConfig       = createConfigFn("./templates/putty.dot", toRgb);
+const stConfig          = createConfigFn("./templates/st.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
 
@@ -140,6 +142,9 @@ case "pantheon":
   break;
 case "putty":
   puttyConfig();
+  break;
+case "st":
+  stConfig();
   break;
 case "tilix":
   tilixConfig();
