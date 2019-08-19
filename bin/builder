@@ -12,7 +12,9 @@ const _ = require("lodash");
 const process = require("process");
 
 const formats = ["alacritty", "chromeshell", "genode", "gnome", "guake",
-                 "iterm", "kitty", "pantheon", "tilix", "xfce"];
+                 "iterm", "kitty", "konsole", "pantheon", "tilix", "xfce"
+
+                ];
 
 const toHex = _.partialRight(_.mapValues, function(color) {
   return color.toHex();
@@ -34,6 +36,10 @@ const toDoubleHex = _.partialRight(_.mapValues, function(color) {
   return color.toDoubleHex();
 });
 
+const toRgb = _.partialRight(_.mapValues, function(color) {
+  return color.toRgbArray().join();
+});
+
 function createConfigFn(location, colorFn) {
   return function() {
     const file = fs.readFileSync(location, "utf8");
@@ -51,6 +57,7 @@ const gnomeConfig       = createConfigFn("./templates/gnome.dot", toHex);
 const guakeConfig       = createConfigFn("./templates/guake.dot", toDoubleHex);
 const itermConfig       = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
 const kittyConfig       = createConfigFn("./templates/kitty.dot", toHexUpper);
+const konsoleConfig     = createConfigFn("./templates/konsole.dot", toRgb);
 const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
@@ -85,20 +92,8 @@ case "alacritty":
 case "chromeshell":
   chromeshellConfig();
   break;
-case "pantheon":
-  pantheonConfig();
-  break;
-case "iterm":
-  itermConfig();
-  break;
 case "genode":
   genodeConfig();
-  break;
-case "tilix":
-  tilixConfig();
-  break;
-case "xfce":
-  xfceConfig();
   break;
 case "gnome":
   gnomeConfig();
@@ -106,7 +101,22 @@ case "gnome":
 case "guake":
   guakeConfig();
   break;
+case "iterm":
+  itermConfig();
+  break;
 case "kitty":
   kittyConfig();
+  break;
+case "konsole":
+  konsoleConfig();
+  break;
+case "pantheon":
+  pantheonConfig();
+  break;
+case "tilix":
+  tilixConfig();
+  break;
+case "xfce":
+  xfceConfig();
   break;
 }

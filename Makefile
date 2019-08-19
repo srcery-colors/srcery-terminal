@@ -30,3 +30,6 @@ iterm/srcery_iterm.itermcolors: templates/iterm.dot palette.json
 
 kitty/srcery_kitty.conf: templates/kitty.dot palette.json
 	bin/builder -o kitty > $@
+
+konsole/srcery_konsole.colorscheme: templates/konsole.dot palette.json
+	bin/builder -o konsole > $@
