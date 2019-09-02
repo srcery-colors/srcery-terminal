@@ -1,0 +1,23 @@
+#!/bin/sh
+if [ "$TERM" = "linux" ]; then
+  /bin/echo -e "
+  \e]P0{{=c[0]}}
+  \e]P1{{=c[1]}}
+  \e]P2{{=c[2]}}
+  \e]P3{{=c[3]}}
+  \e]P4{{=c[4]}}
+  \e]P5{{=c[5]}}
+  \e]P6{{=c[6]}}
+  \e]P7{{=c[7]}}
+  \e]P8{{=c[8]}}
+  \e]P9{{=c[9]}}
+  \e]PA{{=c[10]}}
+  \e]PB{{=c[11]}}
+  \e]PC{{=c[12]}}
+  \e]PD{{=c[13]}}
+  \e]PE{{=c[14]}}
+  \e]PF{{=c[15]}}
+  "
+  # get rid of artifacts
+  clear
+fi

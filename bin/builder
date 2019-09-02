@@ -1,0 +1,193 @@
+#!/usr/bin/env node
+
+"use strict";
+
+const fs = require("fs");
+const termcolors = require("termcolors");
+const pkg = require("../package.json");
+const buffer = require('buffer');
+const palette = fs.readFileSync("./palette.json", "utf8");
+const colors = termcolors.json.import(palette);
+const program = require("commander");
+const _ = require("lodash");
+const process = require("process");
+
+const formats = [
+  "alacritty",
+  "chromeshell",
+  "genode",
+  "gnome",
+  "guake",
+  "iterm",
+  "kitty",
+  "konsole",
+  "linux",
+  "mintty",
+  "pantheon",
+  "putty",
+  "st",
+  "terminalapp",
+  "terminator",
+  "termite",
+  "tilix",
+  "xfce",
+  "xresources"
+];
+
+const toHex = _.partialRight(_.mapValues, function(color) {
+  return color.toHex();
+});
+
+const toHexSlice = _.partialRight(_.mapValues, function(color) {
+  return color.toHex().slice(1);
+});
+
+const toHexUpper = _.partialRight(_.mapValues, function(color) {
+  return color.toHex().toUpperCase();
+});
+
+const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
+  return color.toAvgRgbArray();
+});
+
+const toDoubleHex = _.partialRight(_.mapValues, function(color) {
+  return color.toDoubleHex();
+});
+
+const toRgb = _.partialRight(_.mapValues, function(color) {
+  return color.toRgbArray().join();
+});
+
+const hexNoHash = _.partialRight(_.mapValues, function(color) {
+  return color.toHex().substring(1);
+});
+
+const terminalappColor = _.partialRight(_.mapValues, function(color) {
+  const code = [
+    new buffer.Buffer('62706c6973743030d40102030405061516582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a307080f55246e756c6cd3090a0b0c0d0e554e535247425c4e53436f6c6f7253706163655624636c6173734f1027', 'hex'),
+    new buffer.Buffer('0010018002d2101112135a24636c6173736e616d655824636c6173736573574e53436f6c6f72a21214584e534f626a6563745f100f4e534b657965644172636869766572d1171854726f6f74800108111a232d32373b41484e5b628c8e9095a0a9b1b4bdcfd2d700000000000001010000000000000019000000000000000000000000000000d9', 'hex')
+  ];
+  let srgb = color.toAvgRgbArray();
+  srgb = srgb.map(n => {
+    return n.toFixed(10).toString();
+  }).join(' ');
+  let output = code[0].toString('binary') + srgb + code[1].toString('binary');
+  output = (new buffer.Buffer(output, 'binary')).toString('base64');
+  return output.match(/.{1,68}/g).join('\n\t');
+});
+
+function createConfigFn(location, colorFn) {
+  return function() {
+    const file = fs.readFileSync(location, "utf8");
+    const template = termcolors.export(file, colorFn);
+    const data = template(colors);
+    process.stdout.write(data);
+    process.exit();
+  };
+}
+
+const alacrittyConfig   = createConfigFn("./templates/alacritty.dot", toHexSlice);
+const chromeshellConfig = createConfigFn("./templates/chrome-secure-shell.dot", toHex);
+const genodeConfig      = createConfigFn("./templates/genode.dot", toHexUpper);
+const gnomeConfig       = createConfigFn("./templates/gnome.dot", toHex);
+const guakeConfig       = createConfigFn("./templates/guake.dot", toDoubleHex);
+const itermConfig       = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
+const kittyConfig       = createConfigFn("./templates/kitty.dot", toHexUpper);
+const konsoleConfig     = createConfigFn("./templates/konsole.dot", toRgb);
+const linuxConfig       = createConfigFn("./templates/linux.dot", hexNoHash);
+const minttyConfig      = createConfigFn("./templates/mintty.dot", toRgb);
+const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
+const puttyConfig       = createConfigFn("./templates/putty.dot", toRgb);
+const stConfig          = createConfigFn("./templates/st.dot", toHex);
+const terminalappConfig = createConfigFn("./templates/terminal-app.dot", terminalappColor);
+const terminatorConfig  = createConfigFn("./templates/terminator.dot", toHex);
+const termiteConfig     = createConfigFn("./templates/termite.dot", toHex);
+const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
+const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
+const xresourcesConfig  = createConfigFn("./templates/xresources.dot", toHex);
+
+program
+  .version(pkg.version)
+  .option('-l, --list', 'List available formats')
+  .option('-o, --output [format]', 'Output format')
+  .parse(process.argv);
+
+if (program.list) {
+  for (let i = 0; i < formats.length; i++) {
+    console.log(formats[i]);
+  }
+  process.exit();
+}
+
+if (!program.output) {
+  console.log('Must declare an output format');
+  process.exit(1);
+}
+
+if (!formats.includes(program.output)) {
+  console.log('Invalid output format: ', program.output);
+  process.exit(1);
+}
+
+switch (program.output) {
+case "alacritty":
+  alacrittyConfig();
+  break;
+case "chromeshell":
+  chromeshellConfig();
+  break;
+case "genode":
+  genodeConfig();
+  break;
+case "gnome":
+  gnomeConfig();
+  break;
+case "guake":
+  guakeConfig();
+  break;
+case "iterm":
+  itermConfig();
+  break;
+case "kitty":
+  kittyConfig();
+  break;
+case "konsole":
+  konsoleConfig();
+  break;
+case "linux":
+  linuxConfig();
+  break;
+case "mintty":
+  minttyConfig();
+  break;
+case "pantheon":
+  pantheonConfig();
+  break;
+case "putty":
+  puttyConfig();
+  break;
+case "st":
+  stConfig();
+  break;
+case "terminalapp":
+  terminalappConfig();
+  break;
+case "terminator":
+  terminatorConfig();
+  break;
+case "termite":
+  termiteConfig();
+  break;
+case "tilix":
+  tilixConfig();
+  break;
+case "xfce":
+  xfceConfig();
+  break;
+case "xresources":
+  xresourcesConfig();
+  break;
+default:
+  console.log("An unsupported output was somehow selected");
+  process.exit(1);
+}
