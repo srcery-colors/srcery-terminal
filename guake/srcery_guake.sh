@@ -1,11 +1,11 @@
-#!/bin/bash 
+#!/bin/bash
 
-# Save this script into set_colors.sh, make this file executable and run it: 
-# 
-# $ chmod +x guake.sh 
-# $ ./guake.sh 
-# 
-# Alternatively copy lines below directly into your shell. 
+# Save this script into srcery_guake.sh, make this file executable and run it:
+#
+# $ chmod +x srcery_guake.sh
+# $ ./srcery_guake.sh
+#
+# Alternatively copy lines below directly into your shell.
 
 gconftool-2 -s -t string /apps/guake/style/background/color '#1c1c1b1b1919'
 gconftool-2 -s -t string /apps/guake/style/font/color '#fcfce8e8c3c3'
