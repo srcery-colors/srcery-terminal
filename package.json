@@ -25,7 +25,7 @@
     "eslint": "^6.4.0"
   },
   "dependencies": {
-    "commander": "^3.0.1",
+    "commander": "^3.0.2",
     "lodash": "^4.17.15",
     "termcolors": "^0.5.0"
   }
