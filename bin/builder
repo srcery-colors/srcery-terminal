@@ -14,6 +14,7 @@ const process = require("process");
 
 const formats = [
   "alacritty",
+  "blink",
   "chromeshell",
   "genode",
   "gnome",
@@ -87,6 +88,7 @@ function createConfigFn(location, colorFn) {
 }
 
 const alacrittyConfig   = createConfigFn("./templates/alacritty.dot", toHexSlice);
+const blinkConfig       = createConfigFn("./templates/blink.dot", toHexUpper);
 const chromeshellConfig = createConfigFn("./templates/chrome-secure-shell.dot", toHex);
 const genodeConfig      = createConfigFn("./templates/genode.dot", toHexUpper);
 const gnomeConfig       = createConfigFn("./templates/gnome.dot", toHex);
@@ -132,6 +134,9 @@ if (!formats.includes(program.output)) {
 switch (program.output) {
 case "alacritty":
   alacrittyConfig();
+  break;
+case "blink":
+  blinkConfig();
   break;
 case "chromeshell":
   chromeshellConfig();
