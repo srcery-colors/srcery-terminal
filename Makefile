@@ -1,6 +1,24 @@
 .phony: default install list
 
-default: alacritty/srcery_alacritty.yml chrome_secure_shell/srcery_chrome_secure_shell.prefs.js genode-terminal/srcery_genode-terminal.config gnome-terminal/srcery_gnome-terminal.sh guake/srcery_guake.sh iterm/srcery_iterm.itermcolors kitty/srcery_kitty.conf konsole/srcery_konsole.colorscheme linux_vc/srcery_linux_vc.sh mintty/srcery_mintty.conf pantheon-terminal/srcery_pantheon-terminal.sh putty/srcery_putty.reg st/srcery_st.c terminal_app/srcery_terminal_app.terminal termite/srcery_termite.ini xfce4/srcery_xfce4.theme xresources/srcery.xresources
+default: \
+	alacritty/srcery_alacritty.yml \
+	blink/srcery_blink.js \
+	chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
+	genode-terminal/srcery_genode-terminal.config \
+	gnome-terminal/srcery_gnome-terminal.sh \
+	guake/srcery_guake.sh \
+	iterm/srcery_iterm.itermcolors \
+	kitty/srcery_kitty.conf \
+	konsole/srcery_konsole.colorscheme \
+	linux_vc/srcery_linux_vc.sh \
+	mintty/srcery_mintty.conf \
+	pantheon-terminal/srcery_pantheon-terminal.sh \
+	putty/srcery_putty.reg \
+	st/srcery_st.c \
+	terminal_app/srcery_terminal_app.terminal \
+	termite/srcery_termite.ini \
+	xfce4/srcery_xfce4.theme \
+	xresources/srcery.xresources
 
 install:
 	npm install
@@ -10,6 +28,9 @@ list:
 
 alacritty/srcery_alacritty.yml: templates/alacritty.dot palette.json
 	bin/builder -o alacritty > $@
+
+blink/srcery_blink.js: templates/blink.dot palette.json
+	bin/builder -o blink > $@
 
 chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.dot palette.json
 	bin/builder -o chromeshell > $@
