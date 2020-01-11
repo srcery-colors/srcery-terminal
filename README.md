@@ -13,8 +13,8 @@ yellow        |  3  | #FBB829 | 251, 184, 41
 blue          |  4  | #2C78BF | 44, 120, 191
 magenta       |  5  | #E02C6D | 224, 44,  109
 cyan          |  6  | #0AAEB3 | 10, 174, 179
-white         |  7  | #918175 | 145, 129, 117
-brightblack   |  8  | #2D2C29 | 45, 44, 41
+white         |  7  | #B6A88D | 182, 168, 141
+brightblack   |  8  | #918175 | 145, 129, 117
 brightred     |  9  | #F75341 | 247, 83, 65
 brightgreen   |  10 | #98BC37 | 152, 188, 55
 brightyellow  |  11 | #FED06E | 254, 208, 110
@@ -31,6 +31,7 @@ xgray2        | 236 | #303030 | 48, 48, 48
 xgray3        | 237 | #3A3A3A | 58, 58, 58
 xgray4        | 238 | #444444 | 68, 68, 68
 xgray5        | 239 | #4E4E4E | 78, 78, 78
+xgray6        | 240 | #585858 | 88, 88, 88
 
 ## Development
 ### Requirements
