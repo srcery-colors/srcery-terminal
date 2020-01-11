@@ -8,8 +8,8 @@ if [ "$TERM" = "linux" ]; then
   \e]P42c78bf
   \e]P5e02c6d
   \e]P60aaeb3
-  \e]P7918175
-  \e]P82d2c29
+  \e]P7b6a88d
+  \e]P8918175
   \e]P9f75341
   \e]PA98bc37
   \e]PBfed06e
