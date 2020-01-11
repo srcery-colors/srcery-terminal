@@ -14,11 +14,11 @@ colors:
     blue:    '0x2c78bf'
     magenta: '0xe02c6d'
     cyan:    '0x0aaeb3'
-    white:   '0x918175'
+    white:   '0xb6a88d'
 
   # Bright colors
   bright:
-    black:   '0x2d2c29'
+    black:   '0x918175'
     red:     '0xf75341'
     green:   '0x98bc37'
     yellow:  '0xfed06e'
