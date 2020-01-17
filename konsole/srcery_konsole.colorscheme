@@ -19,7 +19,7 @@ Bold=true
 Color=28,27,25
 
 [Color0Intense]
-Color=45,44,41
+Color=145,129,117
 
 [Color1]
 Color=239,47,39
@@ -58,7 +58,7 @@ Color=10,174,179
 Color=83,253,233
 
 [Color7]
-Color=145,129,117
+Color=208,191,161
 
 [Color7Intense]
 Color=252,232,195
