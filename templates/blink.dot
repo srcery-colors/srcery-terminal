@@ -1,6 +1,3 @@
-# srcery_blink.js
-# Color scheme for the Blink shell: http://blink.sh
-
 t.prefs_.set("color-palette-overrides", [
 	"{{=c[0]}}",
 	"{{=c[1]}}",
@@ -19,7 +16,6 @@ t.prefs_.set("color-palette-overrides", [
 	"{{=c[14]}}",
 	"{{=c[15]}}"
 ]);
-
 t.prefs_.set("foreground-color": "{{=c.foreground}}");
 t.prefs_.set("background-color": "{{=c.background}}");
 t.prefs_.set("cursor-color":     "{{=c.foreground}}");
