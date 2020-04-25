@@ -31,6 +31,7 @@ const formats = [
   "terminator",
   "termite",
   "tilix",
+  "windowsterminal",
   "xfce",
   "xresources"
 ];
@@ -105,6 +106,7 @@ const terminalappConfig = createConfigFn("./templates/terminal-app.dot", termina
 const terminatorConfig  = createConfigFn("./templates/terminator.dot", toHex);
 const termiteConfig     = createConfigFn("./templates/termite.dot", toHex);
 const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
+const windowsTerminal   = createConfigFn("./templates/windows_terminal.dot", toHexUpper);
 const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
 const xresourcesConfig  = createConfigFn("./templates/xresources.dot", toHex);
 
@@ -185,6 +187,9 @@ case "termite":
   break;
 case "tilix":
   tilixConfig();
+  break;
+case "windowsterminal":
+  windowsTerminal();
   break;
 case "xfce":
   xfceConfig();
