@@ -1,0 +1,32 @@
+{
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Srcery"
+    }
+  },
+  "schemes": [
+    {
+      "name": "Srcery",
+      "black": "{{=c[0]}}",
+      "red": "{{=c[1]}}",
+      "green": "{{=c[2]}}",
+      "yellow": "{{=c[3]}}",
+      "blue": "{{=c[4]}}",
+      "purple": "{{=c[5]}}",
+      "cyan": "{{=c[6]}}",
+      "white": "{{=c[7]}}",
+      "brightBlack": "{{=c[8]}}",
+      "brightRed": "{{=c[9]}}",
+      "brightGreen": "{{=c[10]}}",
+      "brightYellow": "{{=c[11]}}",
+      "brightBlue": "{{=c[12]}}",
+      "brightPurple": "{{=c[13]}}",
+      "brightCyan": "{{=c[14]}}",
+      "brightWhite": "{{=c[15]}}",
+      "foreground": "{{=c.foreground}}",
+      "background": "{{=c.background}}",
+      "cursorColor": "{{=c[3]}}",
+      "selectionBackground": "{{=c[15]}}"
+    }
+  ]
+}
