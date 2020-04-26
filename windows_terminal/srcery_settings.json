@@ -1,0 +1,32 @@
+{
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Srcery"
+    }
+  },
+  "schemes": [
+    {
+      "name": "Srcery",
+      "black": "#1C1B19",
+      "red": "#EF2F27",
+      "green": "#519F50",
+      "yellow": "#FBB829",
+      "blue": "#2C78BF",
+      "purple": "#E02C6D",
+      "cyan": "#0AAEB3",
+      "white": "#D0BFA1",
+      "brightBlack": "#918175",
+      "brightRed": "#F75341",
+      "brightGreen": "#98BC37",
+      "brightYellow": "#FED06E",
+      "brightBlue": "#68A8E4",
+      "brightPurple": "#FF5C8F",
+      "brightCyan": "#53FDE9",
+      "brightWhite": "#FCE8C3",
+      "foreground": "#FCE8C3",
+      "background": "#1C1B19",
+      "cursorColor": "#FBB829",
+      "selectionBackground": "#FCE8C3"
+    }
+  ]
+}

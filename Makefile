@@ -17,6 +17,7 @@ default: \
 	st/srcery_st.c \
 	terminal_app/srcery_terminal_app.terminal \
 	termite/srcery_termite.ini \
+	windows_terminal/srcery_settings.json \
 	xfce4/srcery_xfce4.theme \
 	xresources/srcery.xresources
 
@@ -73,6 +74,9 @@ terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.js
 
 termite/srcery_termite.ini: templates/termite.dot palette.json
 	bin/builder -o termite > $@
+
+windows_terminal/srcery_settings.json: templates/windows_terminal.dot palette.json
+	bin/builder -o windowsterminal > $@
 
 xfce4/srcery_xfce4.theme: templates/xfce.dot palette.json
 	bin/builder -o xfce > $@
