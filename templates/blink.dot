@@ -22,4 +22,4 @@ t.prefs_.set("color-palette-overrides", [
 
 t.prefs_.set("foreground-color", "{{=c.foreground}}");
 t.prefs_.set("background-color", "{{=c.background}}");
-t.prefs_.set("cursor-color",     "{{=c.foreground}}");
+t.prefs_.set("cursor-color",     "{{=c[3]}}");
