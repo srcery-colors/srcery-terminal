@@ -49,6 +49,6 @@ func main() {
 	colors = append(colors, Color{Name: "xgray6", Term: 240, Hex: "#1c1B19", RGB: "28, 27, 25"})
 
 	for _, c := range colors {
-		fmt.Printf("%s\n", Index(c.Term, "█████████"))
+		fmt.Printf("%s (%s)\n", Index(c.Term, "█████████"), c.Name)
 	}
 }
