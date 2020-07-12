@@ -1,0 +1,254 @@
+{
+	"colors": [
+		{
+			"name": "black",
+			"term": 0,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "red",
+			"term": 1,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "green",
+			"term": 2,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "yellow",
+			"term": 3,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "blue",
+			"term": 4,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "magenta",
+			"term": 5,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "cyan",
+			"term": 6,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "white",
+			"term": 7,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_black",
+			"term": 8,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_red",
+			"term": 9,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_green",
+			"term": 10,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_yellow",
+			"term": 11,
+			"hex": "#0c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_blue",
+			"term": 12,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_magenta",
+			"term": 13,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_cyan",
+			"term": 14,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_white",
+			"term": 15,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "orange",
+			"term": 166,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "bright_orange",
+			"term": 208,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "hard_black",
+			"term": 233,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "xgray1",
+			"term": 235,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "xgray2",
+			"term": 236,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "xgray3",
+			"term": 237,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "xgray4",
+			"term": 238,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "xgray5",
+			"term": 239,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		},
+		{
+			"name": "xgray6",
+			"term": 240,
+			"hex": "#1c1B19",
+			"rgb": {
+				"red": 28,
+				"green": 27,
+				"blue": 25
+			}
+		}
+	]
+}
