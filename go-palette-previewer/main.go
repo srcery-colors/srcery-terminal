@@ -7,14 +7,17 @@ import (
 	"log"
 	"os"
 
+	"github.com/jedib0t/go-pretty/v6/table"
+	"github.com/jedib0t/go-pretty/v6/text"
 	"github.com/logrusorgru/aurora"
 )
 
 var au aurora.Aurora
 
-var verbose = flag.Bool("c", false, "Print color tags")
-var toJson = flag.Bool("json", false, "Output to a JSON file")
+var simple = flag.Bool("simple", false, "Simply output")
 var srcery Srcery
+var toJson = flag.Bool("json", false, "Output to a JSON file")
+var verbose = flag.Bool("c", false, "Print color tags")
 
 type Srcery struct {
 	Colors []Color `json:"colors"`
@@ -53,13 +56,37 @@ func init() {
 }
 
 func main() {
-	for _, c := range srcery.Colors {
-		fmt.Printf("%s | %s", au.Index(c.Term, "██████████"), c.Name)
+	if *simple {
+		for _, c := range srcery.Colors {
+			fmt.Printf("%s | %s", au.Index(c.Term, "██████████"), c.Name)
 
-		if *verbose {
-			fmt.Printf("\n%d, %s, (%s)", c.Term, c.Hex, c.RGB.ToString())
+			if *verbose {
+				fmt.Printf("\n%d, %s, (%s)", c.Term, c.Hex, c.RGB.ToString())
+			}
+
+			fmt.Println()
 		}
 
-		fmt.Println()
+	} else {
+		PrintTable()
 	}
+}
+
+func PrintTable() {
+	t := table.NewWriter()
+	t.SetOutputMirror(os.Stdout)
+
+	t.SetTitle("Srcery Colors")
+
+	t.AppendHeader(table.Row{"Name", "Color", "Term", "Hex", "RGB"})
+	t.AppendSeparator()
+
+	for _, c := range srcery.Colors {
+		t.AppendRow([]interface{}{c.Name, au.Index(c.Term, "██████████"), c.Term, c.Hex, c.RGB.ToString()})
+		t.AppendSeparator()
+	}
+
+	t.SetStyle(table.StyleLight)
+	t.Style().Title.Align = text.AlignCenter
+	t.Render()
 }
