@@ -1,6 +1,6 @@
 {
   "name": "srcery-terminal",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Build terminal configurations for the srcery color scheme",
   "main": "builder",
   "scripts": {
