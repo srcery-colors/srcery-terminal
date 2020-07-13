@@ -1,0 +1,254 @@
+{
+  "colors": [
+    {
+      "name": "black",
+      "term": 0,
+      "hex": "#1C1B19",
+      "rgb": {
+        "red": 28,
+        "green": 27,
+        "blue": 25
+      }
+    },
+    {
+      "name": "red",
+      "term": 1,
+      "hex": "#EF2F27",
+      "rgb": {
+        "red": 239,
+        "green": 47,
+        "blue": 39
+      }
+    },
+    {
+      "name": "green",
+      "term": 2,
+      "hex": "#519F50",
+      "rgb": {
+        "red": 81,
+        "green": 159,
+        "blue": 80
+      }
+    },
+    {
+      "name": "yellow",
+      "term": 3,
+      "hex": "#FBB829",
+      "rgb": {
+        "red": 251,
+        "green": 184,
+        "blue": 41
+      }
+    },
+    {
+      "name": "blue",
+      "term": 4,
+      "hex": "#2C78BF",
+      "rgb": {
+        "red": 44,
+        "green": 120,
+        "blue": 191
+      }
+    },
+    {
+      "name": "magenta",
+      "term": 5,
+      "hex": "#E02C6D",
+      "rgb": {
+        "red": 224,
+        "green": 44,
+        "blue": 109
+      }
+    },
+    {
+      "name": "cyan",
+      "term": 6,
+      "hex": "#0AAEB3",
+      "rgb": {
+        "red": 10,
+        "green": 174,
+        "blue": 179
+      }
+    },
+    {
+      "name": "white",
+      "term": 7,
+      "hex": "#D0BFA1",
+      "rgb": {
+        "red": 208,
+        "green": 191,
+        "blue": 161
+      }
+    },
+    {
+      "name": "bright_black",
+      "term": 8,
+      "hex": "#918175",
+      "rgb": {
+        "red": 145,
+        "green": 129,
+        "blue": 117
+      }
+    },
+    {
+      "name": "bright_red",
+      "term": 9,
+      "hex": "#F75341",
+      "rgb": {
+        "red": 247,
+        "green": 83,
+        "blue": 65
+      }
+    },
+    {
+      "name": "bright_green",
+      "term": 10,
+      "hex": "#98BC37",
+      "rgb": {
+        "red": 152,
+        "green": 188,
+        "blue": 55
+      }
+    },
+    {
+      "name": "bright_yellow",
+      "term": 11,
+      "hex": "#FED06E",
+      "rgb": {
+        "red": 254,
+        "green": 208,
+        "blue": 110
+      }
+    },
+    {
+      "name": "bright_blue",
+      "term": 12,
+      "hex": "#68A8E4",
+      "rgb": {
+        "red": 104,
+        "green": 168,
+        "blue": 228
+      }
+    },
+    {
+      "name": "bright_magenta",
+      "term": 13,
+      "hex": "#FF5C8F",
+      "rgb": {
+        "red": 255,
+        "green": 92,
+        "blue": 143
+      }
+    },
+    {
+      "name": "bright_cyan",
+      "term": 14,
+      "hex": "#53FDE9",
+      "rgb": {
+        "red": 83,
+        "green": 253,
+        "blue": 233
+      }
+    },
+    {
+      "name": "bright_white",
+      "term": 15,
+      "hex": "#FCE8C3",
+      "rgb": {
+        "red": 252,
+        "green": 232,
+        "blue": 195
+      }
+    },
+    {
+      "name": "orange",
+      "term": 166,
+      "hex": "#D75F00",
+      "rgb": {
+        "red": 215,
+        "green": 95,
+        "blue": 0
+      }
+    },
+    {
+      "name": "bright_orange",
+      "term": 208,
+      "hex": "#FF8700",
+      "rgb": {
+        "red": 255,
+        "green": 135,
+        "blue": 0
+      }
+    },
+    {
+      "name": "hard_black",
+      "term": 233,
+      "hex": "#121212",
+      "rgb": {
+        "red": 18,
+        "green": 18,
+        "blue": 18
+      }
+    },
+    {
+      "name": "xgray1",
+      "term": 235,
+      "hex": "#262626",
+      "rgb": {
+        "red": 38,
+        "green": 38,
+        "blue": 38
+      }
+    },
+    {
+      "name": "xgray2",
+      "term": 236,
+      "hex": "#303030",
+      "rgb": {
+        "red": 48,
+        "green": 48,
+        "blue": 48
+      }
+    },
+    {
+      "name": "xgray3",
+      "term": 237,
+      "hex": "#3A3A3A",
+      "rgb": {
+        "red": 58,
+        "green": 58,
+        "blue": 58
+      }
+    },
+    {
+      "name": "xgray4",
+      "term": 238,
+      "hex": "#444444",
+      "rgb": {
+        "red": 68,
+        "green": 68,
+        "blue": 68
+      }
+    },
+    {
+      "name": "xgray5",
+      "term": 239,
+      "hex": "#4E4E4E",
+      "rgb": {
+        "red": 78,
+        "green": 78,
+        "blue": 78
+      }
+    },
+    {
+      "name": "xgray6",
+      "term": 240,
+      "hex": "#585858",
+      "rgb": {
+        "red": 88,
+        "green": 88,
+        "blue": 88
+      }
+    }
+  ]
+}
