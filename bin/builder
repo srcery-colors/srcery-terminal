@@ -12,30 +12,6 @@ const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
 
-const formats = [
-  "alacritty",
-  "blink",
-  "chromeshell",
-  "genode",
-  "gnome",
-  "guake",
-  "iterm",
-  "kitty",
-  "konsole",
-  "linux",
-  "mintty",
-  "pantheon",
-  "putty",
-  "st",
-  "terminalapp",
-  "terminator",
-  "termite",
-  "tilix",
-  "windowsterminal",
-  "xfce",
-  "xresources"
-];
-
 const toHex = _.partialRight(_.mapValues, function(color) {
   return color.toHex();
 });
@@ -78,37 +54,92 @@ const terminalappColor = _.partialRight(_.mapValues, function(color) {
   return output.match(/.{1,68}/g).join('\n\t');
 });
 
-function createConfigFn(location, colorFn) {
-  return function() {
-    const file = fs.readFileSync(location, "utf8");
-    const template = termcolors.export(file, colorFn);
-    const data = template(colors);
-    process.stdout.write(data);
-    process.exit();
-  };
+const config = {
+  alacritty: {
+    template: "./templates/alacritty.dot",
+    function: toHexSlice
+  },
+  blink: {
+    template: "./templates/blink.dot",
+    function: toHexUpper
+  },
+  chromeshell: {
+    template: "./templates/chrome-secure-shell.dot",
+    function: toHex
+  },
+  genode:{
+    template: "./templates/genode.dot",
+    function: toHexUpper
+  },
+  gnome: {
+    template: "./templates/gnome.dot",
+    function: toHex
+  },
+  guake: {
+    template: "./templates/guake.dot",
+    function: toDoubleHex
+  },
+  iterm: {
+    template: "./templates/iterm.dot",
+    function: toAvgRgbArray
+  },
+  kitty: {
+    template: "./templates/kitty.dot",
+    function: toHexUpper
+  },
+  konsole: {
+    template: "./templates/konsole.dot",
+    function: toRgb
+  },
+  linux: {
+    template: "./templates/linux.dot",
+    function: hexNoHash
+  },
+  mintty: {
+    template: "./templates/mintty.dot",
+    function: toRgb
+  },
+  pantheon: {
+    template: "./templates/pantheon.dot",
+    function: toHex
+  },
+  putty: {
+    template: "./templates/putty.dot",
+    function: toRgb
+  },
+  st: {
+    template: "./templates/st.dot",
+    function: toHex
+  },
+  terminalapp: {
+    template: "./templates/terminal-app.dot",
+    terminalappColor
+  },
+  terminator: {
+    template: "./templates/terminator.dot",
+    function: toHex
+  },
+  termite: {
+    template: "./templates/termite.dot",
+    function: toHex
+  },
+  tilix: {
+    template: "./templates/tilix.dot",
+    function: toHexUpper
+  },
+  windowsterminal: {
+    template: "./templates/windows_terminal.dot",
+    function: toHexUpper
+  },
+  xfce: {
+    template: "./templates/xfce.dot",
+    function: toDoubleHex
+  },
+  xresources: {
+    template: "./templates/xresources.dot",
+    function: toHex
+  }
 }
-
-const alacrittyConfig   = createConfigFn("./templates/alacritty.dot", toHexSlice);
-const blinkConfig       = createConfigFn("./templates/blink.dot", toHexUpper);
-const chromeshellConfig = createConfigFn("./templates/chrome-secure-shell.dot", toHex);
-const genodeConfig      = createConfigFn("./templates/genode.dot", toHexUpper);
-const gnomeConfig       = createConfigFn("./templates/gnome.dot", toHex);
-const guakeConfig       = createConfigFn("./templates/guake.dot", toDoubleHex);
-const itermConfig       = createConfigFn("./templates/iterm.dot", toAvgRgbArray);
-const kittyConfig       = createConfigFn("./templates/kitty.dot", toHexUpper);
-const konsoleConfig     = createConfigFn("./templates/konsole.dot", toRgb);
-const linuxConfig       = createConfigFn("./templates/linux.dot", hexNoHash);
-const minttyConfig      = createConfigFn("./templates/mintty.dot", toRgb);
-const pantheonConfig    = createConfigFn("./templates/pantheon.dot", toHex);
-const puttyConfig       = createConfigFn("./templates/putty.dot", toRgb);
-const stConfig          = createConfigFn("./templates/st.dot", toHex);
-const terminalappConfig = createConfigFn("./templates/terminal-app.dot", terminalappColor);
-const terminatorConfig  = createConfigFn("./templates/terminator.dot", toHex);
-const termiteConfig     = createConfigFn("./templates/termite.dot", toHex);
-const tilixConfig       = createConfigFn("./templates/tilix.dot", toHexUpper);
-const windowsTerminal   = createConfigFn("./templates/windows_terminal.dot", toHexUpper);
-const xfceConfig        = createConfigFn("./templates/xfce.dot", toDoubleHex);
-const xresourcesConfig  = createConfigFn("./templates/xresources.dot", toHex);
 
 program
   .version(pkg.version)
@@ -117,9 +148,9 @@ program
   .parse(process.argv);
 
 if (program.list) {
-  for (let i = 0; i < formats.length; i++) {
-    console.log(formats[i]);
-  }
+  Object.keys(config).forEach(key => {
+    console.log(key);
+  });
   process.exit();
 }
 
@@ -128,76 +159,14 @@ if (!program.output) {
   process.exit(1);
 }
 
-if (!formats.includes(program.output)) {
+if (!Object.prototype.hasOwnProperty.call(config, program.output)) {
   console.log('Invalid output format: ', program.output);
   process.exit(1);
 }
 
-switch (program.output) {
-case "alacritty":
-  alacrittyConfig();
-  break;
-case "blink":
-  blinkConfig();
-  break;
-case "chromeshell":
-  chromeshellConfig();
-  break;
-case "genode":
-  genodeConfig();
-  break;
-case "gnome":
-  gnomeConfig();
-  break;
-case "guake":
-  guakeConfig();
-  break;
-case "iterm":
-  itermConfig();
-  break;
-case "kitty":
-  kittyConfig();
-  break;
-case "konsole":
-  konsoleConfig();
-  break;
-case "linux":
-  linuxConfig();
-  break;
-case "mintty":
-  minttyConfig();
-  break;
-case "pantheon":
-  pantheonConfig();
-  break;
-case "putty":
-  puttyConfig();
-  break;
-case "st":
-  stConfig();
-  break;
-case "terminalapp":
-  terminalappConfig();
-  break;
-case "terminator":
-  terminatorConfig();
-  break;
-case "termite":
-  termiteConfig();
-  break;
-case "tilix":
-  tilixConfig();
-  break;
-case "windowsterminal":
-  windowsTerminal();
-  break;
-case "xfce":
-  xfceConfig();
-  break;
-case "xresources":
-  xresourcesConfig();
-  break;
-default:
-  console.log("An unsupported output was somehow selected");
-  process.exit(1);
-}
+const file = fs.readFileSync(config[program.output].template, "utf8");
+const template = termcolors.export(file, config[program.output].function);
+const data = template(colors);
+process.stdout.write(data);
+process.exit();
+
