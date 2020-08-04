@@ -166,7 +166,6 @@ if (!Object.prototype.hasOwnProperty.call(config, program.output)) {
 
 const file = fs.readFileSync(config[program.output].template, "utf8");
 const template = termcolors.export(file, config[program.output].function);
-const data = template(colors);
-process.stdout.write(data);
+process.stdout.write(template(colors));
 process.exit();
 
