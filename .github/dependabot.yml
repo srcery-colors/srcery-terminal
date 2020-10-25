@@ -1,9 +1,12 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: npm
+    directory: /
     schedule:
-      interval: "daily"
+      interval: daily
     labels:
-      - "dependencies"
-      - "npm"
+      - dependabot
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
