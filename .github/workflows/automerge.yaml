@@ -13,7 +13,6 @@ on:
       - synchronize
       - unlabeled
       - unlocked
-  status: {}
 
 jobs:
   checks:
