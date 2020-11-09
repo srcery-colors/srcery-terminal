@@ -4,15 +4,6 @@ on:
   pull_request:
     paths:
       - package.json
-    types:
-      - edited
-      - labeled
-      - opened
-      - ready_for_review
-      - reopened
-      - synchronize
-      - unlabeled
-      - unlocked
 
 jobs:
   checks:
