@@ -27,6 +27,6 @@
   "dependencies": {
     "commander": "^6.2.0",
     "lodash": "^4.17.20",
-    "termcolors": "^0.7.1"
+    "termcolors": "^0.7.2"
   }
 }
