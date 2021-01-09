@@ -1,4 +1,4 @@
-![title](assets/title.png)
+![title](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/terminal_title.png)
 
 Terminal configurations for [vim](https://github.com/srcery-colors/srcery-vim), and [emacs](https://github.com/srcery-colors/srcery-emacs) color scheme. Pick and choose for your terminal of choice for the pre-generated configs tracked in this repo.
 
