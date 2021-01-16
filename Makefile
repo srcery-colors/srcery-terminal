@@ -11,6 +11,7 @@ default: \
 	kitty/srcery_kitty.conf \
 	konsole/srcery_konsole.colorscheme \
 	linux_vc/srcery_linux_vc.sh \
+	lxterminal/srcery_lxterminal.conf \
 	mintty/srcery_mintty.conf \
 	pantheon-terminal/srcery_pantheon-terminal.sh \
 	putty/srcery_putty.reg \
