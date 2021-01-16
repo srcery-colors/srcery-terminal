@@ -1,6 +1,6 @@
 [general]
 bgcolor=rgb({{=c.background}})
-color_preset=Custom
+color_preset=Srcery
 fgcolor=rgb({{=c.foreground}})
 palette_color_0=rgb({{=c[0]}})
 palette_color_1=rgb({{=c[1]}})
