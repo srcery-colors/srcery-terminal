@@ -95,6 +95,10 @@ const config = {
     template: "./templates/linux.dot",
     function: hexNoHash
   },
+  lxterminal: {
+    template: "./templates/lxterminal.dot",
+    function: toRgb
+  },
   mintty: {
     template: "./templates/mintty.dot",
     function: toRgb
