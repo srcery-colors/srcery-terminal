@@ -17,7 +17,9 @@ default: \
 	putty/srcery_putty.reg \
 	st/srcery_st.c \
 	terminal_app/srcery_terminal_app.terminal \
+	terminator/srcery_terminator.config \
 	termite/srcery_termite.ini \
+	tilix/srcery_tilix.json \
 	windows_terminal/srcery_settings.json \
 	xfce4/srcery_xfce4.theme \
 	xresources/srcery.xresources
@@ -76,8 +78,14 @@ st/srcery_st.c: templates/st.dot palette.json
 terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json
 	bin/builder -o terminalapp > $@
 
+terminator/srcery_terminator.config: templates/terminator.dot palette.json
+	bin/builder -o terminator > $@
+
 termite/srcery_termite.ini: templates/termite.dot palette.json
 	bin/builder -o termite > $@
+
+tilix/srcery_tilix.json: templates/tilix.dot palette.json
+	bin/builder -o tilix > $@
 
 windows_terminal/srcery_settings.json: templates/windows_terminal.dot palette.json
 	bin/builder -o windowsterminal > $@
