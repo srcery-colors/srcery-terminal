@@ -57,7 +57,7 @@ const terminalappColor = _.partialRight(_.mapValues, function(color) {
 const config = {
   alacritty: {
     template: "./templates/alacritty.dot",
-    function: toHexSlice
+    function: toHex
   },
   blink: {
     template: "./templates/blink.dot",
