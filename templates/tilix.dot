@@ -4,7 +4,7 @@
   "bold-color": "#FFFFFF",
   "comment": "Color scheme with clearly defined contrasting colors and a slightly earthy tone.",
   "cursor-background-color": "{{=c[3]}}",
-  "cursor-foreground-color": "{{=c[0]}}",
+  "cursor-foreground-color": "{{=c.background}}",
   "foreground-color": "{{=c.foreground}}",
   "highlight-background-color": "#000000",
   "highlight-foreground-color": "#FFFFFF",

@@ -205,11 +205,11 @@
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>{{=c.foreground[2]}}</real>
+		<real>{{=c[3][2]}}</real>
 		<key>Green Component</key>
-		<real>{{=c.foreground[1]}}</real>
+		<real>{{=c[3][1]}}</real>
 		<key>Red Component</key>
-		<real>{{=c.foreground[0]}}</real>
+		<real>{{=c[3][0]}}</real>
 	</dict>
 	<key>Cursor Text Color</key>
 	<dict>

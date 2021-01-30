@@ -72,7 +72,7 @@
 	</data>
 	<key>CursorColor</key>
 	<data>
-	{{=c.foreground}}
+	{{=c[3]}}
 	</data>
 	<key>SelectionColor</key>
 	<data>
