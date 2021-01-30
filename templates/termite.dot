@@ -3,9 +3,9 @@
 # special
 foreground        = {{=c.foreground}}
 foreground_bold   = {{=c.foreground}}
-cursor            = {{=c[3]}}
-cursor_foreground = {{=c.background}}
 background        = {{=c.background}}
+cursor            = {{=c.cursor}}
+cursor_foreground = {{=c.background}}
 
 # black
 color0  = {{=c[0]}}

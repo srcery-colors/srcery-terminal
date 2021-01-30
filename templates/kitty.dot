@@ -5,7 +5,7 @@
 
 foreground           {{=c.foreground}}
 background           {{=c.background}}
-cursor               {{=c[3]}}
+cursor               {{=c.cursor}}
 selection_foreground {{=c.background}}
 selection_background {{=c.foreground}}
 

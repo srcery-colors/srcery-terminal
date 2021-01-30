@@ -1,6 +1,6 @@
 BackgroundColour={{=c.background}}
 ForegroundColour={{=c.foreground}}
-CursorColour={{=c[3]}}
+CursorColour={{=c.cursor}}
 Black={{=c[0]}}
 BoldBlack={{=c[8]}}
 Red={{=c[1]}}
