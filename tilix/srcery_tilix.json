@@ -29,7 +29,7 @@
   ],
   "use-badge-color": false,
   "use-bold-color": false,
-  "use-cursor-color": false,
+  "use-cursor-color": true,
   "use-highlight-color": false,
   "use-theme-colors": false
 }
