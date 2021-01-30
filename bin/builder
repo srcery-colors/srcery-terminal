@@ -151,25 +151,27 @@ program
   .option('-o, --output [format]', 'Output format')
   .parse(process.argv);
 
-if (program.list) {
+const opts = program.opts();
+
+if (opts.list) {
   Object.keys(config).forEach(key => {
     console.log(key);
   });
   process.exit();
 }
 
-if (!program.output) {
+if (!opts.output) {
   console.log('Must declare an output format');
   process.exit(1);
 }
 
-if (!Object.prototype.hasOwnProperty.call(config, program.output)) {
-  console.log('Invalid output format: ', program.output);
+if (!Object.prototype.hasOwnProperty.call(config, opts.output)) {
+  console.log('Invalid output format: ', opts.output);
   process.exit(1);
 }
 
-const file = fs.readFileSync(config[program.output].template, "utf8");
-const template = termcolors.export(file, config[program.output].function);
+const file = fs.readFileSync(config[opts.output].template, "utf8");
+const template = termcolors.export(file, config[opts.output].function);
 process.stdout.write(template(colors));
 process.exit();
 
