@@ -1,7 +1,7 @@
 ! special
 *.foreground:   {{=c.foreground}}
 *.background:   {{=c.background}}
-*.cursorColor:  {{=c[3]}}
+*.cursorColor:  {{=c.cursor}}
 
 ! black
 *.color0:       {{=c[0]}}

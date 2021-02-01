@@ -16,5 +16,6 @@
   "14": "#53fde9",
   "15": "#fce8c3",
   "foreground": "#fce8c3",
-  "background": "#1c1b19"
+  "background": "#1c1b19",
+  "cursor": "#fbb829"
 }

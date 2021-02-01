@@ -85,7 +85,7 @@ const config = {
   },
   kitty: {
     template: "./templates/kitty.dot",
-    function: toHexUpper
+    function: toHex
   },
   konsole: {
     template: "./templates/konsole.dot",
