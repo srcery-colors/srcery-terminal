@@ -15,7 +15,7 @@ default: \
 	mintty/srcery_mintty.conf \
 	pantheon-terminal/srcery_pantheon-terminal.sh \
 	putty/srcery_putty.reg \
-	st/srcery_st.c \
+	st/srcery_st.h \
 	terminal_app/srcery_terminal_app.terminal \
 	terminator/srcery_terminator.config \
 	termite/srcery_termite.ini \
@@ -72,7 +72,7 @@ pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.dot palette.js
 putty/srcery_putty.reg: templates/putty.dot palette.json
 	bin/builder -o putty > $@
 
-st/srcery_st.c: templates/st.dot palette.json
+st/srcery_st.h: templates/st.dot palette.json
 	bin/builder -o st > $@
 
 terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json
