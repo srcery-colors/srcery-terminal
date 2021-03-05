@@ -1,9 +1,16 @@
+# https://github.com/srcery-colors/srcery-terminal/
+
 # Colors (Srcery)
 colors:
   # Default colors
   primary:
     background: '{{=c.background}}'
     foreground: '{{=c.foreground}}'
+
+  # Cursor colors
+  cursor:
+    text: CellBackground
+    cursor: '{{=c.cursor}}'
 
   # Normal colors
   normal:
