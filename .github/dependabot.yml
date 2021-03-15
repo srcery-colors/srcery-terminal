@@ -6,7 +6,11 @@ updates:
       interval: daily
     labels:
       - dependabot
+      - dependencies
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: daily
+    labels:
+      - dependabot
+      - dependencies
