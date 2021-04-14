@@ -57,4 +57,3 @@ To make a single config, say `xresources` call make like this:
 ``` shell
 make xresources/srcery.xresources
 ```
-Keep in mind that if the template or palette has not been changed nothing will get generated.
