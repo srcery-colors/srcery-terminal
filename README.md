@@ -13,7 +13,7 @@ Terminal configurations for [vim](https://github.com/srcery-colors/srcery-vim), 
 | blue           | 4  | #2C78BF | 44, 120, 191  | ![blue](https://place-hold.it/100x24/2C78BF?text=+)           |
 | magenta        | 5  | #E02C6D | 224, 44,  109 | ![magenta](https://place-hold.it/100x24/E02C6D?text=+)        |
 | cyan           | 6  | #0AAEB3 | 10, 174, 179  | ![cyan](https://place-hold.it/100x24/0AAEB3?text=+)           |
-| white          | 7  | #D0BFA1 | 208, 191, 161 | ![white](https://place-hold.it/100x24/D0BFA1?text=+)          |
+| white          | 7  | #BAA67F | 186, 166, 127 | ![white](https://place-hold.it/100x24/BAA67F?text=+)          |
 | brightblack    | 8  | #918175 | 145, 129, 117 | ![bright_black](https://place-hold.it/100x24/918175?text=+)   |
 | brightred      | 9  | #F75341 | 247, 83, 65   | ![bright_red](https://place-hold.it/100x24/F75341?text=+)     |
 | brightgreen    | 10 | #98BC37 | 152, 188, 55  | ![bright_green](https://place-hold.it/100x24/98BC37?text=+)   |
