@@ -20,7 +20,7 @@ Terminal configurations for [vim](https://github.com/srcery-colors/srcery-vim), 
 | brightyellow   | 11 | #FED06E | 254, 208, 110 | ![bright_yellow](https://place-hold.it/100x24/FED06E?text=+)  |
 | brightblue     | 12 | #68A8E4 | 104, 168, 228 | ![bright_blue](https://place-hold.it/100x24/68A8E4?text=+)    |
 | brightmagenta  | 13 | #FF5C8F | 255, 92, 143  | ![bright_magenta](https://place-hold.it/100x24/FF5C8F?text=+) |
-| brightcyan     | 14 | #53FDE9 | 83, 253, 233  | ![bright_cyan](https://place-hold.it/100x24/53FDE9?text=+)    |
+| brightcyan     | 14 | #2BE4D0 | 43, 228, 208  | ![bright_cyan](https://place-hold.it/100x24/2BE4D0?text=+)    |
 | brightwhite    | 15 | #FCE8C3 | 252, 232, 195 | ![bright_white](https://place-hold.it/100x24/FCE8C3?text=+)   |
 
 Additionally Srcery uses some [xterm 256
