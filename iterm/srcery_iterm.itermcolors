@@ -73,11 +73,11 @@
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>0.9137254901960784</real>
+		<real>0.8156862745098039</real>
 		<key>Green Component</key>
-		<real>0.9921568627450981</real>
+		<real>0.8941176470588236</real>
 		<key>Red Component</key>
-		<real>0.3254901960784314</real>
+		<real>0.16862745098039217</real>
 	</dict>
 	<key>Ansi 15 Color</key>
 	<dict>

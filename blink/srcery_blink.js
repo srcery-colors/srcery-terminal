@@ -16,7 +16,7 @@ t.prefs_.set("color-palette-overrides", [
 	"#FED06E",
 	"#68A8E4",
 	"#FF5C8F",
-	"#53FDE9",
+	"#2BE4D0",
 	"#FCE8C3"
 ]);
 

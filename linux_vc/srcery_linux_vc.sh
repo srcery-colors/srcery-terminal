@@ -15,7 +15,7 @@ if [ "$TERM" = "linux" ]; then
   \e]PBfed06e
   \e]PC68a8e4
   \e]PDff5c8f
-  \e]PE53fde9
+  \e]PE2be4d0
   \e]PFfce8c3
   "
   # get rid of artifacts
