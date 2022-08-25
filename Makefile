@@ -19,6 +19,7 @@ default: \
 	terminal_app/srcery_terminal_app.terminal \
 	terminator/srcery_terminator.config \
 	termite/srcery_termite.ini \
+	termux/srcery_colors.properties \
 	tilix/srcery_tilix.json \
 	windows_terminal/srcery_settings.json \
 	xfce4/srcery_xfce4.theme \
@@ -83,6 +84,9 @@ terminator/srcery_terminator.config: templates/terminator.dot palette.json
 
 termite/srcery_termite.ini: templates/termite.dot palette.json
 	bin/builder -o termite > $@
+
+termux/srcery_colors.properties: templates/termux.dot palette.json
+	bin/builder -o termux > $@
 
 tilix/srcery_tilix.json: templates/tilix.dot palette.json
 	bin/builder -o tilix > $@
