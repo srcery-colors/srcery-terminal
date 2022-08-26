@@ -127,6 +127,10 @@ const config = {
     template: "./templates/termite.dot",
     function: toHex
   },
+  termux: {
+    template: "./templates/termux.dot",
+    function: toHex
+  },
   tilix: {
     template: "./templates/tilix.dot",
     function: toHexUpper
