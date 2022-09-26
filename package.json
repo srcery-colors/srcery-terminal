@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/srcery-colors/srcery-terminal#readme",
   "devDependencies": {
-    "eslint": "^8.23.1"
+    "eslint": "^8.24.0"
   },
   "dependencies": {
     "commander": "^9.4.0",
