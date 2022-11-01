@@ -4,6 +4,8 @@ TEMPLATES = \
 						templates/alacritty.hbs \
 						templates/blink.hbs
 
+PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
+
 default: $(TEMPLATES)
 
 # default: \
@@ -31,22 +33,22 @@ default: $(TEMPLATES)
 # 	xfce4/srcery_xfce4.theme \
 # 	xresources/srcery.xresources
 
-install:
+node_modules:
 	npm install
 
 list:
 	@bin/builder --list
 
-alacritty/srcery_alacritty.yml: templates/alacritty.hbs
+alacritty/srcery_alacritty.yml: templates/alacritty.hbs node_modules $(PALETTE)
 	bin/builder -o alacritty > $@
 
-blink/srcery_blink.js: templates/blink.hbs
+blink/srcery_blink.js: templates/blink.hbs node_modules $(PALETTE)
 	bin/builder -o blink > $@
 
-chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.hbs
+chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.hbs node_modules $(PALETTE)
 	bin/builder -o chromeshell > $@
 
-genode-terminal/srcery_genode-terminal.config: palette.json templates/genode.dot
+genode-terminal/srcery_genode-terminal.config: templates/genode.hbs node_modules $(PALETTE)
 	bin/builder -o genode > $@
 
 gnome-terminal/srcery_gnome-terminal.sh: palette.json templates/gnome.dot
