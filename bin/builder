@@ -10,13 +10,13 @@ const Handlebars = require("handlebars");
 // const palette = fs.readFileSync("./palette.json", "utf8");
 // const colors = termcolors.json.import(palette);
 const program = require("commander");
-const _ = require("lodash");
+// const _ = require("lodash");
 const process = require("process");
 const palette = require("@srcery-colors/srcery-palette");
 
-// Handlebars.registerHelper("join", (context) => {
-//   return _.join(context, ", ");
-// });
+Handlebars.registerHelper("lowerCase", (context) => {
+  return context.toLowerCase()
+});
 
 // const toHex = _.partialRight(_.mapValues, function(color) {
 //   return color.toHex();
