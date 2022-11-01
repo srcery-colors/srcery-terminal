@@ -3,151 +3,161 @@
 "use strict";
 
 const fs = require("fs");
-const termcolors = require("termcolors");
+// const termcolors = require("termcolors");
 const pkg = require("../package.json");
-const buffer = require('buffer');
-const palette = fs.readFileSync("./palette.json", "utf8");
-const colors = termcolors.json.import(palette);
+// const buffer = require('buffer');
+const Handlebars = require("handlebars");
+// const palette = fs.readFileSync("./palette.json", "utf8");
+// const colors = termcolors.json.import(palette);
 const program = require("commander");
 const _ = require("lodash");
 const process = require("process");
+const palette = require("@srcery-colors/srcery-palette");
 
-const toHex = _.partialRight(_.mapValues, function(color) {
-  return color.toHex();
-});
+// Handlebars.registerHelper("join", (context) => {
+//   return _.join(context, ", ");
+// });
 
-const toHexSlice = _.partialRight(_.mapValues, function(color) {
-  return color.toHex().slice(1);
-});
+// const toHex = _.partialRight(_.mapValues, function(color) {
+//   return color.toHex();
+// });
 
-const toHexUpper = _.partialRight(_.mapValues, function(color) {
-  return color.toHex().toUpperCase();
-});
+// const toHexSlice = _.partialRight(_.mapValues, function(color) {
+//   return color.toHex().slice(1);
+// });
 
-const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
-  return color.toAvgRgbArray();
-});
+// const toHexUpper = _.partialRight(_.mapValues, function(color) {
+//   return color.toHex().toUpperCase();
+// });
 
-const toDoubleHex = _.partialRight(_.mapValues, function(color) {
-  return color.toDoubleHex();
-});
+// const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
+//   return color.toAvgRgbArray();
+// });
 
-const toRgb = _.partialRight(_.mapValues, function(color) {
-  return color.toRgbArray().join();
-});
+// const toDoubleHex = _.partialRight(_.mapValues, function(color) {
+//   return color.toDoubleHex();
+// });
 
-const hexNoHash = _.partialRight(_.mapValues, function(color) {
-  return color.toHex().substring(1);
-});
+// const toRgb = _.partialRight(_.mapValues, function(color) {
+//   return color.toRgbArray().join();
+// });
 
-const terminalappColor = _.partialRight(_.mapValues, function(color) {
-  const code = [
-    new buffer.Buffer('62706c6973743030d40102030405061516582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a307080f55246e756c6cd3090a0b0c0d0e554e535247425c4e53436f6c6f7253706163655624636c6173734f1027', 'hex'),
-    new buffer.Buffer('0010018002d2101112135a24636c6173736e616d655824636c6173736573574e53436f6c6f72a21214584e534f626a6563745f100f4e534b657965644172636869766572d1171854726f6f74800108111a232d32373b41484e5b628c8e9095a0a9b1b4bdcfd2d700000000000001010000000000000019000000000000000000000000000000d9', 'hex')
-  ];
-  let srgb = color.toAvgRgbArray();
-  srgb = srgb.map(n => {
-    return n.toFixed(10).toString();
-  }).join(' ');
-  let output = code[0].toString('binary') + srgb + code[1].toString('binary');
-  output = (new buffer.Buffer(output, 'binary')).toString('base64');
-  return output.match(/.{1,68}/g).join('\n\t');
-});
+// const hexNoHash = _.partialRight(_.mapValues, function(color) {
+//   return color.toHex().substring(1);
+// });
 
-const config = {
-  alacritty: {
-    template: "./templates/alacritty.dot",
-    function: toHex
-  },
-  blink: {
-    template: "./templates/blink.dot",
-    function: toHexUpper
-  },
-  chromeshell: {
-    template: "./templates/chrome-secure-shell.dot",
-    function: toHex
-  },
-  genode:{
-    template: "./templates/genode.dot",
-    function: toHexUpper
-  },
-  gnome: {
-    template: "./templates/gnome.dot",
-    function: toHex
-  },
-  guake: {
-    template: "./templates/guake.dot",
-    function: toDoubleHex
-  },
-  iterm: {
-    template: "./templates/iterm.dot",
-    function: toAvgRgbArray
-  },
-  kitty: {
-    template: "./templates/kitty.dot",
-    function: toHex
-  },
-  konsole: {
-    template: "./templates/konsole.dot",
-    function: toRgb
-  },
-  linux: {
-    template: "./templates/linux.dot",
-    function: hexNoHash
-  },
-  lxterminal: {
-    template: "./templates/lxterminal.dot",
-    function: toRgb
-  },
-  mintty: {
-    template: "./templates/mintty.dot",
-    function: toRgb
-  },
-  pantheon: {
-    template: "./templates/pantheon.dot",
-    function: toHex
-  },
-  putty: {
-    template: "./templates/putty.dot",
-    function: toRgb
-  },
-  st: {
-    template: "./templates/st.dot",
-    function: toHex
-  },
-  terminalapp: {
-    template: "./templates/terminal-app.dot",
-    function: terminalappColor
-  },
-  terminator: {
-    template: "./templates/terminator.dot",
-    function: toHex
-  },
-  termite: {
-    template: "./templates/termite.dot",
-    function: toHex
-  },
-  termux: {
-    template: "./templates/termux.dot",
-    function: toHex
-  },
-  tilix: {
-    template: "./templates/tilix.dot",
-    function: toHexUpper
-  },
-  windowsterminal: {
-    template: "./templates/windows_terminal.dot",
-    function: toHexUpper
-  },
-  xfce: {
-    template: "./templates/xfce.dot",
-    function: toDoubleHex
-  },
-  xresources: {
-    template: "./templates/xresources.dot",
-    function: toHex
-  }
+// const terminalappColor = _.partialRight(_.mapValues, function(color) {
+//   const code = [
+//     new buffer.Buffer('62706c6973743030d40102030405061516582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a307080f55246e756c6cd3090a0b0c0d0e554e535247425c4e53436f6c6f7253706163655624636c6173734f1027', 'hex'),
+//     new buffer.Buffer('0010018002d2101112135a24636c6173736e616d655824636c6173736573574e53436f6c6f72a21214584e534f626a6563745f100f4e534b657965644172636869766572d1171854726f6f74800108111a232d32373b41484e5b628c8e9095a0a9b1b4bdcfd2d700000000000001010000000000000019000000000000000000000000000000d9', 'hex')
+//   ];
+//   let srgb = color.toAvgRgbArray();
+//   srgb = srgb.map(n => {
+//     return n.toFixed(10).toString();
+//   }).join(' ');
+//   let output = code[0].toString('binary') + srgb + code[1].toString('binary');
+//   output = (new buffer.Buffer(output, 'binary')).toString('base64');
+//   return output.match(/.{1,68}/g).join('\n\t');
+// });
+
+const templates = {
+  alacritty: "templates/alacritty.hbs"
 }
+
+// const config = {
+//   alacritty: {
+//     template: "./templates/alacritty.dot",
+//     function: toHex
+//   },
+//   blink: {
+//     template: "./templates/blink.dot",
+//     function: toHexUpper
+//   },
+//   chromeshell: {
+//     template: "./templates/chrome-secure-shell.dot",
+//     function: toHex
+//   },
+//   genode:{
+//     template: "./templates/genode.dot",
+//     function: toHexUpper
+//   },
+//   gnome: {
+//     template: "./templates/gnome.dot",
+//     function: toHex
+//   },
+//   guake: {
+//     template: "./templates/guake.dot",
+//     function: toDoubleHex
+//   },
+//   iterm: {
+//     template: "./templates/iterm.dot",
+//     function: toAvgRgbArray
+//   },
+//   kitty: {
+//     template: "./templates/kitty.dot",
+//     function: toHex
+//   },
+//   konsole: {
+//     template: "./templates/konsole.dot",
+//     function: toRgb
+//   },
+//   linux: {
+//     template: "./templates/linux.dot",
+//     function: hexNoHash
+//   },
+//   lxterminal: {
+//     template: "./templates/lxterminal.dot",
+//     function: toRgb
+//   },
+//   mintty: {
+//     template: "./templates/mintty.dot",
+//     function: toRgb
+//   },
+//   pantheon: {
+//     template: "./templates/pantheon.dot",
+//     function: toHex
+//   },
+//   putty: {
+//     template: "./templates/putty.dot",
+//     function: toRgb
+//   },
+//   st: {
+//     template: "./templates/st.dot",
+//     function: toHex
+//   },
+//   terminalapp: {
+//     template: "./templates/terminal-app.dot",
+//     function: terminalappColor
+//   },
+//   terminator: {
+//     template: "./templates/terminator.dot",
+//     function: toHex
+//   },
+//   termite: {
+//     template: "./templates/termite.dot",
+//     function: toHex
+//   },
+//   termux: {
+//     template: "./templates/termux.dot",
+//     function: toHex
+//   },
+//   tilix: {
+//     template: "./templates/tilix.dot",
+//     function: toHexUpper
+//   },
+//   windowsterminal: {
+//     template: "./templates/windows_terminal.dot",
+//     function: toHexUpper
+//   },
+//   xfce: {
+//     template: "./templates/xfce.dot",
+//     function: toDoubleHex
+//   },
+//   xresources: {
+//     template: "./templates/xresources.dot",
+//     function: toHex
+//   }
+// }
 
 program
   .version(pkg.version)
@@ -158,7 +168,7 @@ program
 const opts = program.opts();
 
 if (opts.list) {
-  Object.keys(config).forEach(key => {
+  Object.keys(templates).forEach(key => {
     console.log(key);
   });
   process.exit();
@@ -169,13 +179,14 @@ if (!opts.output) {
   process.exit(1);
 }
 
-if (!Object.prototype.hasOwnProperty.call(config, opts.output)) {
+if (!Object.prototype.hasOwnProperty.call(templates, opts.output)) {
   console.log('Invalid output format: ', opts.output);
   process.exit(1);
 }
 
-const file = fs.readFileSync(config[opts.output].template, "utf8");
-const template = termcolors.export(file, config[opts.output].function);
-process.stdout.write(template(colors));
+const file = fs.readFileSync(templates[opts.output], "utf8");
+const template = Handlebars.compile(file);
+// const template = termcolors.export(file, config[opts.output].function);
+process.stdout.write(template(palette));
 process.exit();
 

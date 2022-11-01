@@ -1,29 +1,34 @@
 .phony: default install list
 
-default: \
-	alacritty/srcery_alacritty.yml \
-	blink/srcery_blink.js \
-	chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
-	genode-terminal/srcery_genode-terminal.config \
-	gnome-terminal/srcery_gnome-terminal.sh \
-	guake/srcery_guake.sh \
-	iterm/srcery_iterm.itermcolors \
-	kitty/srcery_kitty.conf \
-	konsole/srcery_konsole.colorscheme \
-	linux_vc/srcery_linux_vc.sh \
-	lxterminal/srcery_lxterminal.conf \
-	mintty/srcery_mintty.conf \
-	pantheon-terminal/srcery_pantheon-terminal.sh \
-	putty/srcery_putty.reg \
-	st/srcery_st.h \
-	terminal_app/srcery_terminal_app.terminal \
-	terminator/srcery_terminator.config \
-	termite/srcery_termite.ini \
-	termux/srcery_colors.properties \
-	tilix/srcery_tilix.json \
-	windows_terminal/srcery_settings.json \
-	xfce4/srcery_xfce4.theme \
-	xresources/srcery.xresources
+TEMPLATES = \
+						templates/alacritty.hbs
+
+default: $(TEMPLATES)
+
+# default: \
+# 	alacritty/srcery_alacritty.yml \
+# 	blink/srcery_blink.js \
+# 	chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
+# 	genode-terminal/srcery_genode-terminal.config \
+# 	gnome-terminal/srcery_gnome-terminal.sh \
+# 	guake/srcery_guake.sh \
+# 	iterm/srcery_iterm.itermcolors \
+# 	kitty/srcery_kitty.conf \
+# 	konsole/srcery_konsole.colorscheme \
+# 	linux_vc/srcery_linux_vc.sh \
+# 	lxterminal/srcery_lxterminal.conf \
+# 	mintty/srcery_mintty.conf \
+# 	pantheon-terminal/srcery_pantheon-terminal.sh \
+# 	putty/srcery_putty.reg \
+# 	st/srcery_st.h \
+# 	terminal_app/srcery_terminal_app.terminal \
+# 	terminator/srcery_terminator.config \
+# 	termite/srcery_termite.ini \
+# 	termux/srcery_colors.properties \
+# 	tilix/srcery_tilix.json \
+# 	windows_terminal/srcery_settings.json \
+# 	xfce4/srcery_xfce4.theme \
+# 	xresources/srcery.xresources
 
 install:
 	npm install
@@ -31,7 +36,7 @@ install:
 list:
 	@bin/builder --list
 
-alacritty/srcery_alacritty.yml: templates/alacritty.dot palette.json
+alacritty/srcery_alacritty.yml: templates/alacritty.hbs
 	bin/builder -o alacritty > $@
 
 blink/srcery_blink.js: templates/blink.dot palette.json
