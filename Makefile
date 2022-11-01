@@ -43,7 +43,7 @@ alacritty/srcery_alacritty.yml: templates/alacritty.hbs
 blink/srcery_blink.js: templates/blink.hbs
 	bin/builder -o blink > $@
 
-chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.dot palette.json
+chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.hbs
 	bin/builder -o chromeshell > $@
 
 genode-terminal/srcery_genode-terminal.config: palette.json templates/genode.dot

@@ -62,7 +62,8 @@ Handlebars.registerHelper("lowerCase", (context) => {
 
 const templates = {
   alacritty: "templates/alacritty.hbs",
-  blink: "templates/blink.hbs"
+  blink: "templates/blink.hbs",
+  chromeshell: "templates/chrome-secure-shell.hbs",
 }
 
 // const config = {
