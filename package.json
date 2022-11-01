@@ -25,6 +25,7 @@
     "eslint": "^8.25.0"
   },
   "dependencies": {
+    "@srcery-colors/srcery-palette": "1.0.0",
     "commander": "^9.4.1",
     "lodash": "^4.17.21",
     "termcolors": "^0.7.3"
