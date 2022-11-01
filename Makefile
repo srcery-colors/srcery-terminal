@@ -1,7 +1,8 @@
 .phony: default install list
 
 TEMPLATES = \
-						templates/alacritty.hbs
+						templates/alacritty.hbs \
+						templates/blink.hbs
 
 default: $(TEMPLATES)
 
@@ -39,7 +40,7 @@ list:
 alacritty/srcery_alacritty.yml: templates/alacritty.hbs
 	bin/builder -o alacritty > $@
 
-blink/srcery_blink.js: templates/blink.dot palette.json
+blink/srcery_blink.js: templates/blink.hbs
 	bin/builder -o blink > $@
 
 chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.dot palette.json

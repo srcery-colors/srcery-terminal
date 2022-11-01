@@ -61,7 +61,8 @@ Handlebars.registerHelper("lowerCase", (context) => {
 // });
 
 const templates = {
-  alacritty: "templates/alacritty.hbs"
+  alacritty: "templates/alacritty.hbs",
+  blink: "templates/blink.hbs"
 }
 
 // const config = {
