@@ -64,7 +64,8 @@ const templates = {
   alacritty: "templates/alacritty.hbs",
   blink: "templates/blink.hbs",
   chromeshell: "templates/chrome-secure-shell.hbs",
-  genode: "templates/genode.hbs"
+  genode: "templates/genode.hbs",
+  gnome: "templates/gnome.hbs"
 }
 
 // const config = {

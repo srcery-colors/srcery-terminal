@@ -51,7 +51,7 @@ chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure
 genode-terminal/srcery_genode-terminal.config: templates/genode.hbs node_modules $(PALETTE)
 	bin/builder -o genode > $@
 
-gnome-terminal/srcery_gnome-terminal.sh: palette.json templates/gnome.dot
+gnome-terminal/srcery_gnome-terminal.sh: templates/gnome.hbs node_modules $(PALETTE)
 	bin/builder -o gnome > $@
 
 guake/srcery_guake.sh: templates/guake.dot palette.json
