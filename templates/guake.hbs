@@ -7,6 +7,6 @@
 #
 # Alternatively copy lines below directly into your shell.
 
-gconftool-2 -s -t string /apps/guake/style/background/color '{{ primary.black.hex }}'
-gconftool-2 -s -t string /apps/guake/style/font/color '{{ primary.bright_white.hex }}'
-gconftool-2 -s -t string /apps/guake/style/font/palette '{{ primary.black.hex }}:{{ primary.red.hex }}:{{ primary.green.hex }}:{{ primary.yellow.hex }}:{{ primary.blue.hex }}:{{ primary.magenta.hex }}:{{ primary.cyan.hex }}:{{ primary.white.hex }}:{{ primary.bright_black.hex }}:{{ primary.bright_red.hex }}:{{ primary.bright_green.hex }}:{{ primary.bright_yellow.hex }}:{{ primary.bright_blue.hex }}:{{ primary.bright_magenta.hex }}:{{ primary.bright_cyan.hex }}:{{ primary.bright_white.hex }}'
+gconftool-2 -s -t string /apps/guake/style/background/color '{{doubleHex primary.black.hex }}'
+gconftool-2 -s -t string /apps/guake/style/font/color '{{doubleHex primary.bright_white.hex }}'
+gconftool-2 -s -t string /apps/guake/style/font/palette '{{doubleHex primary.black.hex }}:{{doubleHex primary.red.hex }}:{{doubleHex primary.green.hex }}:{{doubleHex primary.yellow.hex }}:{{doubleHex primary.blue.hex }}:{{doubleHex primary.magenta.hex }}:{{doubleHex primary.cyan.hex }}:{{doubleHex primary.white.hex }}:{{doubleHex primary.bright_black.hex }}:{{doubleHex primary.bright_red.hex }}:{{doubleHex primary.bright_green.hex }}:{{doubleHex primary.bright_yellow.hex }}:{{doubleHex primary.bright_blue.hex }}:{{doubleHex primary.bright_magenta.hex }}:{{doubleHex primary.bright_cyan.hex }}:{{doubleHex primary.bright_white.hex }}'

@@ -14,8 +14,32 @@ const program = require("commander");
 const ps = require("process");
 const palette = require("@srcery-colors/srcery-palette");
 
-Handlebars.registerHelper("lowerCase", (context) => {
-  return context.toLowerCase()
+// https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
+function averageRGB(arr) {
+  return arr.map((value) => {
+    return value / 255;
+  });
+}
+// https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
+function doubleHex(context) {
+  let hex = context.slice(1);
+  let r = hex.slice(0, 2);
+  let g = hex.slice(2, 4);
+  let b = hex.slice(4, 6);
+  return '#' + r + r + g + g + b + b;
+}
+
+Handlebars.registerHelper("lowerCase", (hex) => {
+  return hex.toLowerCase()
+});
+
+Handlebars.registerHelper("doubleHex", (hex) => {
+  return doubleHex(hex).toLowerCase();
+});
+
+// Make sure you pass rgb not hex to this helper
+Handlebars.registerHelper("avgRGB", (rgbArray) => {
+  return averageRGB(rgbArray);
 });
 
 // const toHex = _.partialRight(_.mapValues, function(color) {
@@ -61,11 +85,12 @@ Handlebars.registerHelper("lowerCase", (context) => {
 // });
 
 const templates = {
-  alacritty: "templates/alacritty.hbs",
-  blink: "templates/blink.hbs",
+  alacritty:   "templates/alacritty.hbs",
+  blink:       "templates/blink.hbs",
   chromeshell: "templates/chrome-secure-shell.hbs",
-  genode: "templates/genode.hbs",
-  gnome: "templates/gnome.hbs"
+  genode:      "templates/genode.hbs",
+  gnome:       "templates/gnome.hbs",
+  guake:       "templates/guake.hbs"
 }
 
 // const config = {

@@ -56,7 +56,7 @@ genode-terminal/srcery_genode-terminal.config: templates/genode.hbs $(PALETTE)
 gnome-terminal/srcery_gnome-terminal.sh: templates/gnome.hbs $(PALETTE)
 	bin/builder -o gnome > $@
 
-guake/srcery_guake.sh: templates/guake.dot palette.json
+guake/srcery_guake.sh: templates/guake.hbs $(PALETTE)
 	bin/builder -o guake > $@
 
 iterm/srcery_iterm.itermcolors: templates/iterm.dot palette.json
