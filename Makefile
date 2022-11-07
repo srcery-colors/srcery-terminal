@@ -39,6 +39,8 @@ node_modules:
 list:
 	@bin/builder --list
 
+$(PALETTE): node_modules
+
 alacritty/srcery_alacritty.yml: templates/alacritty.hbs node_modules $(PALETTE)
 	bin/builder -o alacritty > $@
 
