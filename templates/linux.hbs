@@ -1,22 +1,22 @@
 #!/bin/sh
 if [ "$TERM" = "linux" ]; then
   /bin/echo -e "
-  \e]P0{{=c[0]}}
-  \e]P1{{=c[1]}}
-  \e]P2{{=c[2]}}
-  \e]P3{{=c[3]}}
-  \e]P4{{=c[4]}}
-  \e]P5{{=c[5]}}
-  \e]P6{{=c[6]}}
-  \e]P7{{=c[7]}}
-  \e]P8{{=c[8]}}
-  \e]P9{{=c[9]}}
-  \e]PA{{=c[10]}}
-  \e]PB{{=c[11]}}
-  \e]PC{{=c[12]}}
-  \e]PD{{=c[13]}}
-  \e]PE{{=c[14]}}
-  \e]PF{{=c[15]}}
+  \e]P0{{ primary.black.hex }}
+  \e]P1{{ primary.red.hex }}
+  \e]P2{{ primary.green.hex }}
+  \e]P3{{ primary.yellow.hex }}
+  \e]P4{{ primary.blue.hex }}
+  \e]P5{{ primary.magenta.hex }}
+  \e]P6{{ primary.cyan.hex }}
+  \e]P7{{ primary.white.hex }}
+  \e]P8{{ primary.bright_black.hex }}
+  \e]P9{{ primary.bright_red.hex }}
+  \e]PA{{ primary.bright_green.hex }}
+  \e]PB{{ primary.bright_yellow.hex }}
+  \e]PC{{ primary.bright_blue.hex }}
+  \e]PD{{ primary.bright_magenta.hex }}
+  \e]PE{{ primary.bright_cyan.hex }}
+  \e]PF{{ primary.bright_white.hex }}
   "
   # get rid of artifacts
   clear

@@ -1,31 +1,31 @@
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"{{=c[0]}}",
-	"{{=c[1]}}",
-	"{{=c[2]}}",
-	"{{=c[3]}}",
-	"{{=c[4]}}",
-	"{{=c[5]}}",
-	"{{=c[6]}}",
-	"{{=c[7]}}",
+	"{{ primary.black.hex }}",
+	"{{ primary.red.hex }}",
+	"{{ primary.green.hex }}",
+	"{{ primary.yellow.hex }}",
+	"{{ primary.blue.hex }}",
+	"{{ primary.magenta.hex }}",
+	"{{ primary.cyan.hex }}",
+	"{{ primary.white.hex }}",
 
 	/* 8 bright colors */
-	"{{=c[8]}}",
-	"{{=c[9]}}",
-	"{{=c[10]}}",
-	"{{=c[11]}}",
-	"{{=c[12]}}",
-	"{{=c[13]}}",
-	"{{=c[14]}}",
-	"{{=c[15]}}",
+	"{{ primary.bright_black.hex }}",
+	"{{ primary.bright_red.hex }}",
+	"{{ primary.bright_green.hex }}",
+	"{{ primary.bright_yellow.hex }}",
+	"{{ primary.bright_blue.hex }}",
+	"{{ primary.bright_magenta.hex }}",
+	"{{ primary.bright_cyan.hex }}",
+	"{{ primary.bright_white.hex }}",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"{{=c.foreground}}", /* foreground */
-	"{{=c.background}}", /* background */
-	"{{=c.cursor}}", /* cursor */
+	"{{ primary.bright_white.hex }}", /* foreground */
+	"{{ primary.black.hex }}", /* background */
+	"{{ primary.yellow.hex }}", /* cursor */
 };
 
 /*

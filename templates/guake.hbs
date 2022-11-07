@@ -7,6 +7,6 @@
 #
 # Alternatively copy lines below directly into your shell.
 
-gconftool-2 -s -t string /apps/guake/style/background/color '{{=c.background}}'
-gconftool-2 -s -t string /apps/guake/style/font/color '{{=c.foreground}}'
-gconftool-2 -s -t string /apps/guake/style/font/palette '{{=c[0]}}:{{=c[1]}}:{{=c[2]}}:{{=c[3]}}:{{=c[4]}}:{{=c[5]}}:{{=c[6]}}:{{=c[7]}}:{{=c[8]}}:{{=c[9]}}:{{=c[10]}}:{{=c[11]}}:{{=c[12]}}:{{=c[13]}}:{{=c[14]}}:{{=c[15]}}'
+gconftool-2 -s -t string /apps/guake/style/background/color '{{ primary.black.hex }}'
+gconftool-2 -s -t string /apps/guake/style/font/color '{{ primary.bright_white.hex }}'
+gconftool-2 -s -t string /apps/guake/style/font/palette '{{ primary.black.hex }}:{{ primary.red.hex }}:{{ primary.green.hex }}:{{ primary.yellow.hex }}:{{ primary.blue.hex }}:{{ primary.magenta.hex }}:{{ primary.cyan.hex }}:{{ primary.white.hex }}:{{ primary.bright_black.hex }}:{{ primary.bright_red.hex }}:{{ primary.bright_green.hex }}:{{ primary.bright_yellow.hex }}:{{ primary.bright_blue.hex }}:{{ primary.bright_magenta.hex }}:{{ primary.bright_cyan.hex }}:{{ primary.bright_white.hex }}'

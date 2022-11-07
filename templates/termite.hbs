@@ -1,40 +1,40 @@
 [colors]
 
 # special
-foreground        = {{=c.foreground}}
-foreground_bold   = {{=c.foreground}}
-background        = {{=c.background}}
-cursor            = {{=c.cursor}}
-cursor_foreground = {{=c.background}}
+foreground        = {{ primary.bright_white.hex }}
+foreground_bold   = {{ primary.bright_white.hex }}
+background        = {{ primary.black.hex }}
+cursor            = {{ primary.yellow.hex }}
+cursor_foreground = {{ primary.black.hex }}
 
 # black
-color0  = {{=c[0]}}
-color8  = {{=c[8]}}
+color0  = {{ primary.black.hex }}
+color8  = {{ primary.bright_black.hex }}
 
 # red
-color1  = {{=c[1]}}
-color9  = {{=c[9]}}
+color1  = {{ primary.red.hex }}
+color9  = {{ primary.bright_red.hex }}
 
 # green
-color2  = {{=c[2]}}
-color10 = {{=c[10]}}
+color2  = {{ primary.green.hex }}
+color10 = {{ primary.bright_green.hex }}
 
 # yellow
-color3  = {{=c[3]}}
-color11 = {{=c[11]}}
+color3  = {{ primary.yellow.hex }}
+color11 = {{ primary.bright_yellow.hex }}
 
 # blue
-color4  = {{=c[4]}}
-color12 = {{=c[12]}}
+color4  = {{ primary.blue.hex }}
+color12 = {{ primary.bright_blue.hex }}
 
 # magenta
-color5  = {{=c[5]}}
-color13 = {{=c[13]}}
+color5  = {{ primary.magenta.hex }}
+color13 = {{ primary.bright_magenta.hex }}
 
 # cyan
-color6  = {{=c[6]}}
-color14 = {{=c[14]}}
+color6  = {{ primary.cyan.hex }}
+color14 = {{ primary.bright_cyan.hex }}
 
 # white
-color7  = {{=c[7]}}
-color15 = {{=c[15]}}
+color7  = {{ primary.white.hex }}
+color15 = {{ primary.bright_white.hex }}

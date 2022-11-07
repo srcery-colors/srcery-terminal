@@ -1,15 +1,15 @@
 [global_config]
-  title_transmit_fg_color = "{{=c.foreground}}"
-  title_transmit_bg_color = "{{=c[0]}}"
-  title_inactive_fg_color = "{{=c.foreground}}"
-  title_inactive_bg_color = "{{=c[8]}}"
+  title_transmit_fg_color = "{{ primary.bright_white.hex }}"
+  title_transmit_bg_color = "{{ primary.black.hex }}"
+  title_inactive_fg_color = "{{ primary.bright_white.hex }}"
+  title_inactive_bg_color = "{{ primary.bright_black.hex }}"
 [profiles]
   [[default]]
-    foreground_color = "{{=c.foreground}}"
-    background_color = "{{=c.background}}"
-    cursor_color = "{{=c.cursor}}"
+    foreground_color = "{{ primary.bright_white.hex }}"
+    background_color = "{{ primary.black.hex }}"
+    cursor_color = "{{ primary.yellow.hex }}"
     cursor_color_fg = False
-    palette = "{{=c[0]}}:{{=c[1]}}:{{=c[2]}}:{{=c[3]}}:{{=c[4]}}:{{=c[5]}}:{{=c[6]}}:{{=c[7]}}:{{=c[8]}}:{{=c[9]}}:{{=c[10]}}:{{=c[11]}}:{{=c[12]}}:{{=c[13]}}:{{=c[14]}}:{{=c[15]}}"
+    palette = "{{ primary.black.hex }}:{{ primary.red.hex }}:{{ primary.green.hex }}:{{ primary.yellow.hex }}:{{ primary.blue.hex }}:{{ primary.magenta.hex }}:{{ primary.cyan.hex }}:{{ primary.white.hex }}:{{ primary.bright_black.hex }}:{{ primary.bright_red.hex }}:{{ primary.bright_green.hex }}:{{ primary.bright_yellow.hex }}:{{ primary.bright_blue.hex }}:{{ primary.bright_magenta.hex }}:{{ primary.bright_cyan.hex }}:{{ primary.bright_white.hex }}"
 [layouts]
   [[default]]
     [[[window0]]]
