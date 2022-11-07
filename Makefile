@@ -41,19 +41,19 @@ list:
 
 $(PALETTE): node_modules
 
-alacritty/srcery_alacritty.yml: templates/alacritty.hbs node_modules $(PALETTE)
+alacritty/srcery_alacritty.yml: templates/alacritty.hbs $(PALETTE)
 	bin/builder -o alacritty > $@
 
-blink/srcery_blink.js: templates/blink.hbs node_modules $(PALETTE)
+blink/srcery_blink.js: templates/blink.hbs $(PALETTE)
 	bin/builder -o blink > $@
 
-chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.hbs node_modules $(PALETTE)
+chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.hbs $(PALETTE)
 	bin/builder -o chromeshell > $@
 
-genode-terminal/srcery_genode-terminal.config: templates/genode.hbs node_modules $(PALETTE)
+genode-terminal/srcery_genode-terminal.config: templates/genode.hbs $(PALETTE)
 	bin/builder -o genode > $@
 
-gnome-terminal/srcery_gnome-terminal.sh: templates/gnome.hbs node_modules $(PALETTE)
+gnome-terminal/srcery_gnome-terminal.sh: templates/gnome.hbs $(PALETTE)
 	bin/builder -o gnome > $@
 
 guake/srcery_guake.sh: templates/guake.dot palette.json
