@@ -63,7 +63,7 @@ kitty/srcery_kitty.conf: templates/kitty.hbs $(PALETTE)
 konsole/srcery_konsole.colorscheme: templates/konsole.hbs $(PALETTE)
 	bin/builder -o konsole > $@
 
-linux_vc/srcery_linux_vc.sh: templates/linux.dot palette.json
+linux_vc/srcery_linux_vc.sh: templates/linux.hbs $(PALETTE)
 	bin/builder -o linux > $@
 
 lxterminal/srcery_lxterminal.conf: templates/lxterminal.dot palette.json

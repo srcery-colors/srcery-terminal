@@ -1,22 +1,22 @@
 #!/bin/sh
 if [ "$TERM" = "linux" ]; then
   /bin/echo -e "
-  \e]P0{{ primary.black.hex }}
-  \e]P1{{ primary.red.hex }}
-  \e]P2{{ primary.green.hex }}
-  \e]P3{{ primary.yellow.hex }}
-  \e]P4{{ primary.blue.hex }}
-  \e]P5{{ primary.magenta.hex }}
-  \e]P6{{ primary.cyan.hex }}
-  \e]P7{{ primary.white.hex }}
-  \e]P8{{ primary.bright_black.hex }}
-  \e]P9{{ primary.bright_red.hex }}
-  \e]PA{{ primary.bright_green.hex }}
-  \e]PB{{ primary.bright_yellow.hex }}
-  \e]PC{{ primary.bright_blue.hex }}
-  \e]PD{{ primary.bright_magenta.hex }}
-  \e]PE{{ primary.bright_cyan.hex }}
-  \e]PF{{ primary.bright_white.hex }}
+  \e]P0{{sub primary.black.hex }}
+  \e]P1{{sub primary.red.hex }}
+  \e]P2{{sub primary.green.hex }}
+  \e]P3{{sub primary.yellow.hex }}
+  \e]P4{{sub primary.blue.hex }}
+  \e]P5{{sub primary.magenta.hex }}
+  \e]P6{{sub primary.cyan.hex }}
+  \e]P7{{sub primary.white.hex }}
+  \e]P8{{sub primary.bright_black.hex }}
+  \e]P9{{sub primary.bright_red.hex }}
+  \e]PA{{sub primary.bright_green.hex }}
+  \e]PB{{sub primary.bright_yellow.hex }}
+  \e]PC{{sub primary.bright_blue.hex }}
+  \e]PD{{sub primary.bright_magenta.hex }}
+  \e]PE{{sub primary.bright_cyan.hex }}
+  \e]PF{{sub primary.bright_white.hex }}
   "
   # get rid of artifacts
   clear
