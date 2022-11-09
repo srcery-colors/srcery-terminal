@@ -38,7 +38,10 @@ Handlebars.registerHelper("avgRGB", (color) => {
   return color / 255
 });
 
-Handlebars.registerHelper("join", (arr, c) => {
+// Takes additional arg(c), what string to join with
+Handlebars.registerHelper("join", (arr, rest) => {
+  let c = ",";
+  if (typeof rest === "string") c = rest;
   return arr.join(c);
 });
 // const toHex = _.partialRight(_.mapValues, function(color) {
