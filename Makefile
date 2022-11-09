@@ -1,37 +1,32 @@
-.phony: default install list
+.phony: default list
 
-TEMPLATES = \
-						templates/alacritty.hbs \
-						templates/blink.hbs
+FILES = alacritty/srcery_alacritty.yml \
+				blink/srcery_blink.js \
+				chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
+				genode-terminal/srcery_genode-terminal.config \
+				gnome-terminal/srcery_gnome-terminal.sh \
+				guake/srcery_guake.sh \
+				iterm/srcery_iterm.itermcolors \
+				kitty/srcery_kitty.conf \
+				konsole/srcery_konsole.colorscheme \
+				linux_vc/srcery_linux_vc.sh \
+				lxterminal/srcery_lxterminal.conf \
+				mintty/srcery_mintty.conf \
+				pantheon-terminal/srcery_pantheon-terminal.sh \
+				putty/srcery_putty.reg \
+				st/srcery_st.h \
+				terminal_app/srcery_terminal_app.terminal \
+				terminator/srcery_terminator.config \
+				termite/srcery_termite.ini \
+				termux/srcery_colors.properties \
+				tilix/srcery_tilix.json \
+				windows_terminal/srcery_settings.json \
+				xfce4/srcery_xfce4.theme \
+				xresources/srcery.xresources
 
 PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
 
-default: $(TEMPLATES)
-
-# default: \
-# 	alacritty/srcery_alacritty.yml \
-# 	blink/srcery_blink.js \
-# 	chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
-# 	genode-terminal/srcery_genode-terminal.config \
-# 	gnome-terminal/srcery_gnome-terminal.sh \
-# 	guake/srcery_guake.sh \
-# 	iterm/srcery_iterm.itermcolors \
-# 	kitty/srcery_kitty.conf \
-# 	konsole/srcery_konsole.colorscheme \
-# 	linux_vc/srcery_linux_vc.sh \
-# 	lxterminal/srcery_lxterminal.conf \
-# 	mintty/srcery_mintty.conf \
-# 	pantheon-terminal/srcery_pantheon-terminal.sh \
-# 	putty/srcery_putty.reg \
-# 	st/srcery_st.h \
-# 	terminal_app/srcery_terminal_app.terminal \
-# 	terminator/srcery_terminator.config \
-# 	termite/srcery_termite.ini \
-# 	termux/srcery_colors.properties \
-# 	tilix/srcery_tilix.json \
-# 	windows_terminal/srcery_settings.json \
-# 	xfce4/srcery_xfce4.theme \
-# 	xresources/srcery.xresources
+default: $(FILES)
 
 node_modules:
 	npm install
@@ -59,7 +54,7 @@ gnome-terminal/srcery_gnome-terminal.sh: templates/gnome.hbs $(PALETTE)
 guake/srcery_guake.sh: templates/guake.hbs $(PALETTE)
 	bin/builder -o guake > $@
 
-iterm/srcery_iterm.itermcolors: templates/iterm.dot palette.json
+iterm/srcery_iterm.itermcolors: templates/iterm.hbs $(PALETTE)
 	bin/builder -o iterm > $@
 
 kitty/srcery_kitty.conf: templates/kitty.dot palette.json

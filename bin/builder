@@ -15,12 +15,6 @@ const ps = require("process");
 const palette = require("@srcery-colors/srcery-palette");
 
 // https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
-function averageRGB(arr) {
-  return arr.map((value) => {
-    return value / 255;
-  });
-}
-// https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
 function doubleHex(context) {
   let hex = context.slice(1);
   let r = hex.slice(0, 2);
@@ -38,8 +32,8 @@ Handlebars.registerHelper("doubleHex", (hex) => {
 });
 
 // Make sure you pass rgb not hex to this helper
-Handlebars.registerHelper("avgRGB", (rgbArray) => {
-  return averageRGB(rgbArray);
+Handlebars.registerHelper("avgRGB", (color) => {
+  return color / 255
 });
 
 // const toHex = _.partialRight(_.mapValues, function(color) {
@@ -90,7 +84,9 @@ const templates = {
   chromeshell: "templates/chrome-secure-shell.hbs",
   genode:      "templates/genode.hbs",
   gnome:       "templates/gnome.hbs",
-  guake:       "templates/guake.hbs"
+  guake:       "templates/guake.hbs",
+  iterm:       "templates/iterm.hbs"
+
 }
 
 // const config = {
