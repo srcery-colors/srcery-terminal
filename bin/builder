@@ -44,6 +44,14 @@ Handlebars.registerHelper("join", (arr, rest) => {
   if (typeof rest === "string") c = rest;
   return arr.join(c);
 });
+
+// Substring, pass index to remove from start
+Handlebars.registerHelper("sub", (hex, rest) => {
+  let i = 1;
+  if (typeof rest === "number") i = rest;
+  return hex.substring(i);
+});
+
 // const toHex = _.partialRight(_.mapValues, function(color) {
 //   return color.toHex();
 // });
