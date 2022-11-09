@@ -57,7 +57,7 @@ guake/srcery_guake.sh: templates/guake.hbs $(PALETTE)
 iterm/srcery_iterm.itermcolors: templates/iterm.hbs $(PALETTE)
 	bin/builder -o iterm > $@
 
-kitty/srcery_kitty.conf: templates/kitty.dot palette.json
+kitty/srcery_kitty.conf: templates/kitty.hbs $(PALETTE)
 	bin/builder -o kitty > $@
 
 konsole/srcery_konsole.colorscheme: templates/konsole.dot palette.json

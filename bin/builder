@@ -23,6 +23,8 @@ function doubleHex(context) {
   return '#' + r + r + g + g + b + b;
 }
 
+// tohex -> lowercase
+// toHexUpper -> no change
 Handlebars.registerHelper("lowerCase", (hex) => {
   return hex.toLowerCase()
 });
@@ -85,8 +87,8 @@ const templates = {
   genode:      "templates/genode.hbs",
   gnome:       "templates/gnome.hbs",
   guake:       "templates/guake.hbs",
-  iterm:       "templates/iterm.hbs"
-
+  iterm:       "templates/iterm.hbs",
+  kitty:       "templates/kitty.hbs",
 }
 
 // const config = {
