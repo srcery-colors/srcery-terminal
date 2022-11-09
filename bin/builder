@@ -38,6 +38,9 @@ Handlebars.registerHelper("avgRGB", (color) => {
   return color / 255
 });
 
+Handlebars.registerHelper("join", (arr, c) => {
+  return arr.join(c);
+});
 // const toHex = _.partialRight(_.mapValues, function(color) {
 //   return color.toHex();
 // });
@@ -89,6 +92,7 @@ const templates = {
   guake:       "templates/guake.hbs",
   iterm:       "templates/iterm.hbs",
   kitty:       "templates/kitty.hbs",
+  konsole:     "templates/konsole.hbs",
 }
 
 // const config = {

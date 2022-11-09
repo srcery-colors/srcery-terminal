@@ -60,7 +60,7 @@ iterm/srcery_iterm.itermcolors: templates/iterm.hbs $(PALETTE)
 kitty/srcery_kitty.conf: templates/kitty.hbs $(PALETTE)
 	bin/builder -o kitty > $@
 
-konsole/srcery_konsole.colorscheme: templates/konsole.dot palette.json
+konsole/srcery_konsole.colorscheme: templates/konsole.hbs $(PALETTE)
 	bin/builder -o konsole > $@
 
 linux_vc/srcery_linux_vc.sh: templates/linux.dot palette.json
