@@ -64,33 +64,30 @@ Handlebars.registerHelper("sub", (hex, rest) => {
 // });
 
 const templates = {
-  alacritty:   "templates/alacritty.hbs",
-  blink:       "templates/blink.hbs",
-  chromeshell: "templates/chrome-secure-shell.hbs",
-  genode:      "templates/genode.hbs",
-  gnome:       "templates/gnome.hbs",
-  guake:       "templates/guake.hbs",
-  iterm:       "templates/iterm.hbs",
-  kitty:       "templates/kitty.hbs",
-  konsole:     "templates/konsole.hbs",
-  linux:       "templates/linux.hbs",
-  lxterminal:  "templates/lxterminal.hbs",
-  mintty:      "templates/mintty.hbs",
-  pantheon:    "templates/pantheon.hbs",
-  putty:       "templates/putty.hbs",
-  st:          "templates/st.hbs",
-  terminator:  "templates/terminator.hbs",
-  termite:     "templates/termite.hbs",
-  termux:      "templates/termux.hbs",
+  alacritty:       "templates/alacritty.hbs",
+  blink:           "templates/blink.hbs",
+  chromeshell:     "templates/chrome-secure-shell.hbs",
+  genode:          "templates/genode.hbs",
+  gnome:           "templates/gnome.hbs",
+  guake:           "templates/guake.hbs",
+  iterm:           "templates/iterm.hbs",
+  kitty:           "templates/kitty.hbs",
+  konsole:         "templates/konsole.hbs",
+  linux:           "templates/linux.hbs",
+  lxterminal:      "templates/lxterminal.hbs",
+  mintty:          "templates/mintty.hbs",
+  pantheon:        "templates/pantheon.hbs",
+  putty:           "templates/putty.hbs",
+  st:              "templates/st.hbs",
+  terminator:      "templates/terminator.hbs",
+  termite:         "templates/termite.hbs",
+  termux:          "templates/termux.hbs",
+  tilix:           "templates/tilix.hbs",
 }
 
 //   terminalapp: {
 //     template: "./templates/terminal-app.dot",
 //     function: terminalappColor
-//   },
-//   tilix: {
-//     template: "./templates/tilix.dot",
-//     function: toHexUpper
 //   },
 //   windowsterminal: {
 //     template: "./templates/windows_terminal.dot",

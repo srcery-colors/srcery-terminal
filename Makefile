@@ -93,7 +93,7 @@ termite/srcery_termite.ini: templates/termite.hbs $(PALETTE)
 termux/srcery_colors.properties: templates/termux.hbs $(PALETTE)
 	bin/builder -o termux > $@
 
-tilix/srcery_tilix.json: templates/tilix.dot palette.json
+tilix/srcery_tilix.json: templates/tilix.hbs $(PALETTE)
 	bin/builder -o tilix > $@
 
 windows_terminal/srcery_settings.json: templates/windows_terminal.dot palette.json
