@@ -19,8 +19,6 @@ function doubleHex(context) {
   return '#' + r + r + g + g + b + b;
 }
 
-// tohex -> lowercase
-// toHexUpper -> no change
 Handlebars.registerHelper("lower", (hex) => {
   return hex.toLowerCase()
 });
@@ -34,14 +32,14 @@ Handlebars.registerHelper("avgRGB", (color) => {
   return color / 255
 });
 
-// Takes additional arg(c), what string to join with
+// optionally pass join string
 Handlebars.registerHelper("join", (arr, rest) => {
   let c = ",";
   if (typeof rest === "string") c = rest;
   return arr.join(c);
 });
 
-// Substring, pass index to remove from start
+// optionally pass substr index
 Handlebars.registerHelper("sub", (hex, rest) => {
   let i = 1;
   if (typeof rest === "number") i = rest;
@@ -122,4 +120,3 @@ const file = fs.readFileSync(templates[opts.output], "utf8");
 const template = Handlebars.compile(file);
 ps.stdout.write(template(palette));
 ps.exit();
-
