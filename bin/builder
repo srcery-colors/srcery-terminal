@@ -81,15 +81,12 @@ const templates = {
   st:          "templates/st.hbs",
   terminator:  "templates/terminator.hbs",
   termite:     "templates/termite.hbs",
+  termux:      "templates/termux.hbs",
 }
 
 //   terminalapp: {
 //     template: "./templates/terminal-app.dot",
 //     function: terminalappColor
-//   },
-//   termux: {
-//     template: "./templates/termux.dot",
-//     function: toHex
 //   },
 //   tilix: {
 //     template: "./templates/tilix.dot",

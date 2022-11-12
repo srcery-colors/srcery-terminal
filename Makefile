@@ -15,7 +15,6 @@ FILES = alacritty/srcery_alacritty.yml \
 				pantheon-terminal/srcery_pantheon-terminal.sh \
 				putty/srcery_putty.reg \
 				st/srcery_st.h \
-				terminal_app/srcery_terminal_app.terminal \
 				terminator/srcery_terminator.config \
 				termite/srcery_termite.ini \
 				termux/srcery_colors.properties \
@@ -24,6 +23,7 @@ FILES = alacritty/srcery_alacritty.yml \
 				xfce4/srcery_xfce4.theme \
 				xresources/srcery.xresources
 
+# terminal_app/srcery_terminal_app.terminal
 PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
 
 default: $(FILES)
@@ -90,7 +90,7 @@ terminator/srcery_terminator.config: templates/terminator.hbs $(PALETTE)
 termite/srcery_termite.ini: templates/termite.hbs $(PALETTE)
 	bin/builder -o termite > $@
 
-termux/srcery_colors.properties: templates/termux.dot palette.json
+termux/srcery_colors.properties: templates/termux.hbs $(PALETTE)
 	bin/builder -o termux > $@
 
 tilix/srcery_tilix.json: templates/tilix.dot palette.json
