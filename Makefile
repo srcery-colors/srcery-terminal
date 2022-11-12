@@ -102,5 +102,5 @@ windows_terminal/srcery_settings.json: templates/windows_terminal.hbs $(PALETTE)
 xfce4/srcery_xfce4.theme: templates/xfce.hbs $(PALETTE)
 	bin/builder -o xfce > $@
 
-xresources/srcery.xresources: templates/xresources.dot palette.json
+xresources/srcery.xresources: templates/xresources.hbs $(PALETTE)
 	bin/builder -o xresources > $@

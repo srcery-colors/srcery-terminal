@@ -85,17 +85,13 @@ const templates = {
   tilix:           "templates/tilix.hbs",
   windowsterminal: "templates/windows_terminal.hbs",
   xfce:            "templates/xfce.hbs",
+  xresources:      "templates/xresources.hbs",
 }
 
 //   terminalapp: {
 //     template: "./templates/terminal-app.dot",
 //     function: terminalappColor
 //   },
-//   xresources: {
-//     template: "./templates/xresources.dot",
-//     function: toHex
-//   }
-// }
 
 program
   .version(pkg.version)
