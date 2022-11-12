@@ -23,7 +23,6 @@ FILES = alacritty/srcery_alacritty.yml \
 				xfce4/srcery_xfce4.theme \
 				xresources/srcery.xresources
 
-# terminal_app/srcery_terminal_app.terminal
 PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
 
 default: $(FILES)
@@ -80,9 +79,6 @@ putty/srcery_putty.reg: templates/putty.hbs $(PALETTE)
 
 st/srcery_st.h: templates/st.hbs $(PALETTE)
 	bin/builder -o st > $@
-
-terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json
-	bin/builder -o terminalapp > $@
 
 terminator/srcery_terminator.config: templates/terminator.hbs $(PALETTE)
 	bin/builder -o terminator > $@
