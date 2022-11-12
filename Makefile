@@ -99,7 +99,7 @@ tilix/srcery_tilix.json: templates/tilix.hbs $(PALETTE)
 windows_terminal/srcery_settings.json: templates/windows_terminal.hbs $(PALETTE)
 	bin/builder -o windowsterminal > $@
 
-xfce4/srcery_xfce4.theme: templates/xfce.dot palette.json
+xfce4/srcery_xfce4.theme: templates/xfce.hbs $(PALETTE)
 	bin/builder -o xfce > $@
 
 xresources/srcery.xresources: templates/xresources.dot palette.json
