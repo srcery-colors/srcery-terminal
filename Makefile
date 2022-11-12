@@ -66,7 +66,7 @@ konsole/srcery_konsole.colorscheme: templates/konsole.hbs $(PALETTE)
 linux_vc/srcery_linux_vc.sh: templates/linux.hbs $(PALETTE)
 	bin/builder -o linux > $@
 
-lxterminal/srcery_lxterminal.conf: templates/lxterminal.dot palette.json
+lxterminal/srcery_lxterminal.conf: templates/lxterminal.hbs $(PALETTE)
 	bin/builder -o lxterminal > $@
 
 mintty/srcery_mintty.conf: templates/mintty.dot palette.json

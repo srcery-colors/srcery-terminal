@@ -104,7 +104,8 @@ const templates = {
   iterm:       "templates/iterm.hbs",
   kitty:       "templates/kitty.hbs",
   konsole:     "templates/konsole.hbs",
-  linux:       "templates/linux.hbs"
+  linux:       "templates/linux.hbs",
+  lxterminal:  "templates/lxterminal.hbs",
 }
 
 // const config = {
