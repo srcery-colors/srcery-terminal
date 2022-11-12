@@ -1,31 +1,31 @@
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"{{ primary.black.hex }}",
-	"{{ primary.red.hex }}",
-	"{{ primary.green.hex }}",
-	"{{ primary.yellow.hex }}",
-	"{{ primary.blue.hex }}",
-	"{{ primary.magenta.hex }}",
-	"{{ primary.cyan.hex }}",
-	"{{ primary.white.hex }}",
+	"{{lowerCase primary.black.hex }}",
+	"{{lowerCase primary.red.hex }}",
+	"{{lowerCase primary.green.hex }}",
+	"{{lowerCase primary.yellow.hex }}",
+	"{{lowerCase primary.blue.hex }}",
+	"{{lowerCase primary.magenta.hex }}",
+	"{{lowerCase primary.cyan.hex }}",
+	"{{lowerCase primary.white.hex }}",
 
 	/* 8 bright colors */
-	"{{ primary.bright_black.hex }}",
-	"{{ primary.bright_red.hex }}",
-	"{{ primary.bright_green.hex }}",
-	"{{ primary.bright_yellow.hex }}",
-	"{{ primary.bright_blue.hex }}",
-	"{{ primary.bright_magenta.hex }}",
-	"{{ primary.bright_cyan.hex }}",
-	"{{ primary.bright_white.hex }}",
+	"{{lowerCase primary.bright_black.hex }}",
+	"{{lowerCase primary.bright_red.hex }}",
+	"{{lowerCase primary.bright_green.hex }}",
+	"{{lowerCase primary.bright_yellow.hex }}",
+	"{{lowerCase primary.bright_blue.hex }}",
+	"{{lowerCase primary.bright_magenta.hex }}",
+	"{{lowerCase primary.bright_cyan.hex }}",
+	"{{lowerCase primary.bright_white.hex }}",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"{{ primary.bright_white.hex }}", /* foreground */
-	"{{ primary.black.hex }}", /* background */
-	"{{ primary.yellow.hex }}", /* cursor */
+	"{{lowerCase primary.bright_white.hex }}", /* foreground */
+	"{{lowerCase primary.black.hex }}", /* background */
+	"{{lowerCase primary.yellow.hex }}", /* cursor */
 };
 
 /*

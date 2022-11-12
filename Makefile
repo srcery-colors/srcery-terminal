@@ -78,7 +78,7 @@ pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.hbs $(PALETTE)
 putty/srcery_putty.reg: templates/putty.hbs $(PALETTE)
 	bin/builder -o putty > $@
 
-st/srcery_st.h: templates/st.dot palette.json
+st/srcery_st.h: templates/st.hbs $(PALETTE)
 	bin/builder -o st > $@
 
 terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json

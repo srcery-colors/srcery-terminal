@@ -109,6 +109,7 @@ const templates = {
   mintty:      "templates/mintty.hbs",
   pantheon:    "templates/pantheon.hbs",
   putty:       "templates/putty.hbs",
+  st:          "templates/st.hbs",
 }
 
 // const config = {
