@@ -108,6 +108,7 @@ const templates = {
   lxterminal:  "templates/lxterminal.hbs",
   mintty:      "templates/mintty.hbs",
   pantheon:    "templates/pantheon.hbs",
+  putty:       "templates/putty.hbs",
 }
 
 // const config = {

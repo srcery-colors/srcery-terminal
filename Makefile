@@ -75,7 +75,7 @@ mintty/srcery_mintty.conf: templates/mintty.hbs $(PALETTE)
 pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.hbs $(PALETTE)
 	bin/builder -o pantheon > $@
 
-putty/srcery_putty.reg: templates/putty.dot palette.json
+putty/srcery_putty.reg: templates/putty.hbs $(PALETTE)
 	bin/builder -o putty > $@
 
 st/srcery_st.h: templates/st.dot palette.json
