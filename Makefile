@@ -96,7 +96,7 @@ termux/srcery_colors.properties: templates/termux.hbs $(PALETTE)
 tilix/srcery_tilix.json: templates/tilix.hbs $(PALETTE)
 	bin/builder -o tilix > $@
 
-windows_terminal/srcery_settings.json: templates/windows_terminal.dot palette.json
+windows_terminal/srcery_settings.json: templates/windows_terminal.hbs $(PALETTE)
 	bin/builder -o windowsterminal > $@
 
 xfce4/srcery_xfce4.theme: templates/xfce.dot palette.json

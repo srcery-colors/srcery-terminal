@@ -83,15 +83,12 @@ const templates = {
   termite:         "templates/termite.hbs",
   termux:          "templates/termux.hbs",
   tilix:           "templates/tilix.hbs",
+  windowsterminal: "templates/windows_terminal.hbs",
 }
 
 //   terminalapp: {
 //     template: "./templates/terminal-app.dot",
 //     function: terminalappColor
-//   },
-//   windowsterminal: {
-//     template: "./templates/windows_terminal.dot",
-//     function: toHexUpper
 //   },
 //   xfce: {
 //     template: "./templates/xfce.dot",
