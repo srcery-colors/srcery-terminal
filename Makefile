@@ -72,7 +72,7 @@ lxterminal/srcery_lxterminal.conf: templates/lxterminal.hbs $(PALETTE)
 mintty/srcery_mintty.conf: templates/mintty.hbs $(PALETTE)
 	bin/builder -o mintty > $@
 
-pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.dot palette.json
+pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.hbs $(PALETTE)
 	bin/builder -o pantheon > $@
 
 putty/srcery_putty.reg: templates/putty.dot palette.json
