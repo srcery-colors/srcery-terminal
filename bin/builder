@@ -21,11 +21,11 @@ function doubleHex(context) {
 
 // tohex -> lowercase
 // toHexUpper -> no change
-Handlebars.registerHelper("lowerCase", (hex) => {
+Handlebars.registerHelper("lower", (hex) => {
   return hex.toLowerCase()
 });
 
-Handlebars.registerHelper("doubleHex", (hex) => {
+Handlebars.registerHelper("double", (hex) => {
   return doubleHex(hex).toLowerCase();
 });
 
