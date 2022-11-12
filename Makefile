@@ -69,7 +69,7 @@ linux_vc/srcery_linux_vc.sh: templates/linux.hbs $(PALETTE)
 lxterminal/srcery_lxterminal.conf: templates/lxterminal.hbs $(PALETTE)
 	bin/builder -o lxterminal > $@
 
-mintty/srcery_mintty.conf: templates/mintty.dot palette.json
+mintty/srcery_mintty.conf: templates/mintty.hbs $(PALETTE)
 	bin/builder -o mintty > $@
 
 pantheon-terminal/srcery_pantheon-terminal.sh: templates/pantheon.dot palette.json
