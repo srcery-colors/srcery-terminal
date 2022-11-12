@@ -87,7 +87,7 @@ terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.js
 terminator/srcery_terminator.config: templates/terminator.hbs $(PALETTE)
 	bin/builder -o terminator > $@
 
-termite/srcery_termite.ini: templates/termite.dot palette.json
+termite/srcery_termite.ini: templates/termite.hbs $(PALETTE)
 	bin/builder -o termite > $@
 
 termux/srcery_colors.properties: templates/termux.dot palette.json

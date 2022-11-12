@@ -80,19 +80,12 @@ const templates = {
   putty:       "templates/putty.hbs",
   st:          "templates/st.hbs",
   terminator:  "templates/terminator.hbs",
+  termite:     "templates/termite.hbs",
 }
 
 //   terminalapp: {
 //     template: "./templates/terminal-app.dot",
 //     function: terminalappColor
-//   },
-//   terminator: {
-//     template: "./templates/terminator.dot",
-//     function: toHex
-//   },
-//   termite: {
-//     template: "./templates/termite.dot",
-//     function: toHex
 //   },
 //   termux: {
 //     template: "./templates/termux.dot",
