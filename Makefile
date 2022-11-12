@@ -84,7 +84,7 @@ st/srcery_st.h: templates/st.hbs $(PALETTE)
 terminal_app/srcery_terminal_app.terminal: templates/terminal-app.dot palette.json
 	bin/builder -o terminalapp > $@
 
-terminator/srcery_terminator.config: templates/terminator.dot palette.json
+terminator/srcery_terminator.config: templates/terminator.hbs $(PALETTE)
 	bin/builder -o terminator > $@
 
 termite/srcery_termite.ini: templates/termite.dot palette.json

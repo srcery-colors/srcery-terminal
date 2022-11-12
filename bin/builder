@@ -3,14 +3,10 @@
 "use strict";
 
 const fs = require("fs");
-// const termcolors = require("termcolors");
 const pkg = require("../package.json");
 // const buffer = require('buffer');
 const Handlebars = require("handlebars");
-// const palette = fs.readFileSync("./palette.json", "utf8");
-// const colors = termcolors.json.import(palette);
 const program = require("commander");
-// const _ = require("lodash");
 const ps = require("process");
 const palette = require("@srcery-colors/srcery-palette");
 
@@ -52,33 +48,6 @@ Handlebars.registerHelper("sub", (hex, rest) => {
   return hex.substring(i).toLowerCase();
 });
 
-// const toHex = _.partialRight(_.mapValues, function(color) {
-//   return color.toHex();
-// });
-
-// const toHexSlice = _.partialRight(_.mapValues, function(color) {
-//   return color.toHex().slice(1);
-// });
-
-// const toHexUpper = _.partialRight(_.mapValues, function(color) {
-//   return color.toHex().toUpperCase();
-// });
-
-// const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
-//   return color.toAvgRgbArray();
-// });
-
-// const toDoubleHex = _.partialRight(_.mapValues, function(color) {
-//   return color.toDoubleHex();
-// });
-
-// const toRgb = _.partialRight(_.mapValues, function(color) {
-//   return color.toRgbArray().join();
-// });
-
-// const hexNoHash = _.partialRight(_.mapValues, function(color) {
-//   return color.toHex().substring(1);
-// });
 
 // const terminalappColor = _.partialRight(_.mapValues, function(color) {
 //   const code = [
@@ -110,69 +79,9 @@ const templates = {
   pantheon:    "templates/pantheon.hbs",
   putty:       "templates/putty.hbs",
   st:          "templates/st.hbs",
+  terminator:  "templates/terminator.hbs",
 }
 
-// const config = {
-//   alacritty: {
-//     template: "./templates/alacritty.dot",
-//     function: toHex
-//   },
-//   blink: {
-//     template: "./templates/blink.dot",
-//     function: toHexUpper
-//   },
-//   chromeshell: {
-//     template: "./templates/chrome-secure-shell.dot",
-//     function: toHex
-//   },
-//   genode:{
-//     template: "./templates/genode.dot",
-//     function: toHexUpper
-//   },
-//   gnome: {
-//     template: "./templates/gnome.dot",
-//     function: toHex
-//   },
-//   guake: {
-//     template: "./templates/guake.dot",
-//     function: toDoubleHex
-//   },
-//   iterm: {
-//     template: "./templates/iterm.dot",
-//     function: toAvgRgbArray
-//   },
-//   kitty: {
-//     template: "./templates/kitty.dot",
-//     function: toHex
-//   },
-//   konsole: {
-//     template: "./templates/konsole.dot",
-//     function: toRgb
-//   },
-//   linux: {
-//     template: "./templates/linux.dot",
-//     function: hexNoHash
-//   },
-//   lxterminal: {
-//     template: "./templates/lxterminal.dot",
-//     function: toRgb
-//   },
-//   mintty: {
-//     template: "./templates/mintty.dot",
-//     function: toRgb
-//   },
-//   pantheon: {
-//     template: "./templates/pantheon.dot",
-//     function: toHex
-//   },
-//   putty: {
-//     template: "./templates/putty.dot",
-//     function: toRgb
-//   },
-//   st: {
-//     template: "./templates/st.dot",
-//     function: toHex
-//   },
 //   terminalapp: {
 //     template: "./templates/terminal-app.dot",
 //     function: terminalappColor
@@ -234,7 +143,6 @@ if (!Object.prototype.hasOwnProperty.call(templates, opts.output)) {
 
 const file = fs.readFileSync(templates[opts.output], "utf8");
 const template = Handlebars.compile(file);
-// const template = termcolors.export(file, config[opts.output].function);
 ps.stdout.write(template(palette));
 ps.exit();
 
