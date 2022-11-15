@@ -59,10 +59,9 @@ to pad out the color selection, no extra configuration needed.
 and run `make README.md` to update docs.
 
 ### Generating configurations
-To get a list of available configurations call `make list`. By editing
-the relevant template for any given configuration (located in
-`./templates`), or by editing `palette.json` and calling `make` will
-generate a new configuration.
+To get a list of available configurations call `make list`. By editing the
+relevant template for any given configuration (located in `./templates`) and
+calling `make` will generate a new configuration.
 
 To make a single config, say `xresources` call make like this:
 
