@@ -68,6 +68,7 @@ const templates = {
   windowsterminal: "templates/windows_terminal.hbs",
   xfce:            "templates/xfce.hbs",
   xresources:      "templates/xresources.hbs",
+  md:              "templates/README.hbs"
 }
 
 program

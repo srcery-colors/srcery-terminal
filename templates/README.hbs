@@ -1,0 +1,45 @@
+![title](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/terminal_title.png)
+
+Terminal configurations for [vim](https://github.com/srcery-colors/srcery-vim),
+and [emacs](https://github.com/srcery-colors/srcery-emacs) color scheme. Pick
+and choose for your terminal of choice for the pre-generated configs tracked in
+this repo.
+
+## Palette
+
+| IMG  | TERMCOL | NR | VAR | HEX | RGB  | HSL |
+|------|---------|----|-----|-----|------|-----|
+{{#each primary}}
+| ![{{ this.termcol }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{ this.termcol }} | {{ this.index }} | `{{ this.var }}` | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
+{{/each}}
+
+Additionally Srcery uses some [xterm 256
+colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg)
+to pad out the color selection, no extra configuration needed.
+
+| IMG  | NAME | NR | HEX | RGB  | HSL |
+|------|------|----|-----|-----|------|
+{{#each secondary}}
+| ![{{ @key }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{ @key }} | {{ this.index }} | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
+{{/each}}
+
+## Development
+### Requirements
+[Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) is required to build the terminal configurations.
+
+### Changing readme
+
+`README.md` along with the configs are generated, edit `templates/README.hbs`
+and run `make README.md` to update docs.
+
+### Generating configurations
+To get a list of available configurations call `make list`. By editing
+the relevant template for any given configuration (located in
+`./templates`), or by editing `palette.json` and calling `make` will
+generate a new configuration.
+
+To make a single config, say `xresources` call make like this:
+
+``` shell
+make xresources/srcery.xresources
+```

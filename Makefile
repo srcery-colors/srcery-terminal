@@ -35,6 +35,9 @@ list:
 
 $(PALETTE): node_modules
 
+README.md: templates/README.hbs $(PALETTE)
+	@bin/builder -o md > $@
+
 alacritty/srcery_alacritty.yml: templates/alacritty.hbs $(PALETTE)
 	bin/builder -o alacritty > $@
 
