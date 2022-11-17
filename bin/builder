@@ -3,179 +3,100 @@
 "use strict";
 
 const fs = require("fs");
-const termcolors = require("termcolors");
 const pkg = require("../package.json");
-const buffer = require('buffer');
-const palette = fs.readFileSync("./palette.json", "utf8");
-const colors = termcolors.json.import(palette);
+const Handlebars = require("handlebars");
 const program = require("commander");
-const _ = require("lodash");
-const process = require("process");
+const ps = require("process");
+const palette = require("@srcery-colors/srcery-palette");
 
-const toHex = _.partialRight(_.mapValues, function(color) {
-  return color.toHex();
+// https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
+function doubleHex(context) {
+  let hex = context.slice(1);
+  let r = hex.slice(0, 2);
+  let g = hex.slice(2, 4);
+  let b = hex.slice(4, 6);
+  return '#' + r + r + g + g + b + b;
+}
+
+Handlebars.registerHelper("lower", (hex) => {
+  return hex.toLowerCase()
 });
 
-const toHexSlice = _.partialRight(_.mapValues, function(color) {
-  return color.toHex().slice(1);
+Handlebars.registerHelper("double", (hex) => {
+  return doubleHex(hex).toLowerCase();
 });
 
-const toHexUpper = _.partialRight(_.mapValues, function(color) {
-  return color.toHex().toUpperCase();
+// Make sure you pass rgb not hex to this helper
+Handlebars.registerHelper("avgRGB", (color) => {
+  return color / 255
 });
 
-const toAvgRgbArray = _.partialRight(_.mapValues, function(color) {
-  return color.toAvgRgbArray();
+// optionally pass join string
+Handlebars.registerHelper("join", (arr, rest) => {
+  let c = ",";
+  if (typeof rest === "string") c = rest;
+  return arr.join(c);
 });
 
-const toDoubleHex = _.partialRight(_.mapValues, function(color) {
-  return color.toDoubleHex();
+// optionally pass substr index
+Handlebars.registerHelper("sub", (hex, rest) => {
+  let i = 1;
+  if (typeof rest === "number") i = rest;
+  return hex.substring(i).toLowerCase();
 });
 
-const toRgb = _.partialRight(_.mapValues, function(color) {
-  return color.toRgbArray().join();
-});
-
-const hexNoHash = _.partialRight(_.mapValues, function(color) {
-  return color.toHex().substring(1);
-});
-
-const terminalappColor = _.partialRight(_.mapValues, function(color) {
-  const code = [
-    new buffer.Buffer('62706c6973743030d40102030405061516582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a307080f55246e756c6cd3090a0b0c0d0e554e535247425c4e53436f6c6f7253706163655624636c6173734f1027', 'hex'),
-    new buffer.Buffer('0010018002d2101112135a24636c6173736e616d655824636c6173736573574e53436f6c6f72a21214584e534f626a6563745f100f4e534b657965644172636869766572d1171854726f6f74800108111a232d32373b41484e5b628c8e9095a0a9b1b4bdcfd2d700000000000001010000000000000019000000000000000000000000000000d9', 'hex')
-  ];
-  let srgb = color.toAvgRgbArray();
-  srgb = srgb.map(n => {
-    return n.toFixed(10).toString();
-  }).join(' ');
-  let output = code[0].toString('binary') + srgb + code[1].toString('binary');
-  output = (new buffer.Buffer(output, 'binary')).toString('base64');
-  return output.match(/.{1,68}/g).join('\n\t');
-});
-
-const config = {
-  alacritty: {
-    template: "./templates/alacritty.dot",
-    function: toHex
-  },
-  blink: {
-    template: "./templates/blink.dot",
-    function: toHexUpper
-  },
-  chromeshell: {
-    template: "./templates/chrome-secure-shell.dot",
-    function: toHex
-  },
-  genode:{
-    template: "./templates/genode.dot",
-    function: toHexUpper
-  },
-  gnome: {
-    template: "./templates/gnome.dot",
-    function: toHex
-  },
-  guake: {
-    template: "./templates/guake.dot",
-    function: toDoubleHex
-  },
-  iterm: {
-    template: "./templates/iterm.dot",
-    function: toAvgRgbArray
-  },
-  kitty: {
-    template: "./templates/kitty.dot",
-    function: toHex
-  },
-  konsole: {
-    template: "./templates/konsole.dot",
-    function: toRgb
-  },
-  linux: {
-    template: "./templates/linux.dot",
-    function: hexNoHash
-  },
-  lxterminal: {
-    template: "./templates/lxterminal.dot",
-    function: toRgb
-  },
-  mintty: {
-    template: "./templates/mintty.dot",
-    function: toRgb
-  },
-  pantheon: {
-    template: "./templates/pantheon.dot",
-    function: toHex
-  },
-  putty: {
-    template: "./templates/putty.dot",
-    function: toRgb
-  },
-  st: {
-    template: "./templates/st.dot",
-    function: toHex
-  },
-  terminalapp: {
-    template: "./templates/terminal-app.dot",
-    function: terminalappColor
-  },
-  terminator: {
-    template: "./templates/terminator.dot",
-    function: toHex
-  },
-  termite: {
-    template: "./templates/termite.dot",
-    function: toHex
-  },
-  termux: {
-    template: "./templates/termux.dot",
-    function: toHex
-  },
-  tilix: {
-    template: "./templates/tilix.dot",
-    function: toHexUpper
-  },
-  windowsterminal: {
-    template: "./templates/windows_terminal.dot",
-    function: toHexUpper
-  },
-  xfce: {
-    template: "./templates/xfce.dot",
-    function: toDoubleHex
-  },
-  xresources: {
-    template: "./templates/xresources.dot",
-    function: toHex
-  }
+const templates = {
+  alacritty:       "templates/alacritty.hbs",
+  blink:           "templates/blink.hbs",
+  chromeshell:     "templates/chrome-secure-shell.hbs",
+  genode:          "templates/genode.hbs",
+  gnome:           "templates/gnome.hbs",
+  guake:           "templates/guake.hbs",
+  iterm:           "templates/iterm.hbs",
+  kitty:           "templates/kitty.hbs",
+  konsole:         "templates/konsole.hbs",
+  linux:           "templates/linux.hbs",
+  lxterminal:      "templates/lxterminal.hbs",
+  mintty:          "templates/mintty.hbs",
+  pantheon:        "templates/pantheon.hbs",
+  putty:           "templates/putty.hbs",
+  st:              "templates/st.hbs",
+  terminator:      "templates/terminator.hbs",
+  termite:         "templates/termite.hbs",
+  termux:          "templates/termux.hbs",
+  tilix:           "templates/tilix.hbs",
+  windowsterminal: "templates/windows_terminal.hbs",
+  xfce:            "templates/xfce.hbs",
+  xresources:      "templates/xresources.hbs",
+  md:              "templates/README.hbs"
 }
 
 program
   .version(pkg.version)
   .option('-l, --list', 'List available formats')
   .option('-o, --output [format]', 'Output format')
-  .parse(process.argv);
+  .parse(ps.argv);
 
 const opts = program.opts();
 
 if (opts.list) {
-  Object.keys(config).forEach(key => {
+  Object.keys(templates).forEach(key => {
     console.log(key);
   });
-  process.exit();
+  ps.exit();
 }
 
 if (!opts.output) {
   console.log('Must declare an output format');
-  process.exit(1);
+  ps.exit(1);
 }
 
-if (!Object.prototype.hasOwnProperty.call(config, opts.output)) {
+if (!Object.prototype.hasOwnProperty.call(templates, opts.output)) {
   console.log('Invalid output format: ', opts.output);
-  process.exit(1);
+  ps.exit(1);
 }
 
-const file = fs.readFileSync(config[opts.output].template, "utf8");
-const template = termcolors.export(file, config[opts.output].function);
-process.stdout.write(template(colors));
-process.exit();
-
+const file = fs.readFileSync(templates[opts.output], "utf8");
+const template = Handlebars.compile(file);
+ps.stdout.write(template(palette));
+ps.exit();
