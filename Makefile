@@ -27,13 +27,11 @@ PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
 
 default: $(FILES)
 
-node_modules:
-	npm install
-
 list:
 	@bin/builder --list
 
-$(PALETTE): node_modules
+$(PALETTE):
+	npm install
 
 README.md: templates/README.hbs $(PALETTE)
 	@bin/builder -o md > $@
