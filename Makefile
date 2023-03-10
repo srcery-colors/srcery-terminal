@@ -3,6 +3,7 @@
 FILES = alacritty/srcery_alacritty.yml \
 				blink/srcery_blink.js \
 				chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
+				foot/foot.ini \
 				genode-terminal/srcery_genode-terminal.config \
 				gnome-terminal/srcery_gnome-terminal.sh \
 				guake/srcery_guake.sh \
@@ -44,6 +45,9 @@ blink/srcery_blink.js: templates/blink.hbs $(PALETTE)
 
 chrome_secure_shell/srcery_chrome_secure_shell.prefs.js: templates/chrome-secure-shell.hbs $(PALETTE)
 	bin/builder -o chromeshell > $@
+
+foot/foot.ini: templates/foot.hbs $(PALETTE)
+	bin/builder -o foot > $@
 
 genode-terminal/srcery_genode-terminal.config: templates/genode.hbs $(PALETTE)
 	bin/builder -o genode > $@
