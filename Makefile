@@ -1,6 +1,6 @@
 .phony: default list
 
-FILES = alacritty/srcery_alacritty.yml \
+FILES = alacritty/srcery_alacritty.toml \
 				blink/srcery_blink.js \
 				chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
 				foot/foot.ini \
@@ -37,7 +37,7 @@ $(PALETTE):
 README.md: templates/README.hbs $(PALETTE)
 	@bin/builder -o md > $@
 
-alacritty/srcery_alacritty.yml: templates/alacritty.hbs $(PALETTE)
+alacritty/srcery_alacritty.toml: templates/alacritty.hbs $(PALETTE)
 	bin/builder -o alacritty > $@
 
 blink/srcery_blink.js: templates/blink.hbs $(PALETTE)
