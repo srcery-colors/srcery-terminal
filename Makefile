@@ -5,6 +5,7 @@ FILES = alacritty/srcery_alacritty.toml \
 				chrome_secure_shell/srcery_chrome_secure_shell.prefs.js \
 				foot/foot.ini \
 				genode-terminal/srcery_genode-terminal.config \
+				ghostty/srcery \
 				gnome-terminal/srcery_gnome-terminal.sh \
 				guake/srcery_guake.sh \
 				iterm/srcery_iterm.itermcolors \
@@ -51,6 +52,9 @@ foot/foot.ini: templates/foot.hbs $(PALETTE)
 
 genode-terminal/srcery_genode-terminal.config: templates/genode.hbs $(PALETTE)
 	bin/builder -o genode > $@
+
+ghostty/srcery: templates/ghostty.hbs $(PALETTE)
+	bin/builder -o ghostty > $@
 
 gnome-terminal/srcery_gnome-terminal.sh: templates/gnome.hbs $(PALETTE)
 	bin/builder -o gnome > $@
