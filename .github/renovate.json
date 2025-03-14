@@ -3,5 +3,13 @@
 
   "extends": ["config:recommended", ":label(dependencies)"],
 
-  "enabledManagers": ["npm"]
+  "enabledManagers": ["npm"],
+
+  "packageRules": [
+    {
+      "matchPackageNames": ["eslint"],
+      "automerge": true,
+      "extends": ["schedule:automergeNonOfficeHours"]
+    }
+  ]
 }
