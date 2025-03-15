@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@srcery-colors/srcery-palette':
         specifier: ^1.0.2
-        version: 1.0.4
+        version: 1.1.0
       commander:
         specifier: ^13.1.0
         version: 13.1.0
@@ -86,8 +86,8 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@srcery-colors/srcery-palette@1.0.4':
-    resolution: {integrity: sha512-LJ/a0NqlEjSCzJ7nEoQvcgWs1XWHY6tFGstxRDX81HBnlmzpu2+vVHi1aTtP5hG/M/Z/qSyGiijZdhL4Kvt5Kg==}
+  '@srcery-colors/srcery-palette@1.1.0':
+    resolution: {integrity: sha512-NBYEoTm1A7OMyfF8M88PMfR3g7DhilDFC3KK/ysI1qUSioGTrMNju7iXpzZu0mOsMq15/iXIvl/4SR9jkSEVHw==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -452,7 +452,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@srcery-colors/srcery-palette@1.0.4': {}
+  '@srcery-colors/srcery-palette@1.1.0': {}
 
   '@types/estree@1.0.6': {}
 
