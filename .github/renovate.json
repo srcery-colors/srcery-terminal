@@ -3,13 +3,5 @@
 
   "extends": ["local>srcery-colors/.github:renovate-config"],
 
-  "enabledManagers": ["npm"],
-
-  "packageRules": [
-    {
-      "matchPackageNames": ["eslint"],
-      "automerge": true,
-      "extends": ["schedule:automergeNonOfficeHours"]
-    }
-  ]
+  "enabledManagers": ["npm"]
 }
