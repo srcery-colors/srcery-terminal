@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
-  "extends": ["local>srcery-colors/.github:renovate-config"],
+  "extends": ["github>srcery-colors/.github:renovate-config"],
 
   "enabledManagers": ["npm"],
 
