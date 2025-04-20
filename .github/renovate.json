@@ -3,5 +3,12 @@
 
   "extends": ["local>srcery-colors/.github:renovate-config"],
 
-  "enabledManagers": ["npm"]
+  "enabledManagers": ["npm"],
+
+  "packageRules": [
+    {
+      "matchPackageNames": ["eslint"],
+      "ignoreTests": true
+    }
+  ]
 }
