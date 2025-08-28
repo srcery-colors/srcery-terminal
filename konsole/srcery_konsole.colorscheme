@@ -1,10 +1,10 @@
 # --- special colors ---
 
 [Background]
-Color=28,27,25
+Color=18,17,16
 
 [BackgroundIntense]
-Color=28,27,25
+Color=18,17,16
 
 [Foreground]
 Color=252,232,195
@@ -16,10 +16,10 @@ Bold=true
 # --- standard colors ---
 
 [Color0]
-Color=28,27,25
+Color=18,17,16
 
 [Color0Intense]
-Color=145,129,117
+Color=145,126,107
 
 [Color1]
 Color=239,47,39
@@ -58,7 +58,7 @@ Color=10,174,179
 Color=43,228,208
 
 [Color7]
-Color=186,166,127
+Color=197,176,136
 
 [Color7Intense]
 Color=252,232,195
