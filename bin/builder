@@ -18,6 +18,10 @@ function doubleHex(context) {
   return '#' + r + r + g + g + b + b;
 }
 
+Handlebars.registerHelper("maybe", (val, fallback) => {
+  return val ?? fallback
+})
+
 Handlebars.registerHelper("lower", (hex) => {
   return hex.toLowerCase()
 });

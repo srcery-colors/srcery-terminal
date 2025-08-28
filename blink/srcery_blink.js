@@ -2,15 +2,15 @@
 // Colorscheme for the Blink shell: https://blink.sh
 
 t.prefs_.set("color-palette-overrides", [
-	"#1C1B19",
+	"#121110",
 	"#EF2F27",
 	"#519F50",
 	"#FBB829",
 	"#2C78BF",
 	"#E02C6D",
 	"#0AAEB3",
-	"#BAA67F",
-	"#918175",
+	"#C5B088",
+	"#917E6B",
 	"#F75341",
 	"#98BC37",
 	"#FED06E",
@@ -21,5 +21,5 @@ t.prefs_.set("color-palette-overrides", [
 ]);
 
 t.prefs_.set("foreground-color", "#FCE8C3");
-t.prefs_.set("background-color", "#1C1B19");
+t.prefs_.set("background-color", "#121110");
 t.prefs_.set("cursor-color",     "#FBB829");
