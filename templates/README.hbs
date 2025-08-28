@@ -12,10 +12,10 @@ Pick and choose for your favorite terminal emulator
 
 ## Palette
 
-| IMG  | NAME | NR | VAR | HEX | RGB  | HSL |
-|------|------|----|-----|-----|------|-----|
+| IMG  | NAME | INDEX | HEX | RGB  | HSL |
+|------|------|-------|-----|------|-----|
 {{#each this}}
-  | ![{{ @key }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{@key}}  | {{maybe this.index "n/a" }} | `{{maybe this.var "n/a" }}` | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
+| ![{{ @key }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{@key}}  | {{maybe this.index "n/a" }} | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
 {{/each}}
 
 ## Development
