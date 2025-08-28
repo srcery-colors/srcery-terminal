@@ -23,7 +23,8 @@ FILES = alacritty/srcery_alacritty.toml \
 				tilix/srcery_tilix.json \
 				windows_terminal/srcery_settings.json \
 				xfce4/srcery_xfce4.theme \
-				xresources/srcery.xresources
+				xresources/srcery.xresources \
+				README.md
 
 PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
 
