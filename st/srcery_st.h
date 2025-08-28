@@ -25,7 +25,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#fce8c3", /* foreground */
 	"#121110", /* background */
-	"#fbb829", /* cursor */
+	"#fed06e", /* cursor */
 };
 
 /*
