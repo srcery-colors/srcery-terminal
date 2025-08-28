@@ -34,7 +34,7 @@ Pick and choose for your favorite terminal emulator
   | ![dark_red](https://place-hold.it/24x24/4f2321?text=+) | dark_red  | n/a | `g:srcery_dark_red` | #4F2321 | 79, 35, 33 | 3, 41%, 22% |
   | ![orange](https://place-hold.it/24x24/ff5f00?text=+) | orange  | 202 | `g:srcery_orange` | #FF5F00 | 255, 95, 0 | 22, 100%, 50% |
   | ![bright_orange](https://place-hold.it/24x24/ff8700?text=+) | bright_orange  | 208 | `g:srcery_bright_orange` | #FF8700 | 255, 135, 0 | 32, 100%, 50% |
-  | ![teal](https://place-hold.it/24x24/008080?text=+) | teal  | 30 | `` | #008080 | 0, 128, 128 | 180, 100%, 25% |
+  | ![teal](https://place-hold.it/24x24/008080?text=+) | teal  | 30 | `n/a` | #008080 | 0, 128, 128 | 180, 100%, 25% |
   | ![gray1](https://place-hold.it/24x24/1c1b19?text=+) | gray1  | n/a | `g:srcery_gray1` | #1C1B19 | 28, 27, 25 | 40, 6%, 10% |
   | ![gray2](https://place-hold.it/24x24/262522?text=+) | gray2  | n/a | `g:srcery_gray2` | #262522 | 38, 37, 34 | 45, 6%, 14% |
   | ![gray3](https://place-hold.it/24x24/312f2c?text=+) | gray3  | n/a | `g:srcery_xgray3` | #312F2C | 49, 47, 44 | 36, 5%, 18% |
