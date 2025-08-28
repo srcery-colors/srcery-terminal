@@ -12,20 +12,10 @@ Pick and choose for your favorite terminal emulator
 
 ## Palette
 
-| IMG  | TERMCOL | NR | VAR | HEX | RGB  | HSL |
-|------|---------|----|-----|-----|------|-----|
-{{#each primary}}
-| ![{{ this.termcol }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{ this.termcol }} | {{ this.index }} | `{{ this.var }}` | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
-{{/each}}
-
-Additionally Srcery uses some [xterm 256
-colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg)
-to pad out the color selection, no extra configuration needed.
-
-| IMG  | NAME | NR | HEX | RGB  | HSL |
-|------|------|----|-----|-----|------|
-{{#each secondary}}
-| ![{{ @key }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{ @key }} | {{ this.index }} | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
+| IMG  | NAME | NR | VAR | HEX | RGB  | HSL |
+|------|------|----|-----|-----|------|-----|
+{{#each this}}
+  | ![{{ @key }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{@key}}  | {{maybe this.index "n/a" }} | `{{ this.var }}` | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
 {{/each}}
 
 ## Development

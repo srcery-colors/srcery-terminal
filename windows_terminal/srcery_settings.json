@@ -7,15 +7,15 @@
   "schemes": [
     {
       "name": "Srcery",
-      "black": "#1C1B19",
+      "black": "#121110",
       "red": "#EF2F27",
       "green": "#519F50",
       "yellow": "#FBB829",
       "blue": "#2C78BF",
       "purple": "#E02C6D",
       "cyan": "#0AAEB3",
-      "white": "#BAA67F",
-      "brightBlack": "#918175",
+      "white": "#C5B088",
+      "brightBlack": "#917E6B",
       "brightRed": "#F75341",
       "brightGreen": "#98BC37",
       "brightYellow": "#FED06E",
@@ -24,7 +24,7 @@
       "brightCyan": "#2BE4D0",
       "brightWhite": "#FCE8C3",
       "foreground": "#FCE8C3",
-      "background": "#1C1B19",
+      "background": "#121110",
       "cursorColor": "#FBB829",
       "selectionBackground": "#FCE8C3"
     }
