@@ -6,7 +6,7 @@ foreground = "#fce8c3"
 
 [colors.cursor]
 text = "CellBackground"
-cursor = "#fbb829"
+cursor = "#fed06e"
 
 [colors.normal]
 black = "#121110"
