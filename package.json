@@ -31,7 +31,7 @@
   },
   "pnpm": {
     "overrides": {
-      "brace-expansion": "^1.1.0"
+      "brace-expansion": "^4.0.0"
     }
   }
 }
