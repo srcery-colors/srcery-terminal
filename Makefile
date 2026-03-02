@@ -34,7 +34,7 @@ list:
 	@bin/builder --list
 
 $(PALETTE):
-	npm install
+	pnpm install
 
 README.md: templates/README.hbs $(PALETTE)
 	@bin/builder -o md > $@
