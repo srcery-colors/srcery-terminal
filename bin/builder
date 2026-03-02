@@ -53,7 +53,7 @@ const templates = {
   alacritty:       "templates/alacritty.hbs",
   blink:           "templates/blink.hbs",
   chromeshell:     "templates/chrome-secure-shell.hbs",
-  foot:		   "templates/foot.hbs",
+  foot:            "templates/foot.hbs",
   genode:          "templates/genode.hbs",
   ghostty:         "templates/ghostty.hbs",
   gnome:           "templates/gnome.hbs",
