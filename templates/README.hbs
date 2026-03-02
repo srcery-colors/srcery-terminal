@@ -15,7 +15,7 @@ Pick and choose for your favorite terminal emulator
 | IMG  | NAME | INDEX | HEX | RGB  | HSL |
 |------|------|-------|-----|------|-----|
 {{#each this}}
-| ![{{ @key }}](https://place-hold.it/24x24/{{sub this.hex }}?text=+) | {{@key}}  | {{maybe this.index "n/a" }} | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
+| ![{{ @key }}](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/{{@key}}_24.jpg) | {{@key}}  | {{maybe this.index "n/a" }} | {{ this.hex }} | {{join this.rgb ", " }} | {{join this.hsl ", " }} |
 {{/each}}
 
 ## Development
