@@ -1,4 +1,4 @@
-.phony: default list
+.PHONY: default list clean
 
 FILES = alacritty/srcery_alacritty.toml \
 				blink/srcery_blink.js \
@@ -29,6 +29,9 @@ FILES = alacritty/srcery_alacritty.toml \
 PALETTE = node_modules/@srcery-colors/srcery-palette/palette.json
 
 default: $(FILES)
+
+clean:
+	rm -f $(FILES)
 
 list:
 	@bin/builder --list
