@@ -30,8 +30,10 @@ Pick and choose for your favorite terminal emulator
 | ![bright_magenta](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_magenta_24.jpg) | bright_magenta  | 13 | #FF5C8F | 255, 92, 143 | 341, 100%, 68% |
 | ![bright_cyan](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_cyan_24.jpg) | bright_cyan  | 14 | #2BE4D0 | 43, 228, 208 | 174, 77%, 53% |
 | ![bright_white](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_white_24.jpg) | bright_white  | 15 | #FCE8C3 | 252, 232, 195 | 39, 90%, 88% |
-| ![dark_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_green_24.jpg) | dark_green  | n/a | #294229 | 41, 66, 41 | 120, 23%, 21% |
-| ![dark_red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_red_24.jpg) | dark_red  | n/a | #4F2321 | 79, 35, 33 | 3, 41%, 22% |
+| ![dark_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_green_24.jpg) | dark_green  | 22 | #294229 | 41, 66, 41 | 120, 23%, 21% |
+| ![dark_red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_red_24.jpg) | dark_red  | 88 | #4F2321 | 79, 35, 33 | 3, 41%, 22% |
+| ![dark_blue](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_blue_24.jpg) | dark_blue  | 24 | #1E5181 | 30, 81, 129 | 209, 62%, 31% |
+| ![dim_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dim_green_24.jpg) | dim_green  | n/a | #2E5C2E | 46, 92, 46 | 119, 33%, 27% |
 | ![orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/orange_24.jpg) | orange  | 202 | #FF5F00 | 255, 95, 0 | 22, 100%, 50% |
 | ![bright_orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_orange_24.jpg) | bright_orange  | 208 | #FF8700 | 255, 135, 0 | 32, 100%, 50% |
 | ![teal](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/teal_24.jpg) | teal  | 30 | #008080 | 0, 128, 128 | 180, 100%, 25% |
