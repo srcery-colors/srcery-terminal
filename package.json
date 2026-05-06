@@ -1,6 +1,6 @@
 {
   "name": "srcery-terminal",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Build terminal configurations for the srcery color scheme",
   "main": "builder",
   "scripts": {
@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/srcery-colors/srcery-terminal#readme",
   "devDependencies": {
-    "eslint": "10.3.0"
+    "eslint": "10.0.2"
   },
   "dependencies": {
-    "@srcery-colors/srcery-palette": "2.0.0-alpha.0",
+    "@srcery-colors/srcery-palette": "2.0.0-alpha.2",
     "commander": "^14.0.0",
     "handlebars": "^4.7.8"
   }
