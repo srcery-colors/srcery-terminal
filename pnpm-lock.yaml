@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@srcery-colors/srcery-palette':
-        specifier: 2.0.0-alpha.2
+        specifier: ^2.0.0-alpha.2
         version: 2.0.0-alpha.2
       commander:
         specifier: ^14.0.0
