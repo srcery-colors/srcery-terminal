@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@srcery-colors/srcery-palette": "2.0.0",
-    "commander": "^14.0.3",
+    "commander": "^15.0.0",
     "handlebars": "^4.7.9"
   }
 }
