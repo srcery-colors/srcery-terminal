@@ -5,6 +5,7 @@
   "type": "module",
   "main": "builder",
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +24,9 @@
   },
   "homepage": "https://github.com/srcery-colors/srcery-terminal#readme",
   "devDependencies": {
-    "eslint": "10.7.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "10.7.0",
+    "globals": "^17.7.0"
   },
   "dependencies": {
     "@srcery-colors/srcery-palette": "2.0.0",
