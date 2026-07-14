@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-"use strict";
-
-const fs = require("fs");
-const pkg = require("../package.json");
-const Handlebars = require("handlebars");
-const { program } = require("commander");
-const ps = require("process");
-const palette = require("@srcery-colors/srcery-palette");
+import fs from "node:fs";
+import ps from "node:process";
+import Handlebars from "handlebars";
+import { program } from "commander";
+import palette from "@srcery-colors/srcery-palette";
+import pkg from "../package.json" with { type: "json" };
 
 // https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
 function doubleHex(context) {
