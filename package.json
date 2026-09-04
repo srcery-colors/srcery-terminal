@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "eslint": "10.9.1",
-    "globals": "17.11.0"
+    "globals": "17.12.0"
   },
   "dependencies": {
     "@srcery-colors/srcery-palette": "2.0.0",
