@@ -1,14 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
-  "extends": ["github>srcery-colors/.github:renovate-config"],
+  "extends": [
+    "github>srcery-colors/.github:renovate-config",
+    "customManagers:biomeVersions"
+  ],
 
-  "enabledManagers": ["github-actions", "npm"],
+  "enabledManagers": ["custom.jsonata", "github-actions", "npm"],
 
   "packageRules": [
     {
-      "matchPackageNames": ["eslint"],
-      "ignoreTests": true
+      "description": "Automerge stable Biome schema updates",
+      "matchManagers": ["custom.jsonata"],
+      "matchPackageNames": ["@biomejs/biome"],
+      "matchCurrentVersion": "!/^0/",
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
     }
   ]
 }

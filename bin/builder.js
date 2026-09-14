@@ -9,11 +9,11 @@ import pkg from "../package.json" with { type: "json" };
 
 // https://github.com/stayradiated/termcolors/blob/master/lib/colr.js
 function doubleHex(context) {
-  let hex = context.slice(1);
-  let r = hex.slice(0, 2);
-  let g = hex.slice(2, 4);
-  let b = hex.slice(4, 6);
-  return '#' + r + r + g + g + b + b;
+  const hex = context.slice(1);
+  const r = hex.slice(0, 2);
+  const g = hex.slice(2, 4);
+  const b = hex.slice(4, 6);
+  return `#${r}${r}${g}${g}${b}${b}`;
 }
 
 Handlebars.registerHelper("maybe", (val, fallback) => {
@@ -95,7 +95,7 @@ if (!opts.output) {
   ps.exit(1);
 }
 
-if (!Object.prototype.hasOwnProperty.call(templates, opts.output)) {
+if (!Object.hasOwn(templates, opts.output)) {
   console.log('Invalid output format: ', opts.output);
   ps.exit(1);
 }
