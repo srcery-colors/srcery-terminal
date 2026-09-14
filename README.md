@@ -46,7 +46,7 @@ Pick and choose for your favorite terminal emulator
 
 ## Development
 ### Requirements
-[Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) is required to build the terminal configurations.
+[Node.js 26](https://nodejs.org/en/) and [pnpm 12](https://pnpm.io/) are required to build the terminal configurations.
 
 ### Changing readme
 
