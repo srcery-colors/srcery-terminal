@@ -3,7 +3,7 @@
 
   "extends": ["github>srcery-colors/.github:renovate-config"],
 
-  "enabledManagers": ["npm"],
+  "enabledManagers": ["github-actions", "npm"],
 
   "packageRules": [
     {
