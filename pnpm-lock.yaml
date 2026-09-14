@@ -7,26 +7,25 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
+      '@eslint/js':
+        specifier: 10.0.1
+        version: 10.0.1(eslint@10.10.0)
       '@srcery-colors/srcery-palette':
         specifier: 2.0.0
         version: 2.0.0
       commander:
         specifier: ^15.0.0
         version: 15.0.0
-      handlebars:
-        specifier: ^4.7.9
-        version: 4.7.9
-    devDependencies:
-      '@eslint/js':
-        specifier: 10.0.1
-        version: 10.0.1(eslint@10.10.0)
       eslint:
         specifier: 10.10.0
         version: 10.10.0
       globals:
         specifier: 17.12.0
         version: 17.12.0
+      handlebars:
+        specifier: ^4.7.9
+        version: 4.7.9
 
 packages:
 
