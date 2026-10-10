@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up pnpm and Node.js
-        uses: MindTooth/setup@3b9324fefd7de5578c535f0e8fe525ba7a2fb834 # fix/prefer-locked-pnpm
+        uses: MindTooth/setup@v3.1.0
         with:
           cache: true
           require-lockfile: true
