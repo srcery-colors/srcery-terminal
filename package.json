@@ -26,7 +26,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.6.6",
     "@srcery-colors/srcery-palette": "2.0.0",
-    "commander": "15.0.0",
+    "commander": "15.1.0",
     "handlebars": "4.7.10"
   },
   "devEngines": {
