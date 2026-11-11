@@ -25,7 +25,7 @@
   "homepage": "https://github.com/srcery-colors/srcery-terminal#readme",
   "devDependencies": {
     "@biomejs/biome": "2.6.6",
-    "@srcery-colors/srcery-palette": "2.0.0",
+    "@srcery-colors/srcery-palette": "2.1.0",
     "commander": "15.1.0",
     "handlebars": "4.7.10"
   },
