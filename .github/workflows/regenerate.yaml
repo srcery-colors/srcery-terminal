@@ -19,7 +19,7 @@ jobs:
     if: github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-slim
     timeout-minutes: 10
-    # Holds the srcery-bot key; deployments limited to renovate/* branches.
+    # Holds the srcery-colors key; deployments limited to renovate/* branches.
     environment: renovate
     permissions:
       contents: read
@@ -48,7 +48,7 @@ jobs:
           git diff --cached --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
 
       # Minted after the build so generator code never sees a write token.
-      - name: Create srcery-bot token
+      - name: Create srcery-colors token
         if: steps.diff.outputs.changed == 'true'
         id: app-token
         uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
@@ -65,7 +65,7 @@ jobs:
           TOKEN: ${{ steps.app-token.outputs.token }}
           HEAD_REF: ${{ github.head_ref }}
         run: |
-          git config user.name "srcery-bot[bot]"
-          git config user.email "356254419+srcery-bot[bot]@users.noreply.github.com"
+          git config user.name "srcery-colors[bot]"
+          git config user.email "356254419+srcery-colors[bot]@users.noreply.github.com"
           git commit -m "chore: regenerate terminal files"
           git push "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${HEAD_REF}"

@@ -8,7 +8,7 @@
 
   "enabledManagers": ["custom.jsonata", "github-actions", "npm"],
 
-  "gitIgnoredAuthors": ["356254419+srcery-bot[bot]@users.noreply.github.com"],
+  "gitIgnoredAuthors": ["356254419+srcery-colors[bot]@users.noreply.github.com"],
 
   "packageRules": [
     {
