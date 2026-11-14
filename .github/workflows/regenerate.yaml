@@ -32,7 +32,7 @@ jobs:
       - name: Set up pnpm and Node.js
         uses: pnpm/setup@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1 # v3.2.0
         env:
-          npm_config_ignore_scripts: "true"
+          pnpm_config_ignore_scripts: "true"
         with:
           cache: true
           require-lockfile: true
