@@ -19,6 +19,8 @@ jobs:
     if: github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-slim
     timeout-minutes: 10
+    # Holds the srcery-bot key; deployments limited to renovate/* branches.
+    environment: renovate
     permissions:
       contents: read
     steps:
