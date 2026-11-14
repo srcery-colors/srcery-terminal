@@ -62,10 +62,10 @@ jobs:
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         env:
-          TOKEN: ${{ steps.app-token.outputs.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           HEAD_REF: ${{ github.head_ref }}
         run: |
           git config user.name "srcery-colors[bot]"
           git config user.email "356254419+srcery-colors[bot]@users.noreply.github.com"
           git commit -m "chore: regenerate terminal files"
-          git push "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${HEAD_REF}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${HEAD_REF}"
