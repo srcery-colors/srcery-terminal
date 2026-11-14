@@ -1,23 +1,22 @@
 name: Regenerate
 
-# Commits regenerated files to Renovate PRs (e.g. srcery-palette bumps) so CI passes.
+# Commits regenerated files to Renovate branches (e.g. srcery-palette bumps) so CI passes.
+# Runs on push, not pull_request: the renovate environment matches GITHUB_REF, which is
+# refs/pull/N/merge for PRs. The "Renovate" ruleset limits who can push here.
 on:
-  pull_request:
-    paths:
-      - package.json
-      - pnpm-lock.yaml
+  push:
+    branches:
+      - "renovate/**"
 
 permissions: {}
 
 concurrency:
-  group: regenerate-${{ github.event.pull_request.number }}
+  group: regenerate-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   # Runs the bumped dependencies, so it gets no secrets; it only hands over a patch.
   build:
-    # Same-repo Renovate PRs only; the rerun after the bot's push finds no diff, so no loop.
-    if: github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-slim
     timeout-minutes: 10
     permissions:
@@ -28,7 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
       - name: Set up pnpm and Node.js
@@ -39,6 +37,7 @@ jobs:
           cache: true
           require-lockfile: true
 
+      # The bot's own push re-runs this; it finds no diff and stops, so no loop.
       - name: Regenerate files
         run: make clean && make
 
@@ -72,7 +71,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
       - name: Download patch
@@ -97,9 +95,9 @@ jobs:
       - name: Commit and push
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          HEAD_REF: ${{ github.head_ref }}
+          BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "srcery-colors[bot]"
           git config user.email "356254419+srcery-colors[bot]@users.noreply.github.com"
           git commit -m "chore: regenerate terminal files"
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${HEAD_REF}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${BRANCH}"
