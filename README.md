@@ -33,16 +33,18 @@ Pick and choose for your favorite terminal emulator
 | ![dark_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_green_24.jpg) | dark_green  | 22 | #294229 | 41, 66, 41 | 120, 23%, 21% |
 | ![dark_red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_red_24.jpg) | dark_red  | 88 | #4F2321 | 79, 35, 33 | 3, 41%, 22% |
 | ![dark_blue](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_blue_24.jpg) | dark_blue  | 24 | #1E5181 | 30, 81, 129 | 209, 62%, 31% |
-| ![dim_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dim_green_24.jpg) | dim_green  | n/a | #2E5C2E | 46, 92, 46 | 119, 33%, 27% |
+| ![dark_yellow](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_yellow_24.jpg) | dark_yellow  | 94 | #433519 | 67, 53, 25 | 40, 46%, 18% |
+| ![dim_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dim_green_24.jpg) | dim_green  | 28 | #2E5C2E | 46, 92, 46 | 119, 33%, 27% |
 | ![orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/orange_24.jpg) | orange  | 202 | #FF5F00 | 255, 95, 0 | 22, 100%, 50% |
 | ![bright_orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/bright_orange_24.jpg) | bright_orange  | 208 | #FF8700 | 255, 135, 0 | 32, 100%, 50% |
 | ![teal](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/teal_24.jpg) | teal  | 30 | #008080 | 0, 128, 128 | 180, 100%, 25% |
-| ![gray1](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray1_24.jpg) | gray1  | n/a | #1C1B19 | 28, 27, 25 | 40, 6%, 10% |
-| ![gray2](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray2_24.jpg) | gray2  | n/a | #262522 | 38, 37, 34 | 45, 6%, 14% |
-| ![gray3](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray3_24.jpg) | gray3  | n/a | #312F2C | 49, 47, 44 | 36, 5%, 18% |
-| ![gray4](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray4_24.jpg) | gray4  | n/a | #3B3935 | 59, 57, 53 | 40, 5%, 22% |
-| ![gray5](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray5_24.jpg) | gray5  | n/a | #45433E | 69, 67, 62 | 43, 5%, 26% |
-| ![gray6](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray6_24.jpg) | gray6  | n/a | #504D47 | 80, 77, 71 | 40, 6%, 30% |
+| ![gray1](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray1_24.jpg) | gray1  | 235 | #1C1B19 | 28, 27, 25 | 40, 6%, 10% |
+| ![gray2](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray2_24.jpg) | gray2  | 236 | #262522 | 38, 37, 34 | 45, 6%, 14% |
+| ![gray3](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray3_24.jpg) | gray3  | 237 | #312F2C | 49, 47, 44 | 36, 5%, 18% |
+| ![gray4](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray4_24.jpg) | gray4  | 238 | #3B3935 | 59, 57, 53 | 40, 5%, 22% |
+| ![gray5](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray5_24.jpg) | gray5  | 239 | #45433E | 69, 67, 62 | 43, 5%, 26% |
+| ![gray6](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/gray6_24.jpg) | gray6  | 240 | #504D47 | 80, 77, 71 | 40, 6%, 30% |
+| ![hard_black](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/hard_black_24.jpg) | hard_black  | 232 | #0E0D0C | 14, 13, 12 | 30, 5%, 5% |
 
 ## Development
 ### Requirements
