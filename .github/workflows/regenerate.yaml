@@ -14,15 +14,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  regenerate:
+  # Runs the bumped dependencies, so it gets no secrets; it only hands over a patch.
+  build:
     # Same-repo Renovate PRs only; the rerun after the bot's push finds no diff, so no loop.
     if: github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-slim
     timeout-minutes: 10
-    # Holds the srcery-colors key; deployments limited to renovate/* branches.
-    environment: renovate
     permissions:
       contents: read
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -41,15 +42,49 @@ jobs:
       - name: Regenerate files
         run: make clean && make
 
-      - name: Check for changes
+      - name: Create patch
         id: diff
         run: |
           git add -A
-          git diff --cached --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
+          git diff --cached --binary > "$RUNNER_TEMP/regen.patch"
+          if [ -s "$RUNNER_TEMP/regen.patch" ]; then echo "changed=true" >> "$GITHUB_OUTPUT"; fi
 
-      # Minted after the build so generator code never sees a write token.
-      - name: Create srcery-colors token
+      - name: Upload patch
         if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: regen-patch
+          path: ${{ runner.temp }}/regen.patch
+          retention-days: 1
+          if-no-files-found: error
+
+  # Holds the App key and never runs repository or dependency code.
+  push:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    # Holds the srcery-colors key; deployments limited to renovate/* branches.
+    environment: renovate
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Download patch
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: regen-patch
+          path: ${{ runner.temp }}
+
+      - name: Apply patch
+        run: git apply --index "$RUNNER_TEMP/regen.patch"
+
+      - name: Create srcery-colors token
         id: app-token
         uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         with:
@@ -60,7 +95,6 @@ jobs:
 
       # App-token pushes (unlike GITHUB_TOKEN) re-trigger CI on the new commit.
       - name: Commit and push
-        if: steps.diff.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           HEAD_REF: ${{ github.head_ref }}
