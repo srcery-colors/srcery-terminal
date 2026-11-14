@@ -1,0 +1,69 @@
+name: Regenerate
+
+# Commits regenerated files to Renovate PRs (e.g. srcery-palette bumps) so CI passes.
+on:
+  pull_request:
+    paths:
+      - package.json
+      - pnpm-lock.yaml
+
+permissions: {}
+
+concurrency:
+  group: regenerate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    # Same-repo Renovate PRs only; the rerun after the bot's push finds no diff, so no loop.
+    if: github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Set up pnpm and Node.js
+        uses: pnpm/setup@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1 # v3.2.0
+        env:
+          npm_config_ignore_scripts: "true"
+        with:
+          cache: true
+          require-lockfile: true
+
+      - name: Regenerate files
+        run: make clean && make
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git add -A
+          git diff --cached --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Minted after the build so generator code never sees a write token.
+      - name: Create srcery-bot token
+        if: steps.diff.outputs.changed == 'true'
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+
+      # App-token pushes (unlike GITHUB_TOKEN) re-trigger CI on the new commit.
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          TOKEN: ${{ steps.app-token.outputs.token }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          git config user.name "srcery-bot[bot]"
+          git config user.email "356254419+srcery-bot[bot]@users.noreply.github.com"
+          git commit -m "chore: regenerate terminal files"
+          git push "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${HEAD_REF}"

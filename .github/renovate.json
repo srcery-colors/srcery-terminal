@@ -8,6 +8,8 @@
 
   "enabledManagers": ["custom.jsonata", "github-actions", "npm"],
 
+  "gitIgnoredAuthors": ["356254419+srcery-bot[bot]@users.noreply.github.com"],
+
   "packageRules": [
     {
       "description": "Automerge stable Biome schema updates",
