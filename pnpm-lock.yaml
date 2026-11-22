@@ -179,8 +179,8 @@ importers:
         specifier: 2.6.8
         version: 2.6.8
       '@srcery-colors/srcery-palette':
-        specifier: 2.1.0
-        version: 2.1.0
+        specifier: 2.1.1
+        version: 2.1.1
       commander:
         specifier: 15.1.0
         version: 15.1.0
@@ -259,8 +259,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@srcery-colors/srcery-palette@2.1.0':
-    resolution: {integrity: sha512-zfW/E/hRgDT2USHZJLMZnke6uXHgy3Cq2jSSW72Fs4kkdPONz4kiv+KwhuswoqJA12WnT2mJ/Awg6FQRT4ITvw==}
+  '@srcery-colors/srcery-palette@2.1.1':
+    resolution: {integrity: sha512-CQlpv6f+6mrLAUS4YIOZnh05dVnTWJVKMqXgLHm/p9JX+ruIaYb9tfsR7YM3axNG0ojbm//ELhphq3qZ81ohJQ==}
 
   commander@15.1.0:
     resolution: {integrity: sha512-cgnQ88TRrWcC7pVq46RzJVRMktu3W2RcbnoidnfBsl1bmDCBwJS/udcIZpKoCrbAYYaCqsz1yZCVIgbIaU3ddQ==}
@@ -334,7 +334,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.6.8':
     optional: true
 
-  '@srcery-colors/srcery-palette@2.1.0': {}
+  '@srcery-colors/srcery-palette@2.1.1': {}
 
   commander@15.1.0: {}
 
