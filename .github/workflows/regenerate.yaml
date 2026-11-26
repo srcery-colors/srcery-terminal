@@ -39,7 +39,7 @@ jobs:
 
       # The bot's own push re-runs this; it finds no diff and stops, so no loop.
       - name: Regenerate files
-        run: make clean && make
+        run: pnpm generate
 
       - name: Create patch
         id: diff

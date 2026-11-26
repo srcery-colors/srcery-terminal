@@ -52,16 +52,16 @@ Pick and choose for your favorite terminal emulator
 
 ### Changing readme
 
-`README.md` along with the configs are generated, edit `templates/README.hbs`
-and run `make README.md` to update docs.
+`README.md` along with the configs are generated, edit `src/formats/readme.ts`
+and run `pnpm generate` to update docs.
 
 ### Generating configurations
-To get a list of available configurations call `make list`. By editing the
-relevant template for any given configuration (located in `./templates`) and
-calling `make` will generate a new configuration.
+To get a list of available configurations call `pnpm formats`. By editing the
+relevant renderer for any given configuration (located in `./src/formats`) and
+calling `pnpm generate` will generate a new configuration.
 
-To make a single config, say `xresources` call make like this:
+To make a single config, say `xresources` call generate like this:
 
 ``` shell
-make xresources/srcery.xresources
+pnpm generate xresources
 ```
