@@ -1,4 +1,10 @@
-#!/usr/bin/env bash
+import type { Palette } from "../palette.ts";
+import { lower } from "../color.ts";
+
+const BT = "`";
+
+export const gnome = (p: Palette): string =>
+  String.raw`#!/usr/bin/env bash
 # Base16 - Gnome Terminal color scheme install script
 
 [[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="srcery"
@@ -36,15 +42,15 @@ dlist_append() {
 if which "$DCONF" > /dev/null 2>&1; then
   [[ -z "$BASE_KEY_NEW" ]] && BASE_KEY_NEW=/org/gnome/terminal/legacy/profiles:
 
-  if [[ -n "`$DCONF list $BASE_KEY_NEW/`" ]]; then
+  if [[ -n "${BT}$DCONF list $BASE_KEY_NEW/${BT}" ]]; then
     if which "$UUIDGEN" > /dev/null 2>&1; then
-      PROFILE_SLUG=`uuidgen`
+      PROFILE_SLUG=${BT}uuidgen${BT}
     fi
 
-    if [[ -n "`$DCONF read $BASE_KEY_NEW/default`" ]]; then
-      DEFAULT_SLUG=`$DCONF read $BASE_KEY_NEW/default | tr -d \'`
+    if [[ -n "${BT}$DCONF read $BASE_KEY_NEW/default${BT}" ]]; then
+      DEFAULT_SLUG=${BT}$DCONF read $BASE_KEY_NEW/default | tr -d \'${BT}
     else
-      DEFAULT_SLUG=`$DCONF list $BASE_KEY_NEW/ | grep '^:' | head -n1 | tr -d :/`
+      DEFAULT_SLUG=${BT}$DCONF list $BASE_KEY_NEW/ | grep '^:' | head -n1 | tr -d :/${BT}
     fi
 
     DEFAULT_KEY="$BASE_KEY_NEW/:$DEFAULT_SLUG"
@@ -58,10 +64,10 @@ if which "$DCONF" > /dev/null 2>&1; then
 
     # update profile values with theme options
     dset visible-name "'$PROFILE_NAME'"
-    dset palette "['{{lower black.hex }}', '{{lower red.hex }}', '{{lower green.hex }}', '{{lower yellow.hex }}', '{{lower blue.hex }}', '{{lower magenta.hex }}', '{{lower cyan.hex }}', '{{lower white.hex }}', '{{lower bright_black.hex }}', '{{lower bright_red.hex }}', '{{lower bright_green.hex }}', '{{lower bright_yellow.hex }}', '{{lower bright_blue.hex }}', '{{lower bright_magenta.hex }}', '{{lower bright_cyan.hex }}', '{{lower bright_white.hex }}']"
-    dset background-color "'{{lower black.hex }}'"
-    dset foreground-color "'{{lower bright_white.hex }}'"
-    dset bold-color "'{{lower bright_white.hex }}'"
+    dset palette "['${lower(p.black.hex)}', '${lower(p.red.hex)}', '${lower(p.green.hex)}', '${lower(p.yellow.hex)}', '${lower(p.blue.hex)}', '${lower(p.magenta.hex)}', '${lower(p.cyan.hex)}', '${lower(p.white.hex)}', '${lower(p.bright_black.hex)}', '${lower(p.bright_red.hex)}', '${lower(p.bright_green.hex)}', '${lower(p.bright_yellow.hex)}', '${lower(p.bright_blue.hex)}', '${lower(p.bright_magenta.hex)}', '${lower(p.bright_cyan.hex)}', '${lower(p.bright_white.hex)}']"
+    dset background-color "'${lower(p.black.hex)}'"
+    dset foreground-color "'${lower(p.bright_white.hex)}'"
+    dset bold-color "'${lower(p.bright_white.hex)}'"
     dset bold-color-same-as-fg "true"
     dset use-theme-colors "false"
     dset use-theme-background "false"
@@ -108,10 +114,10 @@ glist_append() {
 glist_append string /apps/gnome-terminal/global/profile_list "$PROFILE_SLUG"
 
 gset string visible_name "$PROFILE_NAME"
-gset string palette "{{lower black.hex }}:{{lower red.hex }}:{{lower green.hex }}:{{lower yellow.hex }}:{{lower blue.hex }}:{{lower magenta.hex }}:{{lower cyan.hex }}:{{lower white.hex }}:{{lower bright_black.hex }}:{{lower bright_red.hex }}:{{lower bright_green.hex }}:{{lower bright_yellow.hex }}:{{lower bright_blue.hex }}:{{lower bright_magenta.hex }}:{{lower bright_cyan.hex }}:{{lower bright_white.hex }}"
-gset string background_color "{{lower black.hex }}"
-gset string foreground_color "{{lower bright_white.hex }}"
-gset string bold_color "{{lower bright_white.hex }}"
+gset string palette "${lower(p.black.hex)}:${lower(p.red.hex)}:${lower(p.green.hex)}:${lower(p.yellow.hex)}:${lower(p.blue.hex)}:${lower(p.magenta.hex)}:${lower(p.cyan.hex)}:${lower(p.white.hex)}:${lower(p.bright_black.hex)}:${lower(p.bright_red.hex)}:${lower(p.bright_green.hex)}:${lower(p.bright_yellow.hex)}:${lower(p.bright_blue.hex)}:${lower(p.bright_magenta.hex)}:${lower(p.bright_cyan.hex)}:${lower(p.bright_white.hex)}"
+gset string background_color "${lower(p.black.hex)}"
+gset string foreground_color "${lower(p.bright_white.hex)}"
+gset string bold_color "${lower(p.bright_white.hex)}"
 gset bool   bold_color_same_as_fg "true"
 gset bool   use_theme_colors "false"
 gset bool   use_theme_background "false"
@@ -120,3 +126,4 @@ unset PROFILE_NAME
 unset PROFILE_SLUG
 unset DCONF
 unset UUIDGEN
+`;

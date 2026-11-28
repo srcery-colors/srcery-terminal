@@ -31,18 +31,21 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Typecheck
+        run: pnpm typecheck
+
       - name: Regenerate files
-        run: make clean && make
+        run: pnpm generate
 
       - name: Check generated files
         run: |
           if ! git diff --exit-code; then
-            echo "::error::Generated files are out of date. Run 'make clean && make' and commit the changes."
+            echo "::error::Generated files are out of date. Run 'pnpm generate' and commit the changes."
             exit 1
           fi
 
           if [ -n "$(git status --porcelain)" ]; then
             git status --short
-            echo "::error::Generation produced untracked files. Commit the generated output."
+            echo "::error::Generation produced unexpected files. Commit the generated output."
             exit 1
           fi
